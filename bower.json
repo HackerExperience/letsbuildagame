@@ -1,0 +1,29 @@
+{
+  "name": "lets-build-a-game",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "jquery": "2.2.0",
+    "bootstrap-sass": "3.3.6",
+    "font-awesome-sass": "4.5.0",
+    "semantic-ui-sass": "*"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": "dist/jquery.min.js"
+    },
+    "bootstrap-sass": {
+      "sass": "assets/stylesheets/**",
+      "js": "assets/javascripts/**"
+    },
+    "font-awesome-sass": {
+      "sass": "assets/stylesheets/**",
+      "font": "assets/fonts/**"
+    },
+    "semantic-ui-sass": {
+      "sass": "app/assets/stylesheets/**",
+      "js": "app/assets/javascripts/**"
+    },
+    "*": {}
+  }
+}

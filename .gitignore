@@ -1,0 +1,13 @@
+# Processed assets
+/dist
+/tmp
+
+# Dependencies
+/node_modules
+
+# Sass
+.sass-cache
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
