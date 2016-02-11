@@ -26,6 +26,7 @@ uglify_vendor_files = () ->
   folder = "tmp/bower/js/"
   dist =
   {
+    "dist/assets/js/vendor/jquery.min.js": [folder + "jquery.min.js"],
     "dist/assets/js/vendor/bootstrap.min.js": [],
     "dist/assets/js/vendor/semantic.min.js": []}
 
