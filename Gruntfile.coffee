@@ -1,6 +1,7 @@
 bower_filter = (type, component, relative_dir_path) ->
   switch component
-    when "jquery" then ""
+    when "jquery"
+      "jquery/"
     when "bootstrap-sass"
       switch type
         when "sass"
@@ -13,12 +14,6 @@ bower_filter = (type, component, relative_dir_path) ->
           "font-awesome/" + relative_dir_path["assets/stylesheets/".length..]
         when "font"
           "font-awesome/"
-    when "semantic-ui-sass"
-      switch type
-        when "sass"
-          "semantic-ui/" + relative_dir_path["app/assets/stylesheets/".length..]
-        when "js"
-          "semantic-ui/" + relative_dir_path["app/assets/javascripts/".length..]
     else
       relative_dir_path
 
@@ -26,9 +21,8 @@ uglify_vendor_files = () ->
   folder = "tmp/bower/js/"
   dist =
   {
-    "dist/assets/js/vendor/jquery.min.js": [folder + "jquery.min.js"],
-    "dist/assets/js/vendor/bootstrap.min.js": [],
-    "dist/assets/js/vendor/semantic.min.js": []}
+    "dist/assets/js/vendor/jquery.min.js": [folder + "jquery/jquery.min.js"],
+    "dist/assets/js/vendor/bootstrap.min.js": [folder + "bootstrap/**/*.js"]}
 
 bower_path_builder = (type, component, full_path) ->
   # The position of the start of the relative folders
@@ -109,7 +103,8 @@ module.exports = (grunt) ->
       dev:
         options:
           pretty: true
-          data: {}
+          data: {
+            "env": "dev"}
         files: x  = [
           expand: true
           cwd: "src/jade"
@@ -121,7 +116,8 @@ module.exports = (grunt) ->
           options:
             pretty: false
             compileDebug: false
-            data: {}
+            data: {
+              "env": "prod"}
         files: x
     parallel:
       dev:

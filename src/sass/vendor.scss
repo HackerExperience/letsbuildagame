@@ -1,3 +1,10 @@
+// Variable overides
+@import "custom/variables";
+
+////////////////////////////////////////////////////////////////////////////////
+// BOOTSTRAP
+////////////////////////////////////////////////////////////////////////////////
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -54,3 +61,39 @@
 // Utility classes
 @import "bootstrap/bootstrap/utilities";
 // @import "bootstrap/bootstrap/responsive-utilities";
+
+////////////////////////////////////////////////////////////////////////////////
+// FONT AWESOME
+////////////////////////////////////////////////////////////////////////////////
+// Compass font-face to overwride the font-face declaration
+@import "compass/css3/font-face";
+
+/*!
+ *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@import "font-awesome/font-awesome/variables";
+@import "font-awesome/font-awesome/mixins";
+
+// @import "font-awesome/font-awesome/path";
+@include font-face(
+  "FontAwesome",
+  font-files(
+    "font-awesome/#{$fa-font-name}.woff2",
+    "font-awesome/#{$fa-font-name}.woff",
+    "font-awesome/#{$fa-font-name}.ttf",
+    "font-awesome/#{$fa-font-name}.svg"),
+  "font-awesome/#{$fa-font-name}.eot",
+  normal,
+  normal);
+
+@import "font-awesome/font-awesome/core";
+// @import "font-awesome/font-awesome/larger";
+// @import "font-awesome/font-awesome/fixed-width";
+// @import "font-awesome/font-awesome/list";
+// @import "font-awesome/font-awesome/bordered-pulled";
+// @import "font-awesome/font-awesome/animated";
+// @import "font-awesome/font-awesome/rotated-flipped";
+// @import "font-awesome/font-awesome/stacked";
+@import "font-awesome/font-awesome/icons";

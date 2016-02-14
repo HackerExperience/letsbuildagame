@@ -5,8 +5,7 @@
   "devDependencies": {
     "jquery": "2.2.0",
     "bootstrap-sass": "3.3.6",
-    "font-awesome-sass": "4.5.0",
-    "semantic-ui-sass": "*"
+    "font-awesome-sass": "4.5.0"
   },
   "exportsOverride": {
     "jquery": {
@@ -19,10 +18,6 @@
     "font-awesome-sass": {
       "sass": "assets/stylesheets/**",
       "font": "assets/fonts/**"
-    },
-    "semantic-ui-sass": {
-      "sass": "app/assets/stylesheets/**",
-      "js": "app/assets/javascripts/**"
     },
     "*": {}
   }
