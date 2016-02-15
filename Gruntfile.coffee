@@ -21,8 +21,10 @@ uglify_vendor_files = () ->
   folder = "tmp/bower/js/"
   dist =
   {
-    "dist/assets/js/vendor/jquery.min.js": [folder + "jquery/jquery.min.js"],
-    "dist/assets/js/vendor/bootstrap.min.js": [folder + "bootstrap/**/*.js"]}
+    "dist/assets/js/vendor/jquery.js": [folder + "jquery/jquery.js"],
+    "dist/assets/js/vendor/bootstrap.js": [
+      folder + "bootstrap/bootstrap/transition.js",
+      folder + "bootstrap/bootstrap/collapse.js"]}
 
 bower_path_builder = (type, component, full_path) ->
   # The position of the start of the relative folders
@@ -103,8 +105,10 @@ module.exports = (grunt) ->
       dev:
         options:
           pretty: true
-          data: {
-            "env": "dev"}
+          data: (data = (env) ->
+            conf = grunt.file.readJSON "src/jade/variables.json"
+            conf.env = env
+            conf) "dev"
         files: x  = [
           expand: true
           cwd: "src/jade"
@@ -116,8 +120,7 @@ module.exports = (grunt) ->
           options:
             pretty: false
             compileDebug: false
-            data: {
-              "env": "prod"}
+            data: data "prod"
         files: x
     parallel:
       dev:
@@ -157,11 +160,8 @@ module.exports = (grunt) ->
           beautify: true
           sourceMap: true
           sourceMapIncludeSources: true
-        files: x = [
-          expand: true
-          cwd: "src/js"
-          src: ["**/*.js"]
-          dest: "dist/assets/js"]
+        files: x = {
+          "dist/assets/js/custom.js": ["src/js/**/*.js"]}
       prod:
         options:
           preserveComments: "some"

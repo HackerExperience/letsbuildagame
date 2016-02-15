@@ -9,7 +9,7 @@
   },
   "exportsOverride": {
     "jquery": {
-      "js": "dist/jquery.min.js"
+      "js": "dist/jquery.js"
     },
     "bootstrap-sass": {
       "sass": "assets/stylesheets/**",

@@ -8,6 +8,7 @@ $color-primary: #33965E; // Green
 $color-secondary: #7D318B; // Purple
 $color-tertiary: #39538D; // Blue
 $color-quaternary: #D3A447; // Yellow
+$color-contrast: #5B4874; // Dark purple
 
 // Vertical timeline component
 $timeline-vertical-line-width: 3px;
@@ -18,6 +19,15 @@ $timeline-vertical-panel-shadow-color: rgba(66, 66, 66, 0.33);
 $timeline-vertical-arrow-size: 10px;
 $timeline-vertical-icon-size: 50px;
 $timeline-vertical-icon-top: 0px;
+
+// Navbar
+$navbar-default-bg: $color-contrast;
+$navbar-default-link-color: lighten($color-contrast, 40%);
+$navbar-default-link-hover-color: #FFF;
+$navbar-default-link-shadow: 1px 1px 0px #111;
+$navbar-default-link-hover-shadow: 1px 1px 0px #444;
+$navbar-default-link-active-color: $navbar-default-link-hover-color;
+$navbar-default-link-active-shadow: $navbar-default-link-hover-shadow;
 
 ////////////////////////////////////////////////////////////////////////////////
 // BOOTSTRAP

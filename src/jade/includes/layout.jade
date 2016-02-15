@@ -32,9 +32,14 @@ doctype html
     block styles
       +stylesheet("assets/css/vendor.css")
       +stylesheet("assets/css/custom.css")
-    block scripts
-      +javascript("assets/js/vendor/jquery.min.js")
+      +javascript("assets/js/vendor/jquery.js")
+      +javascript("assets/js/vendor/bootstrap.js")
 
   body
-    main(role="main")
+    include header
+
+    main(role="main").container
       block content
+
+    block scripts
+      +javascript("assets/js/custom.js")

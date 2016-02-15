@@ -6,3 +6,33 @@
 // BOOTSTRAP EXTEND
 ////////////////////////////////////////////////////////////////////////////////
 @import "custom/timeline";
+@import "custom/navbar";
+
+////////////////////////////////////////////////////////////////////////////////
+// CUSTOM TEMPLATE CODE
+////////////////////////////////////////////////////////////////////////////////
+html {
+  &#page-index {
+    @import "custom/pages/index";
+  }
+
+  &#page-the-game {
+
+  }
+
+  &#page-how-it-works {
+
+  }
+
+  &#page-timeline {
+    @import "custom/pages/timeline";
+  }
+
+  &#page-contribute {
+
+  }
+
+  &#page-about-us {
+
+  }
+}

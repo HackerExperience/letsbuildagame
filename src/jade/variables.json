@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "index": {
+      "title": "Let's Build A Game",
+      "baseUrl": "/"
+    },
+    "timeline": {
+      "title": "Let's Build A Game",
+      "baseUrl": "/timeline.html"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+mixin nav-button(url, title)
+  li(class={active: currentUrl == url})
+    a(href= url)= title
+
+header.site-header: nav.navbar.navbar-default.collapsed: .container
+  .navbar-header
+    button.navbar-toggle.btn(type="button" data-toggle="collapse" data-target="#headerNavbar")
+      i.fa.fa-bars
+    //- a.navbar-brand(href=pages.index.baseUrl)
+      img(src="assets/img/logo.png")
+  #headerNavbar.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-left
+      +nav-button(pages.index.baseUrl, "Home")
+      +nav-button("", "The Game")
+      +nav-button("", "How it works")
+      +nav-button(pages.timeline.baseUrl, "Timeline")
+    ul.nav.navbar-nav.navbar-right
+      +nav-button("", "Contribute")
