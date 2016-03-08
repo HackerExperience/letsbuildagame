@@ -10,7 +10,7 @@ return array(
         'hostname' => 'localhost',
         'socket' => 'host',
         'username' => 'taiga',
-        'db_name'       => 'subscription',
+        'db_name' => 'subscription',
         //'password' => '',
         'port_number' => '5432'
     )
