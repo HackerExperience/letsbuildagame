@@ -9,8 +9,8 @@
 
         if (isset($_SESSION['user_id'])) {
             echo '<p>Welcome back!</p>';
+            echo "<a href='/logout.php'>Log out</a>";
         } else {
-            var_dump($_SESSION) and die();
             include('login_form.html');
         }
     ?>
