@@ -66,7 +66,8 @@ class UserSession {
     public function login() {
         $u = $this->checkCredentials();
         if ($u) {
-            $this->sessionRegenerateID($u['id']);
+            session_regenerate_id();
+            $_SESSION['user_id'] = $u['user_id'];
             return $u['id'];
         } else {
             return false;
@@ -86,11 +87,6 @@ class UserSession {
             }
         }
         return false;
-    }
-
-    private function sessionRegenerateID($user_id) {
-        $this->setUser($user_id);
-        $_SESSION['user_id'] = $user_id;
     }
 
     private function logout() {
