@@ -1,6 +1,7 @@
 <?php
 
 require_once 'connection.php';
+require_once 'vendor/autoload.php';
 
 /**
  * Created by PhpStorm.
@@ -66,12 +67,35 @@ class UserSession {
     public function login() {
         $u = $this->checkCredentials();
         if ($u) {
+            session_start();
             session_regenerate_id();
             $_SESSION['user_id'] = $u['user_id'];
             return $u['id'];
         } else {
             return false;
         }
+    }
+
+    public static function login_google_auth($token) {
+        $client_id = '190180432457-3bbiv7l4k0uvovgb1pvvgoul7qrm3839.apps.googleusercontent.com';
+        $client_secret = 'AZFT4I-QtMFaqtl2BBCXiPzl';
+
+        $client = new Google_Client();
+        $client->setClientId($client_id);
+        $client->setClientSecret($client_secret);
+        $client->setRedirectUri("http://localhost:8080/index.php");
+
+        session_start();
+        session_regenerate_id();
+
+        $ticket = $client->verifyIdToken($token);
+        if ($ticket) {
+            $data = $ticket->getAttributes();
+            $_SESSION['user_id'] = $data['payload']['sub'];
+            $_SESSION['user_name'] = $data['payload']['name'];
+            return $data['payload']['sub'];
+        }
+        return false;
     }
 
     private function checkCredentials() {

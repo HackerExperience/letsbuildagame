@@ -8,8 +8,15 @@
 
 require_once 'UserSession.php';
 
-$user_session = new UserSession();
-$user_session->setEmail($_POST['user_email']);
-$user_session->setPassword($_POST['user_pass']);
+if ($_POST['idtoken']) {
+    UserSession::login_google_auth($_POST['idtoken']);
+    echo $_SESSION['user_id'];
+
+} else {
+    $user_session->setEmail($_POST['user_email']);
+    $user_session->setPassword($_POST['user_pass']);
+    $user_session->login();
+}
 
 header('Location: index.php');
+
