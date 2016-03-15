@@ -2,6 +2,7 @@
 
 require_once 'connection.php';
 require_once 'vendor/autoload.php';
+require_once 'google.local.php';
 
 /**
  * Created by PhpStorm.
@@ -77,12 +78,12 @@ class UserSession {
     }
 
     public static function login_google_auth($token) {
-        $client_id = '190180432457-3bbiv7l4k0uvovgb1pvvgoul7qrm3839.apps.googleusercontent.com';
-        $client_secret = 'AZFT4I-QtMFaqtl2BBCXiPzl';
+        global $google_client_id;
+        global $google_client_secret;
 
         $client = new Google_Client();
-        $client->setClientId($client_id);
-        $client->setClientSecret($client_secret);
+        $client->setClientId($google_client_id);
+        $client->setClientSecret($google_client_secret);
         $client->setRedirectUri("http://localhost:8080/index.php");
 
         session_start();
