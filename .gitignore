@@ -11,3 +11,6 @@
 # Sublime
 *.sublime-project
 *.sublime-workspace
+
+# LBAG secrets
+/backend/*.local.php
