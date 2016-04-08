@@ -2,8 +2,6 @@
 
 require_once 'connection.php';
 require_once 'vendor/autoload.php';
-require_once 'google.local.php';
-
 /**
  * Created by PhpStorm.
  * User: taiga
@@ -57,7 +55,6 @@ class UserSession {
     public function getUser() {
         return $this->_user;
     }
-
     /**
      * @param mixed $_user
      */
@@ -77,27 +74,27 @@ class UserSession {
         }
     }
 
-    public static function login_google_auth($token) {
-        global $google_client_id;
-        global $google_client_secret;
-
-        $client = new Google_Client();
-        $client->setClientId($google_client_id);
-        $client->setClientSecret($google_client_secret);
-        $client->setRedirectUri("http://localhost:8080/index.php");
-
-        session_start();
-        session_regenerate_id();
-
-        $ticket = $client->verifyIdToken($token);
-        if ($ticket) {
-            $data = $ticket->getAttributes();
-            $_SESSION['user_id'] = $data['payload']['sub'];
-            $_SESSION['user_name'] = $data['payload']['name'];
-            return $data['payload']['sub'];
-        }
-        return false;
-    }
+    // public static function login_google_auth($token) {
+    //     global $google_client_id;
+    //     global $google_client_secret;
+    //
+    //     $client = new Google_Client();
+    //     $client->setClientId($google_client_id);
+    //     $client->setClientSecret($google_client_secret);
+    //     $client->setRedirectUri("http://localhost:8080/index.php");
+    //
+    //     session_start();
+    //     session_regenerate_id();
+    //
+    //     $ticket = $client->verifyIdToken($token);
+    //     if ($ticket) {
+    //         $data = $ticket->getAttributes();
+    //         $_SESSION['user_id'] = $data['payload']['sub'];
+    //         $_SESSION['user_name'] = $data['payload']['name'];
+    //         return $data['payload']['sub'];
+    //     }
+    //     return false;
+    // }
 
     private function checkCredentials() {
         $sql_query = "SELECT * FROM users WHERE email=?";

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'connection.php';
+require_once 'LDAP.php';
 
 
 /**
@@ -64,10 +65,19 @@ class User {
     }
 
 
+    private function insertUserLDAP() {
+        $ldap = new LDAP();
+
+        $ldap->createUser($this->getName(), $this->getEmail(), $this->getPassword());
+
+    }
+
     public function create() {
         $sql_query = "INSERT INTO users(name, email, password) VALUES (?, ?, ?)";
         $sql_reg = $this->_dbo->prepare($sql_query);
         $sql_reg->execute(array($this->getName(), $this->getEmail(), $this->getPassword()));
+
+        $this->insertUserLDAP();
     }
 
     public static function read($user_id) {
@@ -91,7 +101,7 @@ class User {
         $sql_reg->execute(array($this->getUserId()));
     }
 
-    public static function passwordHash($password) {
+    private static function passwordHash($password) {
         $options = [
             'cost' => 13,
         ];
