@@ -16,6 +16,7 @@ if (isset($_SESSION['user_id'])) {
 } else {
     include('google.example.html');
     include('login_form.html');
+    include('register_form.html');
 }
 ?>
 </body>

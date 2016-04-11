@@ -2,7 +2,8 @@ CREATE TABLE users (
   user_id         SERIAL PRIMARY KEY,
   name            VARCHAR NOT NULL,
   email           VARCHAR NOT NULL UNIQUE,
-  password        VARCHAR NOT NULL,
+  password        VARCHAR,
+  provider        VARCHAR NOT NULL default 'backend',
   date_registered TIMESTAMP NOT NULL default now()
 );
 
