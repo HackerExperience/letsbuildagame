@@ -85,7 +85,7 @@ module.exports = (grunt) ->
       live:
         options:
           bases: ["dist"]
-          livereload: true
+          livereload: grunt.option('port-live') || true
     imagemin:
       dev:
         options:
