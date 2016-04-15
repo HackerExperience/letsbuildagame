@@ -34,8 +34,7 @@ body {
 
 
 .main {
-  padding: 0 !important;
-  min-height: 400px;
+  padding: 0 0 40px 0;
 
   .intro {
 
@@ -113,7 +112,6 @@ body {
 
 .section-steps {
   background: $color-secondary;
-  min-height: 600px;
   color: #FFF;
 
   .div-steps {
@@ -144,7 +142,6 @@ body {
 
 .section-game {
   background: $color-primary;
-  min-height: 600px;
   color: #FFF;
 
 
@@ -200,7 +197,6 @@ body {
 
 .section-schedule {
   background: $color-secondary;
-  min-height: 600px;
   color: #FFF;
   img {
     margin-bottom: -100px;
@@ -209,7 +205,6 @@ body {
 
 .section-help {
   background: $color-primary;
-  min-height: 600px;
   color: #FFF;
 
   .section-comment {
@@ -291,7 +286,7 @@ body {
 
 .section-team {
   background: $color-secondary;
-  min-height: 600px;
+  padding-bottom: 30px;
   color: #FFF;
 
   .member {
@@ -343,11 +338,10 @@ body {
 
 .section-cta {
   color: #FFF;
-  min-height: 600px;
 
   .div-cta {
-
     margin-top: 20px;
+    padding-bottom: 30px;
 
     .cta-contrib {
       margin-top: 20px;
@@ -418,10 +412,6 @@ body {
   font-size: 18px;
 }
 
-//mobile
-@media (max-width: 360px) {
-}
-
 .site-footer {
   background: $color-secondary;
   color: #FFF;
@@ -488,6 +478,58 @@ body {
         color: $color-primary;
         font-weight: bold;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+
+  .main {
+
+    .intro {
+      h1 {
+        font-size: 32px;
+      }
+
+      .cta {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+
+    .img-placeholder {
+      display: none;
+    }
+  }
+
+  .section-game {
+    .feature-icon {
+      font-size: 40px !important;
+    }
+  }
+
+  .section-cta {
+    .cta-separator {
+      margin: 20px 0 !important;
+    }
+  }
+
+  .site-footer {
+    .footer-right {
+      text-align: left !important;
+      .contact {
+        a {
+          display: block !important;
+        }
+      }
+      .social {
+        i {
+          margin: 0 10px 0 0 !important;
+        }
+      }
+      .copyright-notice {
+        margin-left: 0px !important;
       }
     }
   }
