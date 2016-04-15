@@ -38,8 +38,10 @@ doctype html
   body
     include header
 
-    main(role="main").container
-      block content
+    //-main(role="main").container
+    block content
+
+    include footer
 
     block scripts
       +javascript("assets/js/custom.js")

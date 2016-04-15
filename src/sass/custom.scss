@@ -24,6 +24,10 @@ html {
 
   }
 
+  &#page-how-to-help {
+    @import "custom/pages/how-to-help";
+  }
+
   &#page-timeline {
     @import "custom/pages/timeline";
   }

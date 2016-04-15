@@ -7,6 +7,10 @@
     "timeline": {
       "title": "Let's Build A Game",
       "baseUrl": "/timeline.html"
+    },
+    "howToHelp": {
+      "title": "Let's Build A Game",
+      "baseUrl": "/how-to-help.html"
     }
   }
 }
