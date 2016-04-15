@@ -433,7 +433,7 @@ body {
 
       .contact {
         a {
-          display: block;
+          display: inline-block;
         }
       }
 
@@ -479,6 +479,7 @@ body {
     }
 
     a {
+      outline: 0;
       color: #FFF;
       text-decoration: none;
 
