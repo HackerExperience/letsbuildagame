@@ -46,6 +46,7 @@ class PDO_DB {
                 }
 
                 $dsn = "{$db_info['db_type']}:{$db_info['socket']}={$db_info['hostname']};port={$db_info['port_number']};dbname={$db_info['db_name']}";
+                
                 self::$dbh = new PDO($dsn, $db_info['username'], $db_info['password'], $db_info['config']);
 
             } else {
@@ -59,7 +60,7 @@ class PDO_DB {
 
     public static function getConfiguration() {
 
-        $config_file = __DIR__ . '/database.local.php';
+        $config_file = __DIR__ . '/../database.local.php';
         if (!is_file($config_file)) {
             throw new Exception('Create the configuration file database. (database.local.php)');
         }

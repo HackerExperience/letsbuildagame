@@ -1,17 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: taiga
- * Date: 2/27/16
- * Time: 10:24 PM
- */
+
 return array(
     'database' => array(
-        'hostname' => 'localhost',
-        'socket' => 'host',
-        'username' => 'taiga',
-        'db_name' => 'subscription',
-        //'password' => '',
-        'port_number' => '5432'
-    )
+        'hostname' => '127.0.0.1',
+        'socket' => 'host', //host or unix_socket
+        'username' => 'postgres',
+        'password' => 'renato',
+        'port_number' => '5432',
+        'db_name' => 'lbag',
+        'config' => array(
+            PDO::ATTR_PERSISTENT => true,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        )
+    ),
 );

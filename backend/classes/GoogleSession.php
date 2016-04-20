@@ -48,7 +48,7 @@ class GoogleSession {
     private function insertUserLDAP() {
         $ldap = new LDAP();
 
-        $ldap->createUser($this->_data['email'], $this->_data['email'], ????);
+        //$ldap->createUser($this->_data['email'], $this->_data['email'], ????);
     }
 
     public function login() {

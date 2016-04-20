@@ -6,20 +6,20 @@
  * Time: 11:52 PM
  */
 
-require_once 'UserSession.php';
-require_once 'GoogleSession.php';
+require_once 'classes/User.php';
 
-if (isset($_POST['idtoken'])) {
-    $gsession = new GoogleSession($_POST['idtoken']);
-    $gsession->login();
-    echo $_SESSION['user_id'];
+//if (isset($_POST['idtoken'])) {
+//    $gsession = new GoogleSession($_POST['idtoken']);
+//    $gsession->login();
+//    echo $_SESSION['user_id'];
+//}
 
-} else {
-    $user_session = new UserSession();
-    $user_session->setUser($_POST['user_name']);
-    $user_session->setEmail($_POST['user_email']);
-    $user_session->setPassword($_POST['user_pass']);
-    $user_session->login();
-}
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-header('Location: index.php');
+$user_login = new User($username, '', $password);
+$login = $user_login->login();
+
+var_dump($login);
+
+var_dump($_SESSION);
