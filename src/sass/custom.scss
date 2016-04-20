@@ -11,6 +11,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 // CUSTOM TEMPLATE CODE
 ////////////////////////////////////////////////////////////////////////////////
+
+@import "custom/generic";
+
 html {
   &#page-index {
     @import "custom/pages/index";
@@ -33,7 +36,7 @@ html {
   }
 
   &#page-contribute {
-
+    @import "custom/pages/contribute";
   }
 
   &#page-about-us {

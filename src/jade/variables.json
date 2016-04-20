@@ -11,6 +11,10 @@
     "howToHelp": {
       "title": "Let's Build A Game",
       "baseUrl": "/how-to-help.html"
+    },
+    "contribute": {
+      "title": "Let's Build A Game",
+      "baseUrl": "/contribute.html"
     }
   }
 }

@@ -1,0 +1,33 @@
+body {
+  background: $color-primary;
+}
+
+.btn.btn-future {
+  border: 1px solid #FFF;
+  color: #FFF;
+  background-color: $color-primary;
+  text-align: center;
+  vertical-align: middle;
+
+  line-height: 20px;
+  padding: 8px 48px;
+  font-size: 18px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid darken(#FFF, 5%);
+    color: darken(#FFF, 5%);
+    @include text-shadow(
+      0 0 1px #000,
+      1px 1px 0 #000);
+  }
+
+  &:focus,
+  &:active {
+    border: 2px solid darken(#FFF, 5%);
+    @include text-shadow(
+      0 0 1px #000,
+      1px 1px 0 #000);
+  }
+}
