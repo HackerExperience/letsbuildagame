@@ -1,6 +1,3 @@
-// Color palette's green and purple: http://paletton.com/#uid=40X0X0kleqtbzEKgVuIpcmGtdhZ
-// Color palette's blue and yellow: http://paletton.com/#uid=42Z0X0kleqtbzEKgVuIpcmGtdhZ
-
 ////////////////////////////////////////////////////////////////////////////////
 // CUSTOM
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,26 +15,25 @@ $timeline-vertical-panel-border-color: #D4D4D4;
 $timeline-vertical-panel-shadow-color: rgba(66, 66, 66, 0.33);
 $timeline-vertical-arrow-size: 10px;
 $timeline-vertical-icon-size: 50px;
-$timeline-vertical-icon-top: 0px;
+$timeline-vertical-icon-top: 0;
+
+////////////////////////////////////////////////////////////////////////////////
+// BOOTSTRAP
+////////////////////////////////////////////////////////////////////////////////
+// Typography
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Headings
+$headings-font-family: "Raleway", $font-family-sans-serif;
 
 // Navbar
 $navbar-default-bg: $color-contrast;
 $navbar-default-link-color: lighten($color-contrast, 40%);
 $navbar-default-link-hover-color: #FFF;
-$navbar-default-link-shadow: 1px 1px 0px #111;
-$navbar-default-link-hover-shadow: 1px 1px 0px #444;
+$navbar-default-link-shadow: 1px 1px 0 #111;
+$navbar-default-link-hover-shadow: 1px 1px 0 #444;
 $navbar-default-link-active-color: $navbar-default-link-hover-color;
 $navbar-default-link-active-shadow: $navbar-default-link-hover-shadow;
-
-////////////////////////////////////////////////////////////////////////////////
-// BOOTSTRAP
-////////////////////////////////////////////////////////////////////////////////
-$font-family-sans-serif:
-  "Open Sans",
-  "Helvetica Neue",
-  Helvetica,
-  Arial,
-  sans-serif;
 
 ////////////////////////////////////////////////////////////////////////////////
 // FONT AWESOME
