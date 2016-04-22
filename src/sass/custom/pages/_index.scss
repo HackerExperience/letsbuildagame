@@ -23,22 +23,31 @@ h3 {
     margin: 25px 0 20px;
   }
 
-  .img-placeholder {
-    background: $color-tertiary;
-    height: 350px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 400px;
-    z-index: -1;
-  }
-
   @media (max-width: $screen-xs-max) {
     text-align: center;
   }
 }
 
+.main {
+  .row {
+    position: relative;
+  }
+
+  .img-placeholder {
+    @include filter(drop-shadow(12px 2px 6px rgba(#333, 0.45)));
+    background: image-url("wrench.svg") no-repeat;
+    background-size: cover;
+    bottom: 0;
+    height: 350px;
+    position: absolute;
+    right: 0;
+    width: 400px;
+    z-index: -1;
+  }
+}
+
 .section-action {
+  @include single-box-shadow(0, 38px, 32px, -32px, rgba(#333, 0.66), inset);
   background: #EEE;
 
   .div-actions {

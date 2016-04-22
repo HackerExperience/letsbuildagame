@@ -33,6 +33,10 @@ doctype html
       +stylesheet("https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.2.1/hint.base.min.css")
       +stylesheet("assets/css/vendor.css")
       +stylesheet("assets/css/custom.css")
+      if env === prod
+        +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Raleway:400,700")
+      
+    block scripts
       +javascript("assets/js/vendor/jquery.js")
       +javascript("assets/js/vendor/bootstrap.js")
 

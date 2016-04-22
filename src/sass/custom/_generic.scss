@@ -3,31 +3,30 @@ body {
 }
 
 .btn.btn-future {
+  background-color: $color-primary;
   border: 1px solid #FFF;
   color: #FFF;
-  background-color: $color-primary;
-  text-align: center;
-  vertical-align: middle;
-
+  font-size: 18px;
   line-height: 20px;
   padding: 8px 48px;
-  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
 
   &:hover,
   &:focus,
   &:active {
+    @include text-shadow(
+      0 0 1px 0 #000,
+      1px 1px 0 0 #000);
     border: 1px solid darken(#FFF, 5%);
     color: darken(#FFF, 5%);
-    @include text-shadow(
-      0 0 1px #000,
-      1px 1px 0 #000);
   }
 
   &:focus,
   &:active {
-    border: 2px solid darken(#FFF, 5%);
     @include text-shadow(
       0 0 1px #000,
       1px 1px 0 #000);
+    border: 2px solid darken(#FFF, 5%);
   }
 }
