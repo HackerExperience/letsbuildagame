@@ -10,14 +10,14 @@
   },
   "exportsOverride": {
     "jquery": {
-      "js": "dist/jquery.js"
+      "js": "dist/jquery.min.js"
     },
     "jquery.easing": {
       "js": "dist/jquery_easing.js"
     },
     "bootstrap-sass": {
       "sass": "assets/stylesheets/**",
-      "js": "assets/javascripts/**"
+      "js": "assets/javascripts/bootstrap.min.js"
     },
     "font-awesome-sass": {
       "sass": "assets/stylesheets/**",

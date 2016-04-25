@@ -1,13 +1,11 @@
 bower_filter = (type, component, relative_dir_path) ->
   switch component
-    when "jquery"
-      "jquery/"
+    when "jquery" then ""
     when "bootstrap-sass"
       switch type
         when "sass"
           "bootstrap/" + relative_dir_path["assets/stylesheets/".length..]
-        when "js"
-          "bootstrap/" + relative_dir_path["assets/javascripts/".length..]
+        when "js" then ""
     when "font-awesome-sass"
       switch type
         when "sass"
@@ -16,15 +14,6 @@ bower_filter = (type, component, relative_dir_path) ->
           "font-awesome/"
     else
       relative_dir_path
-
-uglify_vendor_files = () ->
-  folder = "tmp/bower/js/"
-  dist =
-  {
-    "dist/assets/js/vendor/jquery.js": [folder + "jquery/jquery.js"],
-    "dist/assets/js/vendor/bootstrap.js": [
-      folder + "bootstrap/bootstrap/transition.js",
-      folder + "bootstrap/bootstrap/collapse.js"]}
 
 bower_path_builder = (type, component, full_path) ->
   # The position of the start of the relative folders
@@ -81,6 +70,11 @@ module.exports = (grunt) ->
             cwd: "tmp/bower/font"
             src: "**/*.{eot,woff,woff2,ttf,svg}"
             dest: "dist/assets/font"}]
+      js:
+        expand: true
+        cwd: "tmp/bower/js"
+        src: "**/*.js"
+        dest: "dist/assets/js/vendor"
     express:
       live:
         options:
@@ -105,10 +99,11 @@ module.exports = (grunt) ->
       dev:
         options:
           pretty: true
-          data: (data = (env) ->
-            conf = grunt.file.readJSON "src/jade/variables.json"
-            conf.env = env
-            conf) "dev"
+          data: (dest, src) ->
+            (data = (env) ->
+              conf = grunt.file.readJSON "src/jade/variables.json"
+              conf.env = env
+              conf) "dev"
         files: x  = [
           expand: true
           cwd: "src/jade"
@@ -120,16 +115,18 @@ module.exports = (grunt) ->
           options:
             pretty: false
             compileDebug: false
-            data: data "prod"
+            data: (dest, src) ->
+              data "prod"
         files: x
     parallel:
       dev:
-        options: x =
+        options:
           grunt: true
-        tasks: ["copy:font", "imagemin:dev", "jade:dev", "sass:dev", "uglify:dev", "uglify:vendor"]
+        tasks: ["copy", "imagemin:dev", "jade:dev", "sass:dev", "uglify:dev"]
       prod:
-        options: x
-        tasks: ["copy:font", "imagemin:prod", "jade:prod", "sass:prod", "uglify:prod", "uglify:vendor"]
+        options:
+          grunt: true
+        tasks: ["copy", "imagemin:prod", "jade:prod", "sass:prod", "uglify:prod"]
     sass:
       dev:
         options:
@@ -169,21 +166,7 @@ module.exports = (grunt) ->
           compress:
             drop_console: true
         files: x
-      vendor:
-        options:
-          preserveComments: "some"
-          beautify: false
-        files: uglify_vendor_files()
     watch:
-      bower:
-        options: x =
-          spawn: false
-        files: ["bower.json"]
-        tasks: ["bower", "sass:dev", "uglify:vendor", "copy:font"]
-      font:
-        options: x
-        files: ["tmp/bower/font/**/*.{eot,woff,woff2,ttf,svg}", "src/font/**/*.{eot,woff,woff2,ttf,svg}"]
-        tasks: ["copy:font"]
       img:
         options: x
         files: ["src/img/**/*.{png,jpg,jpeg,gif,svg}"]
@@ -196,10 +179,6 @@ module.exports = (grunt) ->
         options: x
         files: ["src/js/**/*.js"]
         tasks: ["uglify:dev"]
-      vendorJs:
-        options: x
-        files: ["tmp/bower/js/**/*.js"]
-        tasks: ["uglify:vendor"]
       sass:
         options: x
         files: ["src/sass/**/*.scss"]
