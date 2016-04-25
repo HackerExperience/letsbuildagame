@@ -220,8 +220,9 @@ h3 {
       }
 
       .label-dev {
-        background: $color-tertiary;
-        border-color: darken($color-tertiary, 15%);
+        // Vermillion
+        background: #E34234;
+        border-color: darken(#E34234, 15%);
 
         > i {
           font-size: 15px;
@@ -230,18 +231,21 @@ h3 {
       }
 
       .label-art {
-        background: $color-secondary;
-        border-color: darken($color-secondary, 15%);
+        // Lavender
+        background: #B57EDC;
+        border-color: darken(#B57EDC, 15%);
       }
 
       .label-anyone {
-        background: darken($color-primary, 18%);
-        border-color: darken(darken($color-primary, 18%), 15%);
+        // Viridian
+        background: #40826D;
+        border-color: darken(#40826D, 15%);
       }
 
       .label-student {
-        background: #960018;
-        border-color: darken(#960018, 15%);
+        // Cerulean
+        background: #007BA7;
+        border-color: darken(#007BA7, 15%);
       }
 
     }
