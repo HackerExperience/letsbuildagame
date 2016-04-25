@@ -16,7 +16,9 @@ block content
           ul#progress-bar
             li.active Account setup
             li Verify email
-            li Contribution details
+            li Select team
+            li Select tasks
+            li Preferences
 
           fieldset
             h2.fs-title Create your account
@@ -39,7 +41,9 @@ block content
           ul#progress-bar
             li.active Account setup
             li.active Verify email
-            li Contribution details
+            li Select team
+            li Select tasks
+            li Preferences
 
           fieldset
             h2.fs-title Verify your email address
@@ -59,7 +63,9 @@ block content
           ul#progress-bar
             li.active Account setup
             li.active Verify email
-            li.active Contribution Team
+            li.active Select Team
+            li Select Tasks
+            li Preferences
 
           fieldset
             h2.fs-title Contribution Team
@@ -91,15 +97,15 @@ block content
                         h1 Game Design 
               .row
                 .col-xs-3
-                    #team-i18n.team
-                      +tooltip-i18n
+                    #team-translation.team
+                      +tooltip-translation
                         i.fa.fa-language
                         h1 Translation
                 .col-xs-3
-                    #team-promoter.team
-                      +tooltip-promoter
+                    #team-patron.team
+                      +tooltip-patron
                         i.fa.fa-bullhorn
-                        h1 Promoter
+                        h1 Patron
                 .col-xs-3
                     #team-student.team
                       +tooltip-student
@@ -111,10 +117,307 @@ block content
                         i.fa.fa-gamepad
                         h1 Gamer
 
-
-            input(type="submit" name="submit" value="I'm ready!").next.action-button.disabled
+            input(type="submit" name="submit" value="I'm ready").next.action-button.disabled
 
             span or skip
+
+
+        form(style="display: none;")#form-select-tasks.subscribe-form
+
+          ul#progress-bar
+            li.active Account setup
+            li.active Verify email
+            li.active Select Team
+            li.active Select Tasks
+            li Preferences
+
+          fieldset
+            h2.fs-title Contribution Tasks
+            h3.fs-subtitle Select the <strong>actions</strong> that you feel like doing. We'll describe how to perform each one later.
+            h3.fs-subtitle.no-margin Subscribe to <strong>tags</strong> to receive notifications whenever we need your help on the subject.
+            h3.fs-subtitle.no-margin You can (un)subscribe later. You'll set notification preferences next.
+            h3.fs-error
+
+            .task-selector
+              #dev
+                a#cat-dev(href="#").category
+                  p Development team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-dev
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Submit patches', 'code-fork')
+                    +task('review-code', 'Review code', 'search')                
+                    +task('write-tests', 'Write tests', 'bullhorn')
+                    +task('', 'Write docs', 'bullhorn')
+                  h1 Tags
+                  h2 Workflow
+                  .row
+                    +task('', 'TODO', 'bullhorn')
+                    +task('', 'WaitingReview', 'bullhorn')
+                    +task('', 'Bug', 'bullhorn')
+                    +task('', 'Discussion', 'bullhorn')
+
+                  h2 Programming languages
+                  .row
+                    +task('', 'Elixir', 'bullhorn')
+                    +task('', 'Python', 'bullhorn')
+                    +task('', 'Elm', 'bullhorn')
+                    +task('', 'F#', 'bullhorn')
+                  .row
+                    +task('', 'Javascript', 'bullhorn')
+                    +task('', 'PHP', 'bullhorn')
+
+                  h2 Areas of interest
+                  .row
+                    +task('', 'Frontend', 'bullhorn')
+                    +task('', 'Backend', 'bullhorn')
+                    +task('', 'Infrastructure', 'bullhorn')
+                    +task('', 'Security', 'bullhorn')
+                  .row
+                    +task('', 'Optimization', 'bullhorn')
+                    +task('', 'AI', 'bullhorn')
+                    +task('', 'Network', 'bullhorn')
+                    +task('', 'Databases', 'bullhorn')
+                  .row
+                    +task('', 'Project Mgt.', 'bullhorn')
+                    +task('', 'Linux', 'bullhorn')
+                    +task('', 'iOS', 'bullhorn')
+                    +task('', 'Android', 'bullhorn')
+
+                  h2 Game software (server & interfaces)
+                  .row
+                    +task('', 'Core', 'bullhorn')
+                    +task('', 'Mobile', 'bullhorn')
+                    +task('', 'Web', 'bullhorn')
+                    +task('', 'Terminal', 'bullhorn')
+
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Apache Kafka', 'bullhorn')
+                    +task('', 'Apache Samza', 'bullhorn')
+                    +task('', 'nginx', 'bullhorn')
+                    +task('', 'HAproxy', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+              #art
+                a#cat-art(href="#").category
+                  p Design & art team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-art
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Discuss UI', 'code-fork')
+                    +task('review-code', 'Design UI', 'search')
+                    +task('', 'Create assets', 'bullhorn')
+                    +task('', 'Review UX', 'bullhorn')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+              #gd
+                a#cat-gd(href="#").category
+                  p Game design team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-gd
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Discuss features', 'code-fork')
+                    +task('review-code', 'Study the game', 'search')
+                    +task('', 'Balance skills', 'bullhorn')
+                    +task('', 'Design the story', 'bullhorn')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+              #mgt
+                a#cat-mgt(href="#").category
+                  p Community Management team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-mgt
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Triage tasks', 'code-fork')
+                    +task('review-code', 'Guide users', 'search')
+                    +task('', 'Curate content', 'bullhorn')
+                    +task('', 'Flag & report', 'bullhorn')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+              #translation
+                a#cat-translation(href="#").category
+                  p Translation team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-translation
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Translate text', 'code-fork')
+                    +task('', 'Improve text', 'bullhorn')
+                    +task('review-code', 'Fix typos', 'search')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+
+              #patron
+                a#cat-patron(href="#").category
+                  p Patron team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-patron
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Spread the word', 'code-fork')
+                    +task('review-code', 'Preorder', 'search')
+                    +task('review-code', 'Rate & review', 'search')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+
+              #student
+                a#cat-student(href="#").category
+                  p Student & Mentorship team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-student
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Follow topics', 'code-fork')
+                    +task('review-code', 'Learn to code', 'search')
+                    +task('write-code', 'Join study group', 'code-fork')
+                    +task('review-code', 'Share knowlege', 'search')
+                  .row
+                    +task('write-code', 'Adopt a student', 'code-fork')
+                    +task('review-code', 'Answer & guide', 'search')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+
+              #gamer
+                a#cat-gamer(href="#").category
+                  p Gamer team (27)
+                    i.fa.fa-chevron-right.category-icon
+                #tasks-gamer
+                  h1 Actions
+                  .row
+                    +task('write-code', 'Play the game', 'code-fork')
+                    +task('review-code', 'Become a tester', 'search')
+                    +task('write-code', 'Submit ideas ', 'code-fork')
+                    +task('review-code', 'Report bugs', 'bug')
+                  h1 Tags
+                  
+                  h2 Stack Tools
+                  .row
+                    +task('', 'Aerospike', 'bullhorn')
+                    +task('', 'Consul', 'bullhorn')
+                    +task('', 'Elastic', 'bullhorn')
+                    +task('', 'Docker', 'bullhorn')
+                  .row
+                    +task('', 'Kafka', 'bullhorn')
+                    +task('', 'Samza', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                    +task('', '', 'bullhorn')
+                  .row
+                    +task('', 'Mnesia', 'bullhorn')
+                    +task('', 'Phabricator', 'bullhorn')
+                    +task('', 'PostgreSQL', 'bullhorn')
+                    +task('', 'Ansible', 'bullhorn')
+
+
+            input(type="submit" name="submit" value="Let's go").next.action-button
 
         .ending
         br
@@ -152,7 +455,7 @@ block content
         br
 
 mixin tooltip-span(text)
-  span(data-hint= text).hint--medium
+  span(data-hint= text).hint--medium.tooltip-span
     if block
       block
 
@@ -176,12 +479,12 @@ mixin tooltip-gd
     if block
       block
 
-mixin tooltip-i18n
+mixin tooltip-translation
   +tooltip-span("Translate the game to your native language. Spotted any grammar error or typos? Fix them!")
     if block
       block
 
-mixin tooltip-promoter
+mixin tooltip-patron
   +tooltip-span("Share the project to your followers on social media. More contributors means faster development and a higher quality game.")
     if block
       block
@@ -201,3 +504,21 @@ mixin label-selected
 
 mixin label-unselected
   span(title="").label.label-check.fa  
+
+mixin tooltip-write-test
+  +tooltip-dev
+    if block
+      block
+
+mixin task(task_id, name, icon)
+  - var tooltip = "tooltip-" + task_id
+  - var div_id = 'task-' + task_id
+  .col-xs-3
+    //-+#{tooltip}
+    +tooltip-dev
+      div(id="#{div_id}").task
+        .col-xs-2
+          i(class="fa fa-" + icon)
+        .col-xs-9
+          span.task-name= name
+      span.error-helper 

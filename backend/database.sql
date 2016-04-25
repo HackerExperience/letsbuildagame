@@ -21,8 +21,8 @@ INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_DEV', NULL, NULL)
 INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_ART', NULL, NULL);
 INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_MGT', NULL, NULL);
 INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_GD', NULL, NULL);
-INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_TRANSLATE', NULL, NULL);
-INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_PROMOTE', NULL, NULL);
+INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_TRANSLATION', NULL, NULL);
+INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_PATRON', NULL, NULL);
 INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_STUDENT', NULL, NULL);
 INSERT INTO "projects" ("name", "icon", "color") VALUES ('TEAM_GAMER', NULL, NULL);
 

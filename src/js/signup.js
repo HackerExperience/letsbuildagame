@@ -64,6 +64,34 @@ function form_validator(element_name, endpoint){
     })
 }
 
+function animate_next(current_fs, next_fs){
+
+    if(animating) return false;
+    animating = true;
+
+    next_fs.show(); 
+    current_fs.animate({opacity: 0}, {
+        step: function(now, mx) {
+            //as the opacity of current_fs reduces to 0 - stored in "now"
+            //1. scale current_fs down to 80%
+            scale = 1 - (1 - now) * 0.2;
+            //2. bring next_fs from the right(50%)
+            left = (now * 50)+"%";
+            //3. increase opacity of next_fs to 1 as it moves in
+            opacity = 1 - now;
+            current_fs.css({'transform': 'scale('+scale+')'});
+            next_fs.css({'top': 0, 'left': left, 'opacity': opacity});
+        }, 
+        duration: 800, 
+        complete: function(){
+            current_fs.hide();
+            animating = false;
+        }, 
+        //this comes from the custom easing plugin
+        easing: 'easeInOutBack'
+    });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // ACCOUNT SETUP FORM
 ////////////////////////////////////////////////////////////////////////////////
@@ -113,41 +141,13 @@ function event_registration_failed(helper, msg){
 }
 
 function event_registration_success(){
-
-    if(animating) return false;
-    animating = true;
-    
     $('#form-verify-email .fs-subtitle').html(
         $('#form-verify-email .fs-subtitle')[0].innerHTML.replace(
             "you", "<strong>"+ window.form_email +"</strong>"
         )
     )
 
-    current_fs = $('#form-setup-acc');
-    next_fs = $('#form-verify-email');
-
-    next_fs.show(); 
-    current_fs.animate({opacity: 0}, {
-        step: function(now, mx) {
-            //as the opacity of current_fs reduces to 0 - stored in "now"
-            //1. scale current_fs down to 80%
-            scale = 1 - (1 - now) * 0.2;
-            //2. bring next_fs from the right(50%)
-            left = (now * 50)+"%";
-            //3. increase opacity of next_fs to 1 as it moves in
-            opacity = 1 - now;
-            current_fs.css({'transform': 'scale('+scale+')'});
-            next_fs.css({'top': 0, 'left': left, 'opacity': opacity});
-        }, 
-        duration: 800, 
-        complete: function(){
-            current_fs.hide();
-            animating = false;
-        }, 
-        //this comes from the custom easing plugin
-        easing: 'easeInOutBack'
-    });
-
+    animate_next($('#form-setup-acc'), $('#form-verify-email'))
 }
 
 
@@ -181,35 +181,7 @@ $('#form-verify-email').submit(function(event){
 });
 
 function event_verification_success(){
-
-    if(animating) return false;
-    animating = true;
-
-    current_fs = $('#form-verify-email');
-    next_fs = $('#form-select-contrib');
-
-    next_fs.show(); 
-    current_fs.animate({opacity: 0}, {
-        step: function(now, mx) {
-            //as the opacity of current_fs reduces to 0 - stored in "now"
-            //1. scale current_fs down to 80%
-            scale = 1 - (1 - now) * 0.2;
-            //2. bring next_fs from the right(50%)
-            left = (now * 50)+"%";
-            //3. increase opacity of next_fs to 1 as it moves in
-            opacity = 1 - now;
-            current_fs.css({'transform': 'scale('+scale+')'});
-            next_fs.css({'top': 0, 'left': left, 'opacity': opacity});
-        }, 
-        duration: 800, 
-        complete: function(){
-            current_fs.hide();
-            animating = false;
-        }, 
-        //this comes from the custom easing plugin
-        easing: 'easeInOutBack'
-    });
-
+    animate_next($('#form-verify-email'), $('#form-select-contrib'))
 }
 
 function event_verification_failed(helper){
@@ -261,7 +233,7 @@ $('#form-select-contrib').submit(function(event){
     helper = $(this).find('.fs-error');
 
     if (selected_teams <= 0){
-        helper.text("Please select at least one team")
+        helper.text("Please select at least one team");
         return;
     }
 
@@ -271,13 +243,108 @@ $('#form-select-contrib').submit(function(event){
             data: team_array
         },
         function(data){
-            console.log(data)
             if (data.status === true){
-                event_verification_success()
+                event_teams_success();
             } else {
-                event_verification_failed(helper)
+                event_teams_failed(helper), data.msg;
             }
         }
     );
 
 });
+
+function event_teams_success(){
+
+    function addToggle(team_id){
+        $('#cat-' + team_id).click(function(event){
+            event.preventDefault();
+            $('#tasks-' + team_id).slideToggle();
+            var icon_el = $('#cat-' + team_id + ' i');
+            icon_el.toggleClass('fa-chevron-down');
+            icon_el.toggleClass('fa-chevron-right');
+        });
+    }
+
+    animate_next($('#form-select-contrib'), $('#form-select-tasks'))
+
+    all_teams = ['dev', 'art', 'gd', 'mgt', 'student', 'translation', 'gamer', 'patron'];
+
+    for (var i = 0; i < all_teams.length; i++) {
+        team_id = all_teams[i];
+
+        addToggle(team_id);
+
+        // Hide teams which the user is not a member
+        if (!( ('team-' + team_id) in team_array)) {
+            $('#tasks-' + team_id).hide();
+        } else if (!(team_array['team-' + team_id])){
+            $('#tasks-' + team_id).hide();
+        }
+
+        // Go to the top
+        window.scrollTo(0, 0);
+    }
+
+}
+
+function event_teams_failed(helper, msg){
+    helper.text(msg)
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// TASKS SELECTOR
+////////////////////////////////////////////////////////////////////////////////
+
+
+$('#form-select-tasks .task').click(function(){
+    // Enable/disable team
+    element = $('#'+$(this)[0].id);
+
+    task_id = element[0].id.slice(5)
+    team_id = (element.closest('div[id^="tasks-"]')[0].id).slice(6);
+
+    if (element.hasClass('task-selected')){
+        element.removeClass('task-selected');
+        task_unsubscribe(element, team_id, task_id)
+    } else {
+        element.addClass('task-selected');
+        task_subscribe(element, team_id, task_id)
+    }
+});
+
+function subscribe(element, action, team_id, task_id){
+    ajax_call(
+        {
+            func: action,
+            task_id: task_id,
+            team_id: team_id
+        },
+        function(data){
+
+            if (data.status === false){
+
+                if (data.msg) {
+
+                    var helper = element.parent().find('.error-helper')
+                    if (!(helper.length)) return;
+
+                    helper.html(data.msg);
+
+                    if(element.hasClass('task-selected')){
+                        element.removeClass('task-selected');
+                    }
+
+                }
+            }
+        }
+    );
+}
+
+function task_subscribe(element, team_id, task_id){
+    subscribe(element, 'subscribe-task', team_id, task_id)
+}
+
+function task_unsubscribe(element, team_id, task_id){
+    subscribe(element, 'unsubscribe-task', team_id, task_id)
+}
+
