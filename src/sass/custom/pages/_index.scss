@@ -4,8 +4,25 @@ h3 {
   @include single-text-shadow(1px, 1px, 1px, 0, rgba(#333, 0.66));
 }
 
+.btn.btn-future {
+  @include box-shadow(
+    1px 1px 1px 0 rgba(#000, 0.6),
+    inset 0 0 16px -3px rgba(darken($color-primary, 15%), 0.66));
+  @include single-text-shadow(2px, 2px, 0, 0, rgba(#333, 0.5));
+  background: $color-primary;
+  border-radius: 6px;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 16px 32px;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: darken($color-primary, 7.5%);
+  }
+}
+
 // TODO: Button
-// TODO: Responsivity on image
 .main .intro {
   color: #FFF;
   font-size: 1.25em;
@@ -14,6 +31,7 @@ h3 {
 
   h1 {
     font-size: 2.6em;
+    font-weight: bold;
     margin-top: 30px;
   }
 
@@ -29,6 +47,8 @@ h3 {
 }
 
 .main {
+  @include single-box-shadow(0, -38px, 32px, -32px, rgba(#333, 0.66), inset);
+
   .row {
     position: relative;
   }
@@ -47,14 +67,13 @@ h3 {
 }
 
 .section-action {
-  @include single-box-shadow(0, 38px, 32px, -32px, rgba(#333, 0.66), inset);
-  background: #EEE;
+  background: #FFF image-url("swirl.png") fixed;
+  padding-bottom: 64px;
 
   .div-actions {
     margin-top: 52px;
 
     .action {
-      padding-bottom: 80px;
       text-align: center;
 
       i,
@@ -81,11 +100,11 @@ h3 {
 
       &:hover {
         i {
-          color: saturate(rgba($color-primary, 0.75), 10%);
+          color: saturate(rgba($color-secondary, 0.75), 10%);
         }
 
         h3 {
-          color: darken(saturate($color-primary, 10%), 10%);
+          color: darken(saturate($color-secondary, 10%), 10%);
         }
       }
     }
@@ -93,7 +112,8 @@ h3 {
 }
 
 .section-steps {
-  background: $color-secondary;
+  @include single-box-shadow(0, 38px, 32px, -32px, rgba(#333, 0.66), inset);
+  background: $color-primary;
   color: #FFF;
 
   .div-steps {
@@ -114,12 +134,17 @@ h3 {
 // TODO: Button
 // TODO: Responsivity on icons
 .section-game {
-  background: $color-primary;
+  @include single-text-shadow(0, 0, 2px, 0, rgba(#FFF, 0.5));
+  @include single-box-shadow(0, 0, 6px, 4px, rgba(#000, 0.75), inset);
+  background: transparent image-url("background.png") repeat scroll;;
   color: #FFF;
 
   .div-game {
     .feature {
       .feature-icon {
+        @include single-text-shadow(0, 0, 8px, 0, rgba($color-royal-yellow, 0.33));
+        color: $color-royal-yellow;
+        cursor: default;
         font-size: 64px;
         margin-top: 10px;
         text-align: center;
@@ -127,6 +152,7 @@ h3 {
 
       .feature-content {
         h3 {
+          @include single-text-shadow(0, 0, 4px, 0, rgba(#FFF, 0.33));
           font-size: 18px;
           font-weight: bold;
         }
@@ -139,13 +165,27 @@ h3 {
     text-align: center;
 
     .btn {
-      background: $color-tertiary;
+      @include box-shadow(
+        0 0 6px 0 rgba($color-royal-yellow, 0.33),
+        inset 0 0 6px rgba($color-royal-yellow, 0.33));
+      @include single-text-shadow(0, 0, 8px, 0, rgba($color-royal-yellow, 0.33));
+      background: transparent;
+      border-color: $color-royal-yellow;
+      color: $color-royal-yellow;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @include single-text-shadow(0, 0, 8px, 0, lighten(rgba($color-royal-yellow, 0.33), 10%));
+        border-color: lighten($color-royal-yellow, 10%);
+        color: lighten($color-royal-yellow, 10%);
+      }
     }
   }
 }
 
 .section-schedule {
-  background: $color-secondary;
+  background: $color-tertiary;
   color: #FFF;
 
   a {
@@ -157,10 +197,20 @@ h3 {
     }
   }
 
-  img {
-    height: auto;
-    margin-bottom: 32px;
-    width: 100%;
+  .timeline-graph {
+    .popover {
+      color: #333;
+    }
+
+    svg {
+      height: auto;
+      margin-bottom: 32px;
+      width: 100%;
+
+      .st15 {
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -173,7 +223,7 @@ h3 {
   }
 
   .help {
-    padding-bottom: 80px;
+    margin-bottom: 80px;
     text-align: center;
 
     > i,
@@ -258,10 +308,6 @@ h3 {
   .cta {
     padding-bottom: 50px;
     text-align: center;
-
-    .btn {
-      background: $color-tertiary;
-    }
   }
 }
 
@@ -320,18 +366,26 @@ h3 {
       text-align: center;
 
       .btn {
-        background: $color-secondary;
-        height: 64px;
+        @include box-shadow(
+          1px 1px 1px 0 rgba(#000, 0.6),
+          inset 0 0 16px -3px rgba(darken($color-quaternary, 15%), 0.66));
+        background: $color-quaternary;
         width: 50%;
+
+        &:focus,
+        &:hover,
+        &:active {
+          background: darken($color-quaternary, 7.5%);
+        }
       }
     }
 
     .cta-separator {
-      margin: 50px 0;
+      margin: 32px 0;
       text-align: center;
 
       span {
-        font-size: 20px;
+        font-size: 3em;
       }
     }
 
@@ -358,7 +412,9 @@ h3 {
 
       .btn {
         background: $color-tertiary;
+        border-radius: 0;
         margin-top: -3px;
+        min-width: 130px;
         padding: 8px;
         width: 10%;
       }
