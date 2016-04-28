@@ -4,199 +4,85 @@ require_once 'classes/Session.php';
 require_once 'classes/User.php';
 require_once 'classes/EmailVerification.php';
 require_once 'classes/Project.php';
+require_once 'classes/Notification.php';
+require_once 'classes/Settings.php';
 
-$result = Array();
-$result['status'] = 0;
-$result['redirect'] = '';
-$result['msg'] = '';
+$result = Array(
+    'status' => FALSE,
+    'msg' => ''
+);
 
-function update_result($status, $msg, $redirect = FALSE){
-    global $result;
-    $result['status'] = $status;
-    $result['msg'] = $msg;
-    if($redirect) {
-        $result['redirect'] = $redirect;
-    }
+function update_result($status_array) {
+    list($result['status'], $result['msg']) = $status_array;
+    return $result;
 }
 
-//$post = Array(
-//    'func' => 'unsubscribe-task',
-//    'task_id' => 'write_tests',
-//    'team_id' => 'dev'
-//);
-//
-//$_POST = $post;
-//$_SERVER['REQUEST_METHOD'] = 'POST';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['func'])) {
+function function_dispatcher($function) {
     
-    $function = $_POST['func'];
-    
-    switch($function){
+    switch ($function) {
         
         case 'validate-user':
+            return update_result(validate_user($_POST['data']));
             
-            if (!isset($_POST['data'])) {
-                break;
-            }
-            
-            $username = $_POST['data'];
-            
-            $user = new User($username, '', '');
-            
-            list($result['status'], $result['msg']) = $user->validateUsername();
-                                    
-            break;
-        
         case 'validate-email':
-            
-            if (!isset($_POST['data'])) {
-                break;
-            }
-            
-            $email = $_POST['data'];
-            
-            $user = new User('', $email, '');
-            
-            list($result['status'], $result['msg']) = $user->validateEmail();
-            
-            break;
+            return update_result(validate_email($_POST['data']));
         
         case 'register-user':
-            
-            if(!isset($_POST['username']) || !isset($_POST['email']) || !isset($_POST['password'])){
-                break;
-            }
-            
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-
-            $user = new User($username, $email, $password);
-            list($registration_success, $registration_msg) = $user->create();
-           
-            if ($registration_success) {
-                $user->login();
-            }
-            
-            update_result($registration_success, $registration_msg);
-            
-            break;
+            return 
+                update_result(
+                    register_user(
+                        $_POST['username'], 
+                        $_POST['password'], 
+                        $_POST['email']
+                    )
+                );
             
         case 'verify-email':
-            
-            if (!isset($_POST['code'])) {
-                break;
-            }
-            
-            $code = $_POST['code'];
-            
-            $verification = new EmailVerification($code, '');
-            $result['status'] = $verification->validate();
-
-            break;
+            return update_result(verify_email($_POST['code']));
             
         case 'register-teams':
-            
-            $session = new Session();
-            if (!$session->exists()) {
-                update_result(FALSE, 'SYSTEM_ERROR');
-                break;
-            }
-            
-            if(!isset($_POST['data'])) {
-                break;
-            }
-            
-            $teams = all_teams();
-            
-            $team_array = $_POST['data'];
-            $join_list = Array();
-            
-            foreach($team_array as $key => $value){
-                
-                if ($value !== TRUE) {
-                    continue;
-                }
-                
-                if (strpos($key, 'team-') === false){
-                    continue;
-                }
-                
-                $team_id = substr($key, 5);
-                
-                
-                if (!array_key_exists($team_id, $teams)){
-                    continue;
-                }
-                
-                $team_obj = $teams[$team_id];
-                                
-                $team_obj->join($session->getUserId());
-            }
-            
-            update_result(TRUE, '');
-            
-            break;
+            return update_result(register_teams($_POST['data']));
             
         case 'subscribe-task':
         case 'unsubscribe-task':
-            
-            $session = new Session();
-            if (!$session->exists()) {
-                update_result(FALSE, 'SYSTEM_ERROR');
-                break;
-            }
-            
-            if(!isset($_POST['task_id']) || !isset($_POST['team_id'])) {
-                update_result(FALSE, 'SYSTEM_ERROR');
-                break;
-            }
-            
-            $task_id = $_POST['task_id'];
-            $team_id = $_POST['team_id'];
-            
-            if(!is_string($task_id) || !is_string($team_id)){
-                update_result(FALSE, 'ERR_INVALID_TASK');
-                break;
-            }
-            
-            $teams = all_teams();
-            $tasks = all_tasks();
+            return 
+                update_result(
+                    toggle_subscription(
+                        $_POST['task_id'], 
+                        $_POST['team_id'], 
+                        $function
+                    )
+                );
 
-            if (!isset($teams[$team_id])){
-                update_result(FALSE, 'ERR_INVALID_TEAM');
-                break;
-            }
+        case 'subscribe-notification':
+        case 'unsubscribe-notification':
+            return 
+                update_result(
+                toggle_notification(
+                        $_POST['notification_desc'], 
+                        $function
+                    )
+                );
             
-            if (!isset($tasks[$team_id])){
-                update_result(FALSE, 'SYSTEM_ERROR');
-                break;
-            }
-                        
-            if (!isset($tasks[$team_id][$task_id])){
-                update_result(FALSE, 'ERR_TASK_NOT_EXISTS');
-                break;
-            }
+        case 'update-settings':
+            return 
+                update_result(
+                    upsert_setting(
+                        $_POST['setting_name'], 
+                        $_POST['setting_value']
+                    )
+                );
             
-            $task = $tasks[$team_id][$task_id];
             
-            if ($function == 'subscribe-task') {
-                $action_success = $task->subscribe($session->getUserId());
-            } else {
-                $action_success = $task->unsubscribe($session->getUserId());
-            }
-            
-            if(!$action_success){
-                update_result(FALSE, 'SYSTEM_ERROR');
-                break;
-            }
-            
-            update_result(TRUE, '');
-            
-            break;
+        default:
+            return update_result(Array(FALSE, 'INVALID_FUNCTION'));
+        
     }
     
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['func'])) {
+    $result = function_dispatcher($_POST['func']);
 }
 
 # Return the content in JSON format

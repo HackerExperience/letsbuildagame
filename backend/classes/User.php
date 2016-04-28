@@ -14,9 +14,9 @@ class User {
     private $_dbo;
 
     public function __construct($username, $email, $password) {
-        $this->setUsername((string)$username);
-        $this->setEmail((string)$email);
-        $this->setPassword((string)$password);
+        $this->setUsername($username);
+        $this->setEmail($email);
+        $this->setPassword($password);
         $this->_dbo = PDO_DB::factory();
     }
 
@@ -25,7 +25,7 @@ class User {
     }
 
     public function setUserId($_user_id) {
-        $this->_user_id = $_user_id;
+        $this->_user_id = (int)$_user_id;
     }
 
     public function getUsername() {
@@ -33,7 +33,7 @@ class User {
     }
 
     public function setUsername($_name) {
-        $this->_username = $_name;
+        $this->_username = (string)$_name;
     }
 
     public function getEmail() {
@@ -41,7 +41,7 @@ class User {
     }
 
     public function setEmail($_email) {
-        $this->_email = $_email;
+        $this->_email = (string)$_email;
     }
 
     public function getPassword() {
@@ -49,24 +49,16 @@ class User {
     }
 
     public function setPassword($password) {
-        $this->_password = $password;
+        $this->_password = (string)$password;
     }
-
-    public function getDateRegistered() {
-        return $this->_date_registered;
-    }
-
-    public function setDateRegistered($_date_registered) {
-        $this->_date_registered = $_date_registered;
-    }
-
+    
     public function validateUsername() {
         
         $username = $this->getUsername();
         
         // Do not accept usernames made only of numbers
         if (ctype_digit($username)) {
-            //return $this->_validateReturn(FALSE, 'ERR_INVALID_USERNAME');
+            return $this->_validateReturn(FALSE, 'ERR_INVALID_USERNAME');
         }
         
         // Do not accept too big or too small usernames
@@ -224,9 +216,15 @@ class User {
         
         $sql_query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
         $sql_reg = $this->_dbo->prepare($sql_query);
-        $sql_reg->execute(array($this->getUsername(), $this->getEmail(), User::hashPassword($this->getPassword())));
-
-        $userID = $this->_dbo->lastInsertId('users_user_id_seq');
+        
+        try {
+            $sql_reg->execute(array($this->getUsername(), $this->getEmail(), 
+                                    User::hashPassword($this->getPassword())));
+            $userID = $this->_dbo->lastInsertId('users_user_id_seq');
+        } catch (PDOException $e) {
+            error_log($e);
+            return Array(FALSE, 'SYSTEM_ERROR');
+        }
         
         $this->setUserId($userID);
         
@@ -236,8 +234,6 @@ class User {
         //send email
         
         return Array(TRUE, $verification_code);
-        
-        //$this->insertUserLDAP();
     }
 
     private function read($search_value, $search_method='id', $limit = 1) {
@@ -263,22 +259,28 @@ class User {
         $dbo = PDO_DB::factory();
         $sql_query = "SELECT * FROM users WHERE users.".$column_name." = :value $limit";
         $stmt = $dbo->prepare($sql_query);
-        $stmt->execute(array(':value' => $search_value));
+        
+        try {
+            $stmt->execute(array(':value' => $search_value));
+        } catch (PDOException $e) {
+            error_log($e);
+            return FALSE;
+        }
         
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public function update() {
-        $sql_query = "UPDATE users SET username = ?, email = ?, password = ? WHERE users.users_id = ?";
-        $sql_reg = $this->_dbo->prepare($sql_query);
-        $sql_reg->execute(array($this->getUsername(), $this->getEmail(), $this->getPassword(), $this->getUserId()));
-    }
-
-    public function delete() {
-        $sql_query = "DELETE FROM users WHERE users.users_id = ?";
-        $sql_reg = $this->_dbo->prepare($sql_query);
-        $sql_reg->execute(array($this->getUserId()));
-    }
+//    public function update() {
+//        $sql_query = "UPDATE users SET username = ?, email = ?, password = ? WHERE users.users_id = ?";
+//        $sql_reg = $this->_dbo->prepare($sql_query);
+//        $sql_reg->execute(array($this->getUsername(), $this->getEmail(), $this->getPassword(), $this->getUserId()));
+//    }
+//
+//    public function delete() {
+//        $sql_query = "DELETE FROM users WHERE users.users_id = ?";
+//        $sql_reg = $this->_dbo->prepare($sql_query);
+//        $sql_reg->execute(array($this->getUserId()));
+//    }
 
     private static function hashPassword($password) {
         $options = [
@@ -286,4 +288,58 @@ class User {
         ];
         return password_hash($password, PASSWORD_BCRYPT, $options);
     }
+}
+
+function validate_user($username) {
+    
+    if (!isset($username)) {
+        return Array(FALSE, 'ERR_INVALID_DATA');
+    }
+
+    $user = new User($username, '', '');
+
+    return $user->validateUsername();
+    
+}
+
+
+function validate_email($email) {
+    
+    if (!isset($email)) {
+        return Array(FALSE, 'ERR_INVALID_DATA');
+    }
+
+    $user = new User('', $email, '');
+
+    return $user->validateEmail();
+    
+}
+
+function register_user($username, $password, $email) {
+    
+    if (!isset($username) || !isset($email) || !isset($password)) {
+        return Array(FALSE, 'ERR_INVALID_DATA');
+    }
+
+    $user = new User($username, $email, $password);
+    list($registration_success, $registration_msg) = $user->create();
+
+    if ($registration_success) {
+        $user->login();
+    }
+
+    return Array($registration_success, $registration_msg); 
+    
+}
+
+function verify_email($code) {
+    
+    if (!isset($code)) {
+        return Array(FALSE, 'ERR_INVALID_DATA');
+    }
+
+    $verification = new EmailVerification($code, '');
+
+    return Array($verification->validate(), '');
+    
 }

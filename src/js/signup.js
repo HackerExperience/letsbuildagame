@@ -1,9 +1,5 @@
-var current_fs, next_fs, previous_fs; //fieldsets
-var left, opacity, scale; //fieldset properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
-
 function ajax_call(input_data, callback){
-    console.log(input_data)
+    console.log(input_data);
     $.ajax({
         type: "POST",
         url: "http://localhost/lbag/ajax.php",
@@ -49,7 +45,9 @@ function form_validator(element_name, endpoint){
             validator_add_success(input, helper);
             return;
         }
-
+        if (typeof(endpoint) === "function") {
+            return endpoint(input, helper);
+        }
         ajax_call({
             func: endpoint,
             data: this.value
@@ -64,6 +62,8 @@ function form_validator(element_name, endpoint){
     })
 }
 
+
+var animating = false;
 function animate_next(current_fs, next_fs){
 
     if(animating) return false;
@@ -92,21 +92,39 @@ function animate_next(current_fs, next_fs){
     });
 }
 
+function toggleSubmitLoading(element){
+
+    spinner = element.parent().find('i.input-loading');
+    
+    if(spinner.is(':visible')){
+        spinner.hide();
+        element.show();
+    } else {
+        element.hide();
+        spinner.show();
+    }
+
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // ACCOUNT SETUP FORM
 ////////////////////////////////////////////////////////////////////////////////
 
 form_validator('#form-setup-acc .input-username', 'validate-user');
 form_validator('#form-setup-acc .input-email', 'validate-email');
-form_validator('#form-setup-acc .input-password')
+form_validator('#form-setup-acc .input-password', assert_password_policy);
 
 $('#form-setup-acc').submit(function(ev){
+
     ev.preventDefault();
 
-    helper = $(this).find('.fs-error')
+    helper_element = $(this).find('.fs-error');
+    submit_element = $(this).find('input[type="submit"]');
 
-    window.form_username = $('#form-setup-acc .input-username')[0].value
-    window.form_email = $('#form-setup-acc .input-email')[0].value
+    toggleSubmitLoading(submit_element);
+
+    window.form_username = $('#form-setup-acc .input-username')[0].value;
+    window.form_email = $('#form-setup-acc .input-email')[0].value;
 
     ajax_call(
         {
@@ -118,9 +136,10 @@ $('#form-setup-acc').submit(function(ev){
         function(data){
 
             if (data.status === true){
-                event_registration_success()
+                event_registration_success();
             } else {
-                event_registration_failed(helper, data.msg)
+                toggleSubmitLoading(submit_element);
+                event_registration_failed(helper_element, data.msg);
             }
         }
     )
@@ -128,14 +147,14 @@ $('#form-setup-acc').submit(function(ev){
 
 function event_registration_failed(helper, msg){
 
-    helper.text(msg)
+    helper.text(msg);
 
     if (msg.toLowerCase().indexOf('username') > -1){
-        validator_add_error($('#form-setup-acc .input-username'))
+        validator_add_error($('#form-setup-acc .input-username'));
     } else if(msg.toLowerCase().indexOf('email') > -1){
-        validator_add_error($('#form-setup-acc .input-email'))
+        validator_add_error($('#form-setup-acc .input-email'));
     } else if(msg.toLowerCase().indexOf('password') > -1){
-        validator_add_error($('#form-setup-acc .input-password'))
+        validator_add_error($('#form-setup-acc .input-password'));
     }
 
 }
@@ -145,11 +164,20 @@ function event_registration_success(){
         $('#form-verify-email .fs-subtitle')[0].innerHTML.replace(
             "you", "<strong>"+ window.form_email +"</strong>"
         )
-    )
+    );
 
-    animate_next($('#form-setup-acc'), $('#form-verify-email'))
+    animate_next($('#form-setup-acc'), $('#form-verify-email'));
 }
 
+function assert_password_policy(input, helper){
+
+    if (input[0].value.length < 6) {
+        validator_add_error(input, helper, "Please insert a password with 6 or more characters");
+    } else {
+        validator_add_success(input, helper);
+    }
+
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // VERIFICATION EMAIL FORM
@@ -160,19 +188,22 @@ $('#form-verify-email').submit(function(event){
 
     event.preventDefault();
 
-    helper = $(this).find('.fs-error');
+    helper_element = $(this).find('.fs-error');
+    submit_element = $(this).find('input[type="submit"]');
+
+    toggleSubmitLoading(submit_element);
 
     ajax_call(
-
         {
             func: 'verify-email',
             code: $('#form-verify-email .input-email-code')[0].value
         },
         function(data){
             if (data.status === true){
-                event_verification_success()
+                event_verification_success();
             } else {
-                event_verification_failed(helper)
+                toggleSubmitLoading(submit_element);
+                event_verification_failed(helper_element);
             }
         }
 
@@ -181,7 +212,7 @@ $('#form-verify-email').submit(function(event){
 });
 
 function event_verification_success(){
-    animate_next($('#form-verify-email'), $('#form-select-contrib'))
+    animate_next($('#form-verify-email'), $('#form-select-contrib'));
 }
 
 function event_verification_failed(helper){
@@ -202,14 +233,14 @@ var team_array = {};
 
 $('#form-select-contrib .team').click(function(){
     // Enable/disable team
-    element = $('#'+$(this)[0].id)
-    input = $('#form-select-contrib .next')
+    element = $('#'+$(this)[0].id);
+    input = $('#form-select-contrib .next');
     if (element.hasClass('team-selected')){
-        element.removeClass('team-selected')
+        element.removeClass('team-selected');
         selected_teams--;
         team_array[element[0].id] = false;
     } else {
-        element.addClass('team-selected')
+        element.addClass('team-selected');
         selected_teams++;
         team_array[element[0].id] = true;
     }
@@ -217,12 +248,12 @@ $('#form-select-contrib .team').click(function(){
     // Enable/disable button
     if (selected_teams > 0) {
         if (input.hasClass('disabled')) {
-            input.removeClass('disabled')
-            $('#form-select-contrib').find('.fs-error').text('')
+            input.removeClass('disabled');
+            $('#form-select-contrib').find('.fs-error').text('');
         }
     } else {
         if (!input.hasClass('disabled')) {
-            input.addClass('disabled')
+            input.addClass('disabled');
         }
     }
 });
@@ -230,12 +261,16 @@ $('#form-select-contrib .team').click(function(){
 $('#form-select-contrib').submit(function(event){
 
     event.preventDefault();
-    helper = $(this).find('.fs-error');
+
+    helper_element = $(this).find('.fs-error');
+    submit_element = $(this).find('input[type="submit"]');
 
     if (selected_teams <= 0){
-        helper.text("Please select at least one team");
+        helper_element.text("Please select at least one team");
         return;
     }
+
+    toggleSubmitLoading(submit_element);
 
     ajax_call(
         {
@@ -246,7 +281,8 @@ $('#form-select-contrib').submit(function(event){
             if (data.status === true){
                 event_teams_success();
             } else {
-                event_teams_failed(helper), data.msg;
+                toggleSubmitLoading(submit_element);
+                event_teams_failed(helper_element, data.msg);
             }
         }
     );
@@ -255,19 +291,22 @@ $('#form-select-contrib').submit(function(event){
 
 function event_teams_success(){
 
-    function addToggle(team_id){
+    function switchIcon(element){
+        element.toggleClass('fa-chevron-down');
+        element.toggleClass('fa-chevron-right');
+    }
+
+    function addToggle(team_id){        
         $('#cat-' + team_id).click(function(event){
             event.preventDefault();
             $('#tasks-' + team_id).slideToggle();
-            var icon_el = $('#cat-' + team_id + ' i');
-            icon_el.toggleClass('fa-chevron-down');
-            icon_el.toggleClass('fa-chevron-right');
+            switchIcon($('#cat-' + team_id + ' i'));
         });
     }
 
-    animate_next($('#form-select-contrib'), $('#form-select-tasks'))
+    animate_next($('#form-select-contrib'), $('#form-select-tasks'));
 
-    all_teams = ['dev', 'art', 'gd', 'mgt', 'student', 'translation', 'gamer', 'patron'];
+    all_teams = ['dev', 'art', 'gd', 'mgt', 'student', 'translation', 'gamer', 'patron', 'other'];
 
     for (var i = 0; i < all_teams.length; i++) {
         team_id = all_teams[i];
@@ -276,9 +315,11 @@ function event_teams_success(){
 
         // Hide teams which the user is not a member
         if (!( ('team-' + team_id) in team_array)) {
-            $('#tasks-' + team_id).hide();
+            $('#tasks-' + team_id).hide();            
         } else if (!(team_array['team-' + team_id])){
             $('#tasks-' + team_id).hide();
+        } else {
+            switchIcon($('#cat-' + team_id + ' i'));
         }
 
         // Go to the top
@@ -288,7 +329,7 @@ function event_teams_success(){
 }
 
 function event_teams_failed(helper, msg){
-    helper.text(msg)
+    helper.text(msg);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -305,14 +346,14 @@ $('#form-select-tasks .task').click(function(){
 
     if (element.hasClass('task-selected')){
         element.removeClass('task-selected');
-        task_unsubscribe(element, team_id, task_id)
+        task_unsubscribe(element, team_id, task_id);
     } else {
         element.addClass('task-selected');
-        task_subscribe(element, team_id, task_id)
+        task_subscribe(element, team_id, task_id);
     }
 });
 
-function subscribe(element, action, team_id, task_id){
+function task_generic_subscribe(element, action, team_id, task_id){
     ajax_call(
         {
             func: action,
@@ -341,10 +382,73 @@ function subscribe(element, action, team_id, task_id){
 }
 
 function task_subscribe(element, team_id, task_id){
-    subscribe(element, 'subscribe-task', team_id, task_id)
+    task_generic_subscribe(element, 'subscribe-task', team_id, task_id);
 }
 
 function task_unsubscribe(element, team_id, task_id){
-    subscribe(element, 'unsubscribe-task', team_id, task_id)
+    task_generic_subscribe(element, 'unsubscribe-task', team_id, task_id);
 }
 
+$('#form-select-tasks').submit(function(event){
+
+    event.preventDefault();
+
+    animate_next($('#form-select-tasks'), $('#form-select-preferences'));
+
+    // Go to the top
+    window.scrollTo(0, 0);
+
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// PREFERENCES
+////////////////////////////////////////////////////////////////////////////////
+
+$('.notification-input').click(function(){
+    if (this.checked) {
+        notification_subscribe(this.value);
+    } else {
+        notification_unsubscribe(this.value);
+    }
+});
+
+function notification_generic_subscribe(action, desc){
+    ajax_call(
+        {
+            func: action,
+            notification_desc: desc
+        },
+        function(data){}
+    );
+} 
+
+
+function notification_subscribe(notification_desc){
+    notification_generic_subscribe('subscribe-notification', notification_desc);
+}
+
+function notification_unsubscribe(notification_desc){
+    notification_generic_subscribe('unsubscribe-notification', notification_desc);
+}
+
+$('#form-select-preferences').submit(function(event){
+
+    event.preventDefault();
+
+    // Assert all checkbox were sent to the server
+    $('.notification-input').each(function(i){
+        if(this.checked){
+            notification_subscribe(this.value);
+        }
+    });
+
+    ajax_call(
+        {
+            func: 'update-settings',
+            setting_name: 'notifications_frequency',
+            setting_value: $('.email-frequency :selected').val()
+        },
+        function(data){}
+    );
+    
+});

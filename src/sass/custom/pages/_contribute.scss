@@ -19,6 +19,16 @@
     /*stacking fieldsets above each other*/
     position: absolute;
 }
+
+.subscribe-form label {
+  padding: 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
 /*Hide all except first fieldset*/
 .subscribe-form fieldset:not(:first-of-type) {
     display: none;
@@ -35,6 +45,46 @@
     color: #2C3E50;
     font-size: 13px;
 }
+
+.subscribe-form select {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: montserrat;
+  color: #2C3E50;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+
+  .checkbox-group {
+
+    span {
+      font-weight: normal;
+    }
+
+    input {
+      outline: 0;
+      display: block;
+      width: 10%;
+      font-size: 13px;
+      font-family: montserrat;
+      color: #2C3E50;
+      float: left;
+    }
+
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-family: montserrat;
+    color: #2C3E50;
+
+  }
+
+}
+
 /*buttons*/
 .subscribe-form .action-button {
     width: 100px;
@@ -67,6 +117,13 @@
         font-size: 12px;
         font-weight: bold;
         text-align: left;
+    }
+
+    .input-loading {      
+      font-size: 30px;
+      color: #2C3E50;
+      padding: 7px 5px;
+      margin: 7px 5px;
     }
 }
 
@@ -153,6 +210,7 @@
     border: 1px black solid;
     padding: 0px 0 5px 0;
     background: $color-tertiary;
+    min-width: 163px;
 
     i {
       margin-top: 15px;
@@ -234,7 +292,6 @@
       margin-left: 5px;
       margin-top: 3px;
       font-size: 16px;
-      font-weight: bold;
       color: #FFF;
     }
 
@@ -286,6 +343,18 @@
   .error-helper {
     color: #F00;
     font-size: 10px;
+  }
+
+  #tasks-other {
+    input {
+      padding: 5px;
+    }
+
+    p {
+      margin-top: 4px;
+      margin-left: 5px;
+      font-size: 14px;
+    }
   }
 
 }

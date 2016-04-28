@@ -16,5 +16,230 @@
       "title": "Let's Build A Game",
       "baseUrl": "/contribute.html"
     }
+  },
+  "tooltips": {
+    "index": {
+      "lala": "cece"
+    },
+
+    "teams": {
+      "dev": "Write patches, review code and write unit tests. Follow and discuss tasks tagged under any technology you love.",
+
+      "art": "Design game interfaces for desktop or mobile. Draw assets, enhance our icons and create the ultimate gaming experience.",
+
+      "mgt": "Manage the community. Keep everything organized, tag tasks, guide new users and help us keep focused on what is important.",
+
+      "gd": "Design features, balance the game and develop the storyline. Don't be intimitated, amateur and wannabe game designers are more than welcome!",
+
+      "translation": "Translate the game to your native language. Spotted any grammar error or typos? Fix them!",
+
+      "patron": "Share the project to your followers on social media. More contributors means faster development and a higher quality game.",
+
+      "student": "Learn to code, or discover a new technology. Share and consolidate your knowledge.",
+
+      "gamer": "Of course you want to play the game YOU are creating, right? Test brand new features, spot bugs or simply have fun!"
+    },
+
+    "tasks": {
+      "submit-patches": "Grab open tasks or TODOs, write code and submit a patch for review. We will usually let people know what needs to be done, write a thorough requirements and triage the patch in easy / medium / hard to implement.",
+
+      "review-code": "To ensure a high-quality game, all code written must go through a review process. Share your expertise and help us spot bugs by analyzing the review queue.",
+
+      "write-tests": "Tests are the best way to ensure we have a resilient and stable system. Select this task if you want to increase our test coverage by writing unit tests or integration tests for the game.",
+
+      "write-docs": "A thorough documentation is fundamental to the success of the project. Help us keep our documents clean, readable and accurate.",
+
+      "tag-todo": "Subscribe to the TODO tag. Not sure how to help? Grab an open task under the TODO list.",
+
+      "tag-waitingreview": "Subscribe to the WaitingReview tag. Specially useful for spotting code that is waiting to be reviewed. You can also find specifications and drafts that are waiting review.",
+
+      "tag-bug": "Subscribe to the Bug tag. No one likes bugs. Tasks with the Bug tag are waiting for a fix.",
+
+      "tag-discussion": "Subscribe to the Discussions tag. Interesting technical discussions being held will be under this tag. It usually means that we are open to expert input/feedback on that specific subject.",
+
+      "tag-elixir": "Subscribe to the Elixir tag. Code, tasks, issues and anything related to Elixir. We use Elixir on our backend (server) software.",
+
+      "tag-python": "Subscribe to the Python tag. Code, tasks, issues and anything related to Python. We use Python on our backend (server) software.",
+
+      "tag-elm": "Subscribe to the Elm tag. Code, tasks, issues and anything related to Elm. We use Elm on our frontend software (client) for Web Browsers and Desktops.",
+
+      "tag-fs": "Subscribe to the f# tag. Code, tasks, issues and anything related to F#. We use F# on our frontend software (client) for mobile interfaces.",
+
+      "tag-javascript": "Subscribe to the Javascript tag. Code, tasks, issues and anything related to Javascript. We don't use Javascript directly, but supporting libraries and websites (like this one) do.",
+
+      "tag-php": "Subscribe to the PHP tag. Code, tasks, issues and anything related to PHP. We don't use PHP directly, but supporting libraries and websites (like this one) do. Specially, our Development Center (Phabricator) is built in PHP, and help is welcomed on building plugins to it.",
+
+      "tag-frontend": "Subscribe to the Frontend tag. Code, tasks, issues and anything related to Frontend.",
+
+      "tag-backend": "Subscribe to the Backend tag. Code, tasks, issues and anything related to Backend.",
+
+      "tag-infrastructure": "Subscribe to the Infrastructure tag. Code, tasks, issues and anything related to Infrastructure.",
+
+      "tag-security": "Subscribe to the Security tag. Code, tasks, issues and anything related to Security.",
+
+      "tag-optimization": "Subscribe to the Optimization tag. Code, tasks, issues and anything related to Optimization.",
+
+      "tag-ai": "Subscribe to the AI tag. Code, tasks, issues and anything related to AI.",
+
+      "tag-network": "Subscribe to the Network tag. Code, tasks, issues and anything related to Network.",
+
+      "tag-databases": "Subscribe to the Databases tag. Code, tasks, issues and anything related to Databases.",
+
+      "tag-pm": "Subscribe to the Project Management tag. Code, tasks, issues and anything related to Project Management.",
+
+      "tag-linux": "Subscribe to the Linux tag. Code, tasks, issues and anything related to Linux.",
+
+      "tag-ios": "Subscribe to the iOS tag. Code, tasks, issues and anything related to iOS.",
+
+      "tag-android": "Subscribe to the Android tag. Code, tasks, issues and anything related to Android.",
+
+      "tag-core": "Subscribe to the Core tag. Code, tasks, issues and anything related to Core. Core is the server software that powers the game. It is written mainly in Elixir and Python.",
+
+      "tag-mobile": "Subscribe to the Mobile tag. Code, tasks, issues and anything related to Mobile. Mobile is the interface software for mobile phones (WP, iOS and Android) written in F#.",
+
+      "tag-web": "Subscribe to the Web tag. Code, tasks, issues and anything related to Web. Web is the interface software (client) for web browsers and desktop. It is written in Elm.",
+
+      "tag-terminal": "Subscribe to the Terminal tag. Code, tasks, issues and anything related to Terminal. Terminal is the interface software (client) for *NIX Shell. It is written in Python.",
+
+      "tag-aerospike": "Subscribe to the Aerospike tag. Code, tasks, issues and anything related to Aerospike. We use Aerospike for caching game data.",
+
+      "tag-consul": "Subscribe to the Consul tag. Code, tasks, issues and anything related to Consul. We use Consul for service discovery and micro-services management.",
+
+      "tag-elastic": "Subscribe to the Elastic tag. Code, tasks, issues and anything related to Elastic(search). We use Elasticsearch to storing map-related information, global coordinates and log data.",
+
+      "tag-docker": "Subscribe to the Docker tag. Code, tasks, issues and anything related to Docker. We rely on Docker for containing each microservice of the game, as well as other stack tools like databases, proxies and message brokers.",
+
+      "tag-kafka": "Subscribe to the Kafka tag. Code, tasks, issues and anything related to Kafka. We use Apache Kafka for internal services communication.",
+
+      "tag-samza": "Subscribe to the Samza tag. Code, tasks, issues and anything related to Samza. We use Apache Samza for dynamically creating cached databased views.",
+
+      "tag-nginx": "Subscribe to the nginx tag. Code, tasks, issues and anything related to nginx. We use nginx for routing, load balancing and rate-limiting requests, as well as managing Websocket connections.",
+
+      "tag-haproxy": "Subscribe to the HAProxy tag. Code, tasks, issues and anything related to HAProxy. We use HAProxy for routing and load balancing TCP requests.",
+
+      "tag-mnesia": "Subscribe to the Mnesia tag. Code, tasks, issues and anything related to Mnesia. We use Mnesia to storing Elixir-specific data, usually required for internal communications.",
+
+      "tag-phabricator": "Subscribe to the Phabricator tag. Code, tasks, issues and anything related to Phabricator. We use Phabricator as our Development Center.",
+
+      "tag-postgresql": "Subscribe to the PostgreSQL tag. Code, tasks, issues and anything related to PostgreSQL. We use PostgreSQL to store most of the game data.",
+
+      "tag-postgis": "Subscribe to the PostGIS tag. We make heavy use of the GIS extension for Postgres called PostGIS.",
+
+      "discuss-ui": "Discuss the UI we use or plan to use. Share ideas and suggestions for a better user interface.",
+
+      "design-ui": "Get your hands dirty and draw/sketch/design a UI for the game.",
+
+      "create-assets": "Icons, images, corporation logos, anything. We have several assets that you can help with.",
+
+      "review-ux": "Review the current UI for usability errors and bad user experience.",
+
+      "tag-design": "Subscribe to the Design tag. Generic tasks and discussions related to Design will have this tag.",
+
+      "tag-mobileui": "Subscribe to the InterfaceMobile tag. All design tasks related to the mobile interface will have this tag.",
+
+      "tag-webui": "Subscribe to the InterfaceWeb tag. All design tasks related to the Web interface will have this tag.",
+
+      "tag-terminalui": "Subscribe to the InterfaceTerminal tag. All design tasks related to the terminal interface will have this tag.",
+
+      "tag-designdiscussion": "Subscribe to the DesignDiscussion tag. Interesting tasks and issues being discussed will have this tag. Weigh in with your expertise and join the discussion.",
+
+      "tag-designsuggestion": "Subscribe to the DesignSuggestion tag. New suggestions related to design will have this tag. Review, comment and improve the suggestion.",
+
+      "tag-designfeedback": "Subscribe to the DesignFeedback tag. Design contributions will have this tag so you can review, suggest and improve the final game interface.",
+
+      "tag-ux": "Subscribe to the UX tag. Interesting tasks, issues and questions about user experience will have this tag. Weigh in with your expertise and join the discussion.",
+
+      "discuss-features": "Discuss, review or suggest features and game mechanics. Do you think a feature might hurt the game design? Create a discussion and tell us why.",
+
+      "study-game": "Regarding design, Hacker Experience 2 is a complex game. Studying it is the first step on having insights about its game design. Read the specifications, play Hacker Experience 1 and related games, ask questions.",
+
+      "balance": "Balancing is probably the most challenging task on game design. Open your spreadsheet and suggest balance formulas for skill, user progress, difficulty and economy.",
+
+      "design-story": "Write the game storyline. Design NPCs and tutorial levels. Craft missions and side quests.",
+
+      "tag-storyline": "Subscribe to the Storyline tag. Follow the progress of the game story. Review, suggest and improve it.",
+
+      "tag-gamemechanic": "Subscribe to the GameMechanic tag. It's the best way to find discussions and assets related to game mechanics.",
+
+      "tag-gamedesign": "Subscribe to the GameDesign tag. Follow discussions and tasks about Game Design.",
+
+      "tag-heep-gd": "Subscribe to the HEEP-GD tag. HEEPs (Hacker Experience Enhancement Proposal) are the official way to add things to the game. Follow Game Design proposals that were approved or are being reviewed. Discuss, review and vote for or against the HEEP being accepted.",      
+      "tag-feature": "Subscribe to the Feature tag. It's the best way to find discussions and assets related to specific features.",
+
+      "tag-featurerequest": "Subscribe to the FeatureRequest tag. This is the entrypoint for people to suggest new features to the game. Review, discuss and improve feature requests.",
+
+      "triage-tasks": "Keep our bug tracker organized. Triage tasks and issues regarding their priority and related projects.",
+
+      "guide-users": "Guide users on how they can help, or how to perform a specific task. Welcome new users and let them know we are here for them.",
+
+      "curate-content": "We have lots of content on our Development Center. Help us keep it up-to-date, formatted and tagged.",
+
+      "report": "Flag off-topic discussions and report inappropriate content. Help us keep a clean community.",
+
+      "translate-text": "Translate texts to your native language. We have at least three different user-interfaces, as well as several documents and websites (like this one) that we'd like to have accessible in several languages.",
+
+      "improve-text": "Improve existing translations by adding clarity and readability to the text.",
+
+      "fix-typos": "Fix typos and grammar errors you find on the game clients, related documents or related websites (like this one).",
+
+      "tag-typos": "Subscribe to the Typos tag. Fix errors others have spotted, or let others know about typing mistaeks.",
+
+      "spread": "Let your social followers know about Let's build a game. Invite your friends to the project. More contributors means faster development.",
+
+      "preorder": "Take the chance to directly fund the game development by subscribing to an HEOnline account. Note: buying an account is not required to play the game; see FAQ.",
+
+      "rate-review": "All feedback is welcomed. Rate and review the game on recommendation stores like Steam, Google Play and App Store. Please give an honest review (what you really thought about the game).",
+
+      "invest": "Are you an angel or VC? Or an accredited investor? Consider watching our pitch and reading our business plan.",
+
+      "follow-topics": "Follow topics (tags) of your interest. Reading the discussions or related code will give you a better overview of that subject.",
+
+      "learn-code": "Don't be afraid and take this opportunity to learn how to code. Grab a subject you link, ask for help and find easy tasks to get started.",
+
+      "study-group": "Create or join a study group about a specific subject. Invite your friends and study together.",
+
+      "share-knowledge": "Share what you know or what you learned. Teaching is the best way to learn.",
+
+      "adopt-student": "\"Adopt\" a student. Guide him and show the path to learn the subject he is interested in. Share resources, videos and books that can help his journey.",
+
+      "answer-guide": "Be a mentor, guide students. Share resources, videos, books and advices. Answer questions they have. Help them get their first code approved.",
+
+      "tag-question": "Subscribe to the Question tag. Find the newest questions being asked on our Q&A application.",
+
+      "tag-advice": "Subscribe to the Advice tag. Share an advice to everyone.",
+
+      "tag-resource": "Subscribe to the Resources tag. Share cool online resources that people can use to learn and improve their knowledge.",
+
+      "tag-tutorial": "Subscribe to the Tutorial tag. Create, share and read tutorial about anything related to the game development.",
+
+      "tag-studygroup": "Subscribe to the StudyGroup tag. Create or join a study group about any subject related to the game development. Learn with others.",
+
+      "tag-seekingmentor": "Subscribe to the SeekingMentor tag. Use this to find mentors who can guide your learning path.",
+
+      "tag-seekingstudent": "Subscribe to the SeekingStudent tag. Use this to find students to mentor.",
+
+      "play": "Of course you want to play the game YOU are creating, right? You are invited to play Hacker Experience 2 whenever it gets released.",
+
+      "become-tester": "Are you brave and fearless? Become a bug hunter and test new releases of the game before everyone else.",
+
+      "submit-ideas": "Got a great idea that you'd like to see in the game? Submit it and we'll discuss it. If we like it and its deemed technically feasible by developers and game designers, we'll add it to a future release.",
+
+      "report-bugs": "Something unexpected happened? Odd behaviour? Game is crashing? Please report the bug you've found so we can work on a fix.",
+
+      "music": "Compose cool sound effects or songs for the soundtrack.",
+
+      "offer-service": "Got a service that might be interesting for the project? Let us know about it.",
+
+      "tag-marketing": "Subscribe to the Marketing tag.",
+
+      "tag-legal": "Subscribe to the Legal tag. Discussions and documents related to Legal subjects can be find here. Read and review our legal documents.",
+
+      "tag-social-media": "Subscribe to the Social Media tag.",
+
+      "tag-crm": "Subscribe to the CRM tag.",
+
+      "tag-soundtrack": "Subscribe to the Soundtrack tag. Listen to the current set of sounds and give feedback."
+
+    }
   }
 }
