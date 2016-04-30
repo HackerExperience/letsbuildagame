@@ -2,24 +2,28 @@
   $("#timeline-button-1").popover({
     container: ".timeline-graph",
     content: "Lorem ipsum",
-    title: "foobar"
+    title: "foobar",
+    trigger: "click hover"
   });
 
   $("#timeline-button-2").popover({
     container: ".timeline-graph",
     content: "Lorem ipsum",
-    title: "bar"
+    title: "bar",
+    trigger: "click hover"
   })
 
   $("#timeline-button-3").popover({
     container: ".timeline-graph",
     content: "Lorem ipsum",
-    title: "baz"
+    title: "baz",
+    trigger: "click hover"
   })
 
   $("#timeline-button-4").popover({
     container: ".timeline-graph",
     content: "Lorem ipsum",
-    title: "Ja acabou ?"
+    title: "Ja acabou ?",
+    trigger: "click hover"
   })
 })();

@@ -65,79 +65,91 @@ block content
       nisi sem, et fringilla lorem.
       
     .div-steps
-      .row: .col-xs-12.col-sm-6: .step
-        h3 
-          strong Step 1
-          |  - Define the foundations
-        p.
-          Our first step is to define the foundations of the project.
-          Stuff like:
-        ul
-          li What is the game about?
-          li What are the game objectives?
-          li What directions should the game take?
-          li How can we keep the community organized?
-        p
-          | Most of this planning already took place. We have a well-defined 
-          em foundation
-          |  for the game, but it can become anything with your ideas and
-          | feedback.
+      .row
+        .col-xs-12.col-sm-6: .step
+          h3 
+            strong Step 1
+            |  - Define the foundations
+          p.
+            Our first step is to define the foundations of the project.
+            Stuff like:
+          ul
+            li What is the game about?
+            li What are the game objectives?
+            li What directions should the game take?
+            li How can we keep the community organized?
+          p
+            | Most of this planning already took place. We have a well-defined 
+            em foundation
+            |  for the game, but it can become anything with your ideas and
+            | feedback.
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step1.png").img.img-responsive.img-center
 
-      .row: .col-xs-12.col-sm-6.col-sm-offset-6: .step
-        h3 
-          strong Step 2
-          |  - Design the game
+      .row
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step2.png").img.img-responsive.img-center
+        .col-xs-12.col-sm-6: .step
+          h3 
+            strong Step 2
+            |  - Design the game
 
-        p.
-          The next step is to actually design the game.
-        p.
-          The gameplay and features that shape the game are designed on this
-          step. They are extensions of the foundations defined previously.
-        p
-          | This is an endless step. It means we are 
-          em always
-          |  designing and improving the game, even if it has already been
-          | released.
+          p.
+            The next step is to actually design the game.
+          p.
+            The gameplay and features that shape the game are designed on this
+            step. They are extensions of the foundations defined previously.
+          p
+            | This is an endless step. It means we are 
+            em always
+            |  designing and improving the game, even if it has already been
+            | released.
 
-      .row: .col-xs-12.col-sm-6: .step
-        h3 
-          strong Step 3
-          |  - Plan the game architecture
+      .row
+        .col-xs-12.col-sm-6: .step
+          h3 
+            strong Step 3
+            |  - Plan the game architecture
 
-        p.
-          Now that we have a better idea of what game we are building, we can
-          start planning its software. Common questions on this step are:
+          p.
+            Now that we have a better idea of what game we are building, we can
+            start planning its software. Common questions on this step are:
 
-        ul
-          li What is the underlying server architecture?
-          li What programming languages will we use?
-          li What tools will we use?
-          li How will the user interface look like?
-          li What platforms will be supported?
-        p.
-          Most of this planning already took place, but we'll take the time to
-          review everything with the community.
+          ul
+            li What is the underlying server architecture?
+            li What programming languages will we use?
+            li What tools will we use?
+            li How will the user interface look like?
+            li What platforms will be supported?
+          p.
+            Most of this planning already took place, but we'll take the time to
+            review everything with the community.
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step3.png").img.img-responsive.img-center
 
-      .row: .col-xs-12.col-sm-6.col-sm-offset-6: .step
-        h3 
-          strong Step 4
-          |  - Develop the game
+      .row
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step4.png").img.img-responsive.img-center
+        .col-xs-12.col-sm-6: .step
+          h3 
+            strong Step 4
+            |  - Develop the game
 
-        p.
-          Finally, it's time to get our hands dirty.
-        p
-          | On this step, the most challenging of all, it's when we
-          | incrementally develop 
-          em each
-          |  software that makes up the game.
-        p.
-          It might come as a surprise that our game is made of more than one
-          software.
-        p
-          | This is an endless step. It means we are 
-          em always
-          |  developing and maintaining each software, even if the game has
-          | already been released.
+          p.
+            Finally, it's time to get our hands dirty.
+          p
+            | On this step, the most challenging of all, it's when we
+            | incrementally develop 
+            em each
+            |  software that makes up the game.
+          p.
+            It might come as a surprise that our game is made of more than one
+            software.
+          p
+            | This is an endless step. It means we are 
+            em always
+            |  developing and maintaining each software, even if the game has
+            | already been released.
 
   .section-game: .container
     h2.section-title The game
@@ -398,7 +410,9 @@ block content
       .col-sm-6.col-md-3: .member
         .member-photo: img(src="https://usercontent1.hubstatic.com/5732926_f520.jpg" height="320" width="320")
         .member-desc
-          h3 Charlotte Oliveira
+          h3 
+            | Charlotte');
+            span.drop-tables  drop table users;--
           .member-role Lead Developer
           p Magical girl and Alchemist.
       .col-sm-6.col-md-3: .member
@@ -417,22 +431,25 @@ block content
   .section-cta: .container
     h2.section-title So, let's build a game?
     hr.section-separator
-    p.section-comment
-      | Develop a game, learn a lot
-      em  and
-      |  have fun.
+    .row
+      .col-xs-12.col-sm-6
+        p.section-comment
+          | Develop a game, learn a lot
+          em  and
+          |  have fun.
 
-    .div-cta
-      .cta-contrib: button.btn.btn-future Start contributing
-      .cta-separator: span or
-      .cta-subscribe
-        span
-          | Receive important notifications about
-          em  Let's build a game
-          | .
-        input(type="text" placeholder="Enter your email address")
-        button.btn.btn-future.subscribe-button Subscribe
-        span.frequency (about 1 email per month)
+        .div-cta
+          .cta-contrib: button.btn.btn-future Start contributing
+          .cta-separator: span or
+          .cta-subscribe
+            span
+              | Receive important notifications about
+              em  Let's build a game
+              | .
+            input(type="text" placeholder="Enter your email address")
+            button.btn.btn-future.subscribe-button Subscribe
+            span.frequency (about 1 email per month)
+      .col-xs-12.col-sm-6
 
 mixin label-dev
   span(title="Development task - might require some technical knowledge").label.label-dev: i.fa.fa-code
