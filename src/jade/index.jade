@@ -225,8 +225,10 @@ block content
     hr.section-separator
       
     p.section-comment
-      | A tentative schedule (estimating software is 
-      a: em hard
+      | A tentative schedule (
+      a
+        | estimating software is
+        em  hard
       | ) with each step outlined below.
     p.section-comment
       | Green dots tell us when the code repository will be made public
@@ -234,7 +236,8 @@ block content
       | . Red dots are problems we've faced. 
       
     //- TODO: Inline SVG to allow manipulation
-    img(src="assets/img/timeline_2.svg")
+    .timeline-graph 
+      include includes/index/timeline.svg
 
     p.section-comment
       | You can find a detailed 
@@ -422,13 +425,13 @@ block content
     .div-cta
       .cta-contrib: button.btn.btn-future Start contributing
       .cta-separator: span or
-      .cta-subscribe              
+      .cta-subscribe
         span
           | Receive important notifications about
           em  Let's build a game
           | .
         input(type="text" placeholder="Enter your email address")
-        button.btn.btn-future Subscribe
+        button.btn.btn-future.subscribe-button Subscribe
         span.frequency (about 1 email per month)
 
 mixin label-dev

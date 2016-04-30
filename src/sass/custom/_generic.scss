@@ -21,12 +21,4 @@ body {
     border: 1px solid darken(#FFF, 5%);
     color: darken(#FFF, 5%);
   }
-
-  &:focus,
-  &:active {
-    @include text-shadow(
-      0 0 1px #000,
-      1px 1px 0 #000);
-    border: 2px solid darken(#FFF, 5%);
-  }
 }

@@ -47,19 +47,19 @@
 // @import "bootstrap/bootstrap/progress-bars";
 // @import "bootstrap/bootstrap/media";
 // @import "bootstrap/bootstrap/list-group";
-// @import "bootstrap/bootstrap/panels";
+@import "bootstrap/bootstrap/panels";
 // @import "bootstrap/bootstrap/responsive-embed";
 // @import "bootstrap/bootstrap/wells";
-// @import "bootstrap/bootstrap/close";
+@import "bootstrap/bootstrap/close";
 
 // Components w/ JavaScript
 // @import "bootstrap/bootstrap/modals";
-// @import "bootstrap/bootstrap/tooltip";
-// @import "bootstrap/bootstrap/popovers";
+@import "bootstrap/bootstrap/tooltip";
+@import "bootstrap/bootstrap/popovers";
 // @import "bootstrap/bootstrap/carousel";
 
 // Utility classes
-// @import "bootstrap/bootstrap/utilities";
+@import "bootstrap/bootstrap/utilities";
 @import "bootstrap/bootstrap/responsive-utilities";
 
 ////////////////////////////////////////////////////////////////////////////////
