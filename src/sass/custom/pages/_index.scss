@@ -55,13 +55,13 @@ h3 {
 
   .img-placeholder {
     @include filter(drop-shadow(2px 2px 3px rgba(#333, 0.45)));
-    background: image-url("game_dev.svg") no-repeat;
+    background: image-url("game_dev_b.svg") no-repeat;
     background-size: cover;
     bottom: -100px;
-    height: 675px * 0.65;
+    height: 670px * 0.65;
     position: absolute;
     right: 0;
-    width: 775px * 0.65;
+    width: 740px * 0.65;
     // z-index: -1;
 
     @media (max-width: $screen-md-max) {
@@ -454,75 +454,6 @@ h3 {
 .section-comment {
   font-size: 18px;
   text-align: center;
-}
-
-.site-footer {
-  background: $color-secondary;
-  color: #FFF;
-
-  .footer-column {
-    margin-top: 40px;
-
-    .footer-right {
-      text-align: right;
-
-      .contact {
-        a {
-          display: inline-block;
-        }
-      }
-
-      .social {
-        margin: 10px 0;
-
-        i {
-          font-size: 32px;
-          margin-left: 10px;
-        }
-      }
-
-      .copyright-notice {
-        margin: 0% (5% * 0.33);
-        padding-bottom: 15px;
-
-        @media (max-width: $screen-xs-max) {
-          margin: 0% 5%;
-        }
-
-        .improve-text {
-          font-size: 12px;
-          padding-bottom: 5px;
-
-          a {
-            color: #FFF;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-
-    .topic {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    a {
-      color: #FFF;
-      outline: 0;
-      text-decoration: none;
-
-      &:hover {
-        color: lighten($color-primary, 15);
-        cursor: pointer;
-      }
-    }
-  }
 }
 
 a {
