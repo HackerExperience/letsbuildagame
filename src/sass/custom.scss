@@ -16,7 +16,9 @@
 
 html {
   &#page-index {
-    @import "custom/pages/index";
+    main {
+      @import "custom/pages/index";
+    }
   }
 
   &#page-the-game {

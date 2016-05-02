@@ -3,11 +3,14 @@ extends includes/layout
 block variables
   - currentPage = "index";
   - currentUrl = pages.index.baseUrl;
+  
+block header
+  include includes/index/header_fixed
 
 block content
   .main: .container
     .row
-      .col-xs-12.col-md-7.col-lg-8: .intro
+      .col-xs-12.col-md-7.col-lg-8: .intro#section-home
         h1 LET'S BUILD A GAME
         .slogan Together. Now. No matter who you are.
         
@@ -23,7 +26,7 @@ block content
         .cta: button.btn.btn-future Learn more
       .img-placeholder.hidden-xs.hidden-sm
 
-  .section-action: .container
+  .section-action#section-takeAction: .container
     h2.section-title Take action
     
     .row.div-actions
@@ -56,7 +59,7 @@ block content
           Above all else, enjoy the ride. Meet new people, make friends and have
           fun. That's what life is all about.
   
-  .section-steps: .container
+  .section-steps#section-theSteps: .container
     h2.section-title The steps
     hr.section-separator
       
@@ -150,7 +153,7 @@ block content
             |  developing and maintaining each software, even if the game has
             | already been released.
 
-  .section-game: .container
+  .section-game#section-theGame: .container
     h2.section-title The game
     hr.section-separator
       
@@ -231,7 +234,7 @@ block content
     .cta
       button.btn.btn-future Read more about Hacker Experience 2
 
-  .section-schedule: .container
+  .section-schedule#section-theSchedule: .container
     h2.section-title The schedule
     hr.section-separator
       
@@ -255,7 +258,7 @@ block content
       a explanation of each phase
       |  on the documentation.
 
-  .section-help: .container
+  .section-help#section-theContribution: .container
     h2.section-title The contribution
     hr.section-separator
     
@@ -389,7 +392,7 @@ block content
           
     .cta: button.btn.btn-future View more examples
   
-  .section-team: .container
+  .section-team#section-theTeam: .container
     h2.section-title The team
     hr.section-separator
     p.section-comment
@@ -410,8 +413,7 @@ block content
         .member-photo: img(src="https://usercontent1.hubstatic.com/5732926_f520.jpg" height="320" width="320")
         .member-desc
           h3 
-            | Charlotte');
-            span.drop-tables  drop table users;--
+            | Charlotte Oliveira
           .member-role Lead Developer
           p Magical girl and Alchemist.
       .col-sm-6.col-md-3: .member
@@ -427,7 +429,7 @@ block content
           .member-role Contributor
           p You are invited to be a part of this journey.
           
-  .section-cta: .container
+  .section-cta#section-letsBuildAGame: .container
     h2.section-title So, let's build a game?
     hr.section-separator
     .row

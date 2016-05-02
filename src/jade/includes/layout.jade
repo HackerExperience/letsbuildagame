@@ -37,10 +37,11 @@ doctype html
         +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Raleway:400,700")
 
   body
-    include header
+    block header
+      include header
 
-    //-main(role="main").container
-    block content
+    main(role="main")
+      block content
 
     include footer
 

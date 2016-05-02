@@ -1,5 +1,6 @@
 body {
   background: $color-primary;
+  position: relative;
 }
 
 .btn.btn-future {
@@ -20,6 +21,17 @@ body {
       1px 1px 0 0 #000);
     border: 1px solid darken(#FFF, 5%);
     color: darken(#FFF, 5%);
+  }
+}
+
+.site-header {
+  a {
+    color: #FFF;
+
+    &:hover {
+      @include single-text-shadow(0, 0, 2px, rgba(#FFF, 0.5));
+      color: #FFF;
+    }
   }
 }
 
