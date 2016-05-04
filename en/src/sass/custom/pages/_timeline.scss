@@ -1,0 +1,20 @@
+body {
+  background: $color-tertiary;
+}
+
+h1 {
+  text-align: center;
+  color: #FFF;
+  text-shadow:
+    1px 1px 0px #333,
+    2px 2px 0px #000;
+}
+
+.timeline-vertical {
+  > .timestamp {
+    @media (min-width: $screen-sm-min) {
+      border: 8px solid $color-tertiary;
+      background-color: $color-tertiary;
+    }
+  }
+}
