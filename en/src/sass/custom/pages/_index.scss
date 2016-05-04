@@ -135,10 +135,6 @@ h3 {
         padding-left: 1.5rem;
       }
     }
-
-    .img-center {
-      margin: 0 auto;
-    }
   }
 }
 
@@ -465,4 +461,8 @@ a {
     color: $color-primary;
     cursor: pointer;
   }
+}
+
+.img-center {
+  margin: 0 auto;
 }
