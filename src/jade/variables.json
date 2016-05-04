@@ -241,5 +241,19 @@
       "tag-soundtrack": "Subscribe to the Soundtrack tag. Listen to the current set of sounds and give feedback."
 
     }
+  },
+  "strings": {
+    "intro": {
+      "name": "Let's build a game",
+      "slogan": "Together. Now. No matter who you are.",
+      "line_1": "Join other contributors and help create the next collaborative game.",
+      "line_2": "You don't have to be a programmer.",
+      "line_3": "Join us and make a difference. Create your very own game.",
+      "btn": "Learn more"
+    },
+    "action": {
+      "first_title": "LEARN TO CODE",
+      "first_desc": "Take the first step on programming. Learn with others <em>while building a game</em>! Receive help and teach what you know."
+    }
   }
 }

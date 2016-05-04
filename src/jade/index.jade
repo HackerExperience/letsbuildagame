@@ -11,17 +11,12 @@ block content
   .main: .container
     .row
       .col-xs-12.col-md-7.col-lg-8: .intro#section-home
-        h1 LET'S BUILD A GAME
-        .slogan Together. Now. No matter who you are.
+        h1= strings.intro.name
+        .slogan= strings.intro.slogan
         
-        p.
-          Join other contributors and help create the next collaborative game.
-        p.
-          You don't have to be a programmer.
-        p
-          | And you 
-          em will
-          |  learn a lot.
+        p= strings.intro.line_1
+        p= strings.intro.line_2
+        p= strings.intro.line_3
         
         .cta: button.btn.btn-future Learn more
       .img-placeholder.hidden-xs.hidden-sm
@@ -32,11 +27,8 @@ block content
     .row.div-actions
       .col-sm-3.col-xs-12: .action
         i.fa.fa-code
-        h3 LEARN TO CODE
-        p
-          | Take the first step on programming. Learn with others 
-          em while building a game
-          | ! Receive help and teach what you know.
+        h3= strings.action.first_title
+        p!= strings.action.first_desc
           
       .col-sm-3.col-xs-12: .action
         i.fa.fa-paint-brush
