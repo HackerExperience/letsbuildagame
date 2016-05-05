@@ -43,7 +43,8 @@ doctype html
     main(role="main")
       block content
 
-    include footer
+    if currentPage != "contribute"
+      include footer
 
     block scripts
       +javascript("assets/js/vendor/jquery.min.js")

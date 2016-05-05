@@ -288,24 +288,24 @@
       "line_1": "Meet <strong>Hacker Experience 2</strong>, a massively multiplayer real time hacking simulatiom <em>built by you</em>!",
       "line_2": "Living in a dystopian world controlled by megacorporations, you play the role of a hacker seeking money and power.",
       "col1_title": "Hack. Exploit. Intercept.",
-      "col1_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col1_desc": "<p>Hack players, corporations, banks and even the NSA. Exploit connections, eavesdrop data packets in real time and get remote desktop access to your target.</p>",
       "col2_title": "Meet a virtual world just like ours",
-      "col2_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col2_desc": "<p>Hacker Experience 2 is based on a virtual reality of our worldwith thousands of simulated entities. They are persistent virtual citizens living around virtual buildings.</p>",
       "col3_title": "Dominate your city",
-      "col3_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col3_desc": "<p>Gather influence over your block, city or country. Claim your territory and guard it against hackers and rival factions.</p>",
       "col4_title": "Work on mind-blowing missions",
-      "col4_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col4_desc": "<p>Execute dirty jobs for the megacorps. Join lonewolf or team missions of data leaks, industrial espionage, sabotage, framing or CTF.</p>",
       "col5_title": "Join a faction",
-      "col5_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col5_desc": "<p>Form alliances with people that share your objectives. Work together and deploy your own team strategy. Engage in exciting faction wars to conquer new territories.</p>",
       "col6_title": "Learn while playing",
-      "col6_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col6_desc": "<p>Learn about computers, networks and operating systems. Get familiar with VPN, encryption and security concepts. You will never trust an insecure connection again.</p>",
       "btn": "Read more about Hacker Experience 2"
     },
     "schedule": {
       "title": "The schedule",
-      "line_1": "A tentative schedule (<a href='#'>estimating software is <em>hard</em></a>) with each step outlined below.",
-      "line_2": "Green dots tell us when the code repository will be made public <sup><a href='#'>*</a></sup>. Red dots are problems we've faced.",
-      "line_3": "You can find a detailed <a href='#'>explanation of each phase</a> on the documentation."
+      "line_1": "A tentative schedule (<a href='https://blog.renatomassaro.com/post/3/human_variables_in_software_development/'>estimating software is <em>hard</em></a>) with each step outlined below.",
+      "line_2": "Green dots tell us when the code repository will be made public<sup><a href='https://docs.hackerexperience.com/lbag/faq/#why-i-cant-find-any-source-of-the-game'>*</a></sup>. Red dots are problems we've faced.",
+      "line_3": "You can find a detailed <a href='https://docs.hackerexperience.com/lbag/how_it_works/workflow/'>explanation of each phase</a> on the documentation."
     },
     "contribution": {
       "title": "The contribution",
@@ -333,8 +333,7 @@
       "col11_title": "Translate the game",
       "col11_desc": "<p>Translate HE2 to your native language. Fix grammar errors and typos you find.</p>",
       "col12_title": "Manage our community",
-      "col12_desc": "<p>Welcome new members, close discussions and tag tasks. We need your help to keep the community organized.</p>",
-      "btn": "View more examples"
+      "col12_desc": "<p>Welcome new members, close discussions and tag tasks. We need your help to keep the community organized.</p>"
     },
     "team": {
       "title": "The team",

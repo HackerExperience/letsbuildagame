@@ -18,7 +18,6 @@ block content
         p= strings.intro.line_2
         p= strings.intro.line_3
         
-        .cta: button.btn.btn-future= strings.intro.btn
       .img-placeholder.hidden-xs.hidden-sm
 
   .section-action#section-takeAction: .container
@@ -142,7 +141,8 @@ block content
             != strings.game.col6_desc
               
     .cta
-      button.btn.btn-future= strings.game.btn
+      a(href="https://hackerexperience.com" target="_blank")
+        button.btn.btn-future= strings.game.btn
 
   .section-schedule#section-theSchedule: .container
     h2.section-title!= strings.schedule.title
@@ -264,8 +264,6 @@ block content
           
         h3!= strings.contribution.col12_title
         != strings.contribution.col12_desc
-        
-    .cta: button.btn.btn-future!= strings.contribution.btn
   
   .section-team#section-theTeam: .container
     h2.section-title= strings.team.title
@@ -307,7 +305,8 @@ block content
         p.section-comment!= strings.lbag.line_1
 
         .div-cta
-          .cta-contrib: button.btn.btn-future= strings.lbag.btn_future
+          .cta-contrib: a(href= pages.contribute.baseUrl)
+            button.btn.btn-future= strings.lbag.btn_future
           .cta-separator: span= strings.lbag.span_sep
           .cta-subscribe
             span!= strings.lbag.span_sub
