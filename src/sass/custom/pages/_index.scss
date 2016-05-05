@@ -55,7 +55,7 @@ h3 {
 
   .img-placeholder {
     @include filter(drop-shadow(2px 2px 3px rgba(#333, 0.45)));
-    background: image-url("game_dev_b.svg") no-repeat;
+    background: image-url("game_dev.svg") no-repeat;
     background-size: cover;
     bottom: -100px;
     height: 670px * 0.65;
@@ -214,10 +214,6 @@ h3 {
       height: auto;
       margin-bottom: 32px;
       width: 100%;
-
-      .st15 {
-        cursor: pointer;
-      }
     }
   }
 }
