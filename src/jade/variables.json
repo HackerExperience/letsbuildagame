@@ -252,6 +252,7 @@
       "btn": "Learn more"
     },
     "action": {
+      "title": "Take action",
       "first_title": "LEARN TO CODE",
       "first_desc": "Take the first step on programming. Learn with others <em>while building a game</em>! Receive help and teach what you know.",
       "second_title": "SHOW YOUR SKIILS",
@@ -264,19 +265,19 @@
     "steps": {
       "main_title": "The steps",
       "main_desc": "This is a high-level overview of the steps required to build the game.",
-      "step1_title": "<strong>Step 1 - Define the foundations</strong>",
+      "step1_title": "<strong>Step 1</strong> - Define the foundations",
       "step1_p1": "<p>Our first step is to define the foundations of the project. Stuff like:</p>",
       "step1_p2": "<ul><li>What is the game about?</li><li>What are the game objectives?</li><li>What directions should the game take?</li><li>How can we keep the community organized?</li></ul>",
       "step1_p3": "<p>Most of this planning already took place. We have a well-defined <em>foundation</em> for the game, but it can become anything with your ideas and feedback.",
-      "step2_title": "<strong>Step 2 - Design the game</strong>",
+      "step2_title": "<strong>Step 2</strong> - Design the game",
       "step2_p1": "<p>The next step is to actually design the game.</p>",
-      "step2_p2": "<p>The gameplay and features that shape the game are designed on this step. They are extensions of the foundations defined previously.",
-      "step2_p3": "This is an endless step. It means we are <em>always</em> designing and improving the game, even if it has already been released.",
-      "step3_title": "<strong>Step 3 - Plan the game architecture</strong>",
+      "step2_p2": "<p>The gameplay and features that shape the game are designed on this step. They are extensions of the foundations defined previously.</p>",
+      "step2_p3": "<p>This is an endless step. It means we are <em>always</em> designing and improving the game, even if it has already been released.</p>",
+      "step3_title": "<strong>Step 3</strong> - Plan the game architecture",
       "step3_p1": "<p>Now that we have a better idea of what game we are building, we can start planning its software. Common questions on this step are:</p>",
       "step3_p2": "<ul><li>What is the underlying server architecture?</li><li>What programming languages will we use?</li><li>What tools will we use?</li><li>How will the user interface look like?</li><li>What platforms will be supported?</li></ul>",
       "step3_p3": "<p>Most of this planning already took place, but we'll take the time to review everything with the community.</p>",
-      "step4_title": "<strong>Step 4 - Develop the game</strong>",
+      "step4_title": "<strong>Step 4</strong> - Develop the game",
       "step4_p1": "<p>Finally, it's time to get our hands dirty.</p>",
       "step4_p2": "<p>On this step, the most challenging of all, it's when we incrementally develop <em>each</em> software that makes up the game.</p>",
       "step4_p3": "<p>It might come as a surprise that our game is made of more than one software.</p>",
@@ -344,7 +345,8 @@
       "charlotte_bio": "<p>Magical girl and Alchemist.<p>",
       "allan_pos": "Backend Developer",
       "allan_bio": "<p>Developer with a passion for Functional Programming and Computation Theory.</p>",
-      "contrib_name": "You",
+      "contrib_name": "You!",
+      "contrib_pos": "Contributor",
       "contrib_bio": "<p>You are invited to be a part of this journey.</p>"
     },
     "lbag": {

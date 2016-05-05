@@ -136,9 +136,6 @@ h3 {
       }
     }
 
-    .img-center {
-      margin: 0 auto;
-    }
   }
 }
 
@@ -371,6 +368,7 @@ h3 {
 
 .section-cta {
   color: #FFF;
+  padding-bottom: 30px;
 
   .div-cta {
     margin-top: 20px;
@@ -465,4 +463,8 @@ a {
     color: $color-primary;
     cursor: pointer;
   }
+}
+
+.img-center {
+  margin: 0 auto;
 }
