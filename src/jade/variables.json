@@ -61,7 +61,7 @@
 
       "tag-python": "Subscribe to the Python tag. Code, tasks, issues and anything related to Python. We use Python on our backend (server) software.",
 
-      "tag-elm": "Subscribe to the Elm tag. Code, tasks, issues and anything related to Elm. We use Elm on our frontend software (client) for Web Browsers and Desktops.",
+      "tag-elm": "Subscribe to the Elm tag. Code, tasks, issues and anything related to Elm. We use Elm on our frontend software (client) for Web Bcolsers and Desktops.",
 
       "tag-fs": "Subscribe to the f# tag. Code, tasks, issues and anything related to F#. We use F# on our frontend software (client) for mobile interfaces.",
 
@@ -97,7 +97,7 @@
 
       "tag-mobile": "Subscribe to the Mobile tag. Code, tasks, issues and anything related to Mobile. Mobile is the interface software for mobile phones (WP, iOS and Android) written in F#.",
 
-      "tag-web": "Subscribe to the Web tag. Code, tasks, issues and anything related to Web. Web is the interface software (client) for web browsers and desktop. It is written in Elm.",
+      "tag-web": "Subscribe to the Web tag. Code, tasks, issues and anything related to Web. Web is the interface software (client) for web bcolsers and desktop. It is written in Elm.",
 
       "tag-terminal": "Subscribe to the Terminal tag. Code, tasks, issues and anything related to Terminal. Terminal is the interface software (client) for *NIX Shell. It is written in Python.",
 
@@ -163,7 +163,7 @@
 
       "tag-gamedesign": "Subscribe to the GameDesign tag. Follow discussions and tasks about Game Design.",
 
-      "tag-heep-gd": "Subscribe to the HEEP-GD tag. HEEPs (Hacker Experience Enhancement Proposal) are the official way to add things to the game. Follow Game Design proposals that were approved or are being reviewed. Discuss, review and vote for or against the HEEP being accepted.",      
+      "tag-heep-gd": "Subscribe to the HEEP-GD tag. HEEPs (Hacker Experience Enhancement Proposal) are the official way to add things to the game. Follow Game Design proposals that were approved or are being reviewed. Discuss, review and vote for or against the HEEP being accepted.",
       "tag-feature": "Subscribe to the Feature tag. It's the best way to find discussions and assets related to specific features.",
 
       "tag-featurerequest": "Subscribe to the FeatureRequest tag. This is the entrypoint for people to suggest new features to the game. Review, discuss and improve feature requests.",
@@ -253,7 +253,115 @@
     },
     "action": {
       "first_title": "LEARN TO CODE",
-      "first_desc": "Take the first step on programming. Learn with others <em>while building a game</em>! Receive help and teach what you know."
+      "first_desc": "Take the first step on programming. Learn with others <em>while building a game</em>! Receive help and teach what you know.",
+      "second_title": "SHOW YOUR SKIILS",
+      "second_desc": "Show off your professional skills and develop new ones. Work on something you love - and improve your resumé.",
+      "third_title": "MAKE A DIFFERENCE",
+      "third_desc": " Take the opportunity to make a difference. Learn, teach, build, improve. Bring fun and knowledge to others.",
+      "fourth_title": "HAVE FUN",
+      "fourth_desc": "Above all else, enjoy the ride. Meet new people, make friends and have fun. That's what life is all about."
+    },
+    "steps": {
+      "main_title": "The steps",
+      "main_desc": "This is a high-level overview of the steps required to build the game.",
+      "step1_title": "<strong>Step 1 - Define the foundations</strong>",
+      "step1_p1": "<p>Our first step is to define the foundations of the project. Stuff like:</p>",
+      "step1_p2": "<ul><li>What is the game about?</li><li>What are the game objectives?</li><li>What directions should the game take?</li><li>How can we keep the community organized?</li></ul>",
+      "step1_p3": "<p>Most of this planning already took place. We have a well-defined <em>foundation</em> for the game, but it can become anything with your ideas and feedback.",
+      "step2_title": "<strong>Step 2 - Design the game</strong>",
+      "step2_p1": "<p>The next step is to actually design the game.</p>",
+      "step2_p2": "<p>The gameplay and features that shape the game are designed on this step. They are extensions of the foundations defined previously.",
+      "step2_p3": "This is an endless step. It means we are <em>always</em> designing and improving the game, even if it has already been released.",
+      "step3_title": "<strong>Step 3 - Plan the game architecture</strong>",
+      "step3_p1": "<p>Now that we have a better idea of what game we are building, we can start planning its software. Common questions on this step are:</p>",
+      "step3_p2": "<ul><li>What is the underlying server architecture?</li><li>What programming languages will we use?</li><li>What tools will we use?</li><li>How will the user interface look like?</li><li>What platforms will be supported?</li></ul>",
+      "step3_p3": "<p>Most of this planning already took place, but we'll take the time to review everything with the community.</p>",
+      "step4_title": "<strong>Step 4 - Develop the game</strong>",
+      "step4_p1": "<p>Finally, it's time to get our hands dirty.</p>",
+      "step4_p2": "<p>On this step, the most challenging of all, it's when we incrementally develop <em>each</em> software that makes up the game.</p>",
+      "step4_p3": "<p>It might come as a surprise that our game is made of more than one software.</p>",
+      "step4_p4": "<p>This is an endless step. It means we are <em>always</em>  developing and maintaining each software, even if the game has already been released.</p>"
+    },
+    "game": {
+      "title": "The game",
+      "line_1": "Meet <strong>Hacker Experience 2</strong>, a massively multiplayer real time hacking simulatiom <em>built by you</em>!",
+      "line_2": "Living in a dystopian world controlled by megacorporations, you play the role of a hacker seeking money and power.",
+      "col1_title": "Hack. Exploit. Intercept.",
+      "col1_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col2_title": "Meet a virtual world just like ours",
+      "col2_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col3_title": "Dominate your city",
+      "col3_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col4_title": "Work on mind-blowing missions",
+      "col4_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col5_title": "Join a faction",
+      "col5_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "col6_title": "Learn while playing",
+      "col6_desc": "<p>This is an endless step. It means we are <em>always</em> developing and maintaining each software, even if the game has already been released.</p>",
+      "btn": "Read more about Hacker Experience 2"
+    },
+    "schedule": {
+      "title": "The schedule",
+      "line_1": "A tentative schedule (<a href='#'>estimating software is <em>hard</em></a>) with each step outlined below.",
+      "line_2": "Green dots tell us when the code repository will be made public <sup><a href='#'>*</a></sup>. Red dots are problems we've faced.",
+      "line_3": "You can find a detailed <a href='#'>explanation of each phase</a> on the documentation."
+    },
+    "contribution": {
+      "title": "The contribution",
+      "line_1": "Here's how <strong>you</strong> can help and become a part of this project.",
+      "col1_title": "Submit patches",
+      "col1_desc": "<p>Grab open tasks or TO-DOs, write code and submit patches for review.</p>",
+      "col2_title": "Review code",
+      "col2_desc": "<p><em>All</em> code submitted is reviewed. Join the review and help spot bugs.</p>",
+      "col3_title": "Write tests",
+      "col3_desc": "<p>Tests are a great way to increase overall system resilience and stability</p>",
+      "col4_title": "Write documentation",
+      "col4_desc": "<p>We can't go anywhere without a thorough documentation.</p>",
+      "col5_title": "Develop the game UI",
+      "col5_desc": "<p>Design an immersive interface for desktop and mobile devices.</p>",
+      "col6_title": "Make art",
+      "col6_desc": "<p>Our team is really bad with design. Help us create nice icons, assets and images.</p>",
+      "col7_title": "Suggest features",
+      "col7_desc": "<p>Got an idea? Have a feature you'd really like to see in the game? Suggest it!</p>",
+      "col8_title": "Design the game",
+      "col8_desc": "<p>Design and improve features. Help balance the game economy and design an entertaining gameplay.</p>",
+      "col9_title": "Spread the word",
+      "col9_desc": "<p>Invite your friends to the project. More contributors means faster development.</p>",
+      "col10_title": "Donate/Preorder",
+      "col10_desc": "<p>All income keeps our team working full time on Hacker Experience 2. It also allows us to hire additional developers.</p>",
+      "col11_title": "Translate the game",
+      "col11_desc": "<p>Translate HE2 to your native language. Fix grammar errors and typos you find.</p>",
+      "col12_title": "Manage our community",
+      "col12_desc": "<p>Welcome new members, close discussions and tag tasks. We need your help to keep the community organized.</p>",
+      "btn": "View more examples"
+    },
+    "team": {
+      "title": "The team",
+      "line_1": "The amazing people behind <em>Let's build a game</em> and <em>Hacker Experience 2</em>.",
+      "renato_pos": "CTO &amp; Developer",
+      "renato_bio": "<p>Renato is a passionate backend developer and systems administrator.</p>",
+      "charlotte_pos": "Lead Developer",
+      "charlotte_bio": "<p>Magical girl and Alchemist.<p>",
+      "allan_pos": "Backend Developer",
+      "allan_bio": "<p>Developer with a passion for Functional Programming and Computation Theory.</p>",
+      "contrib_name": "You",
+      "contrib_bio": "<p>You are invited to be a part of this journey.</p>"
+    },
+    "lbag": {
+      "title": "So, let's build a game?",
+      "line_1": "Develop a game, learn a lot <em>and</em> have fun.",
+      "btn_future": "Start contributing",
+      "span_sep": "or",
+      "span_sub": "Receive important notifications about <em>Let's build a game</em>.",
+      "input_sub": "Enter your email address",
+      "btn_sub": "Subscribe",
+      "frequency": "(about 1 email per month)"
+    },
+    "label": {
+      "dev": "Development task - might require some technical knowledge",
+      "art": "Art task",
+      "anyone": "Anyone can perform this task - no technical knowledge is required.",
+      "student": "Great for students!"
     }
   }
 }
