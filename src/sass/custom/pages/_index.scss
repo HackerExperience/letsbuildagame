@@ -26,7 +26,7 @@ h3 {
 .main .intro {
   color: #FFF;
   font-size: 1.25em;
-  padding: 70px 16px 40px;
+  padding: 70px 16px 60px;
   position: relative;
 
   h1 {
@@ -366,6 +366,10 @@ h3 {
   color: #FFF;
   padding-bottom: 30px;
 
+  .row {
+    padding-top: 10px;
+  }
+
   .div-cta {
     margin-top: 20px;
     padding-bottom: 30px;
@@ -379,7 +383,7 @@ h3 {
           1px 1px 1px 0 rgba(#000, 0.6),
           inset 0 0 16px -3px rgba(darken($color-quaternary, 15%), 0.66));
         background: $color-quaternary;
-        width: 50%;
+        width: 60%;
 
         &:focus,
         &:hover,
@@ -407,7 +411,7 @@ h3 {
         line-height: 18px;
         margin: 5px 0;
         padding: 8px 5px;
-        width: 30%;
+        width: 50%;
       }
 
       span {

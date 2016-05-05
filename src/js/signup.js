@@ -2,7 +2,7 @@ function ajax_call(input_data, callback){
     console.log(input_data);
     $.ajax({
         type: "POST",
-        url: "https://ajax.letsbuildagame.org/",
+        url: "http://localhost/lbag/ajax.php",
         data: input_data,
         success: function(data){
             callback(data);
@@ -450,5 +450,7 @@ $('#form-select-preferences').submit(function(event){
         },
         function(data){}
     );
+
+    animate_next($('#form-select-preferences'), $('#form-done'));
     
 });
