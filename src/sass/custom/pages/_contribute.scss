@@ -1,0 +1,360 @@
+/*form styles*/
+.subscribe-form {
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+.subscribe-form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    
+    /*stacking fieldsets above each other*/
+    position: absolute;
+}
+
+.subscribe-form label {
+  padding: 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/*Hide all except first fieldset*/
+.subscribe-form fieldset:not(:first-of-type) {
+    display: none;
+}
+/*inputs*/
+.subscribe-form input, .subscribe-form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.subscribe-form select {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: montserrat;
+  color: #2C3E50;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+
+  .checkbox-group {
+
+    span {
+      font-weight: normal;
+    }
+
+    input {
+      outline: 0;
+      display: block;
+      width: 10%;
+      font-size: 13px;
+      font-family: montserrat;
+      color: #2C3E50;
+      float: left;
+    }
+
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-family: montserrat;
+    color: #2C3E50;
+
+  }
+
+}
+
+/*buttons*/
+.subscribe-form .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+.subscribe-form .action-button:hover, .subscribe-form .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+.subscribe-form {
+
+    .has-error {
+        border-color: #F00;
+    }
+
+    .has-success {
+        border-color: $color-primary;
+    }
+
+    .helper, 
+    .fs-error {
+        color: #F00;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .input-loading {      
+      font-size: 30px;
+      color: #2C3E50;
+      padding: 7px 5px;
+      margin: 7px 5px;
+    }
+}
+
+#form-verify-email {
+    .input-email-code {
+        
+    }
+}
+
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.no-margin {
+    margin-top: -10px;
+}
+/*progress-bar*/
+#progress-bar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+#progress-bar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 19.2%;
+    float: left;
+    position: relative;
+}
+#progress-bar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+/*progress-bar connectors*/
+#progress-bar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+#progress-bar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progress-bar li.active:before,  #progress-bar li.active:after{
+    background: #27AE60;
+    color: white;
+}
+
+.team-selector {
+
+  .row:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  .team {
+
+    border: 1px black solid;
+    padding: 0px 0 5px 0;
+    background: $color-tertiary;
+    min-width: 163px;
+
+    i {
+      margin-top: 15px;
+      font-size: 40px;
+      color: #FFF;
+    }
+
+    h1 {
+      color: #FFF;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background: lighten($color-primary, 15%);
+      cursor: pointer;
+    }
+  }
+
+  .team-selected {
+    background: $color-primary;
+
+    &:hover {
+      background: darken($color-primary, 5%);
+      cursor: pointer;
+    }
+  }
+}
+
+#form-select-contrib,
+#form-select-tasks {
+  .next {
+    margin-top: 30px;
+  }
+  .disabled {
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    cursor: default;
+    background-color: #CCC;
+  }
+}
+
+
+
+.task-selector {
+
+  h1 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    background-color: #DDD;
+    padding: 5px 0;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 13px;
+    color: #2C3E50;
+    background-color: #F4F4F4;
+    margin-bottom: 10px;
+    padding: 3px 0;
+    margin-top: 30px;
+  }
+
+  .row:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  .task {
+
+    min-width: 163px;
+    min-height: 30px;
+    border: 1px black solid;
+    padding: 3px 0 5px 0;
+    background: lighten($color-tertiary, 10%);
+
+    i {
+      margin-left: 5px;
+      margin-top: 3px;
+      font-size: 16px;
+      color: #FFF;
+    }
+
+    .task-name {
+      margin-top: 2px;
+      float: left;
+      color: #FFF;
+      font-size: 12px;
+    }
+
+    &:hover {
+      background: lighten($color-primary, 15%);
+      cursor: pointer;
+    }
+  }
+
+  .task-selected {
+    background: $color-primary;
+
+    &:hover {
+      background: darken($color-primary, 5%);
+      cursor: pointer;
+    }
+  }
+
+  .category {
+    outline: 0;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 5px 0;
+
+    p {
+      padding: 3px 0;
+      background-color: $color-secondary;
+      border: 1px $color-primary solid;
+      margin-top: 20px;
+    }
+
+    .category-icon {
+      position: absolute;
+      color: #FFF;
+      right: 40px;
+      margin-top: 3px;
+    }
+  }
+
+  .error-helper {
+    color: #F00;
+    font-size: 10px;
+  }
+
+  #tasks-other {
+    input {
+      padding: 5px;
+    }
+
+    p {
+      margin-top: 4px;
+      margin-left: 5px;
+      font-size: 14px;
+    }
+  }
+
+}

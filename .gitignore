@@ -1,16 +1,12 @@
 # Processed assets
-en/dist/
-br/dist/
-en/tmp/
-br/tmp/
+/dist
+/tmp
 
 # Dependencies
-en/node_modules/
-br/node_modules/
+/node_modules
 
 # Sass
-en/.sass-cache
-br/.sass-cache
+.sass-cache
 
 # Sublime
 *.sublime-project

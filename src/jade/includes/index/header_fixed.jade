@@ -1,0 +1,18 @@
+mixin nav-button(url, title)
+  li(class={active: currentUrl == url})&attributes(attributes)
+    a(href= url)= title
+
+header.site-header: nav.navbar.navbar-default.collapsed.navbar-fixed-top: .container
+  .navbar-header
+    button.navbar-toggle.btn(type="button" data-toggle="collapse" data-target="#headerNavbar")
+      i.fa.fa-bars
+  #headerNavbar.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-left
+      +nav-button("#section-home", "Home")
+      +nav-button("#section-theSteps", "The steps")
+      +nav-button("#section-theGame", "The game")
+      +nav-button("#section-theSchedule", "The schedule")
+      +nav-button("#section-theContribution", "The contribution")
+      +nav-button("#section-theTeam", "The team")
+    ul.nav.navbar-nav.navbar-right
+      +nav-button(pages.contribute.baseUrl, "Contribute")

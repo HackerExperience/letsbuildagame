@@ -1,0 +1,330 @@
+extends includes/layout
+
+block variables
+  - currentPage = "index";
+  - currentUrl = pages.index.baseUrl;
+  
+block header
+  include includes/index/header_fixed
+
+block content
+  .main: .container
+    .row
+      .col-xs-12.col-md-7.col-lg-8: .intro#section-home
+        h1= strings.intro.name
+        .slogan= strings.intro.slogan
+        
+        p= strings.intro.line_1
+        p= strings.intro.line_2
+        p= strings.intro.line_3
+        
+        .cta: button.btn.btn-future= strings.intro.btn
+      .img-placeholder.hidden-xs.hidden-sm
+
+  .section-action#section-takeAction: .container
+    h2.section-title= strings.action.title
+    
+    .row.div-actions
+      .col-sm-3.col-xs-12: .action
+        i.fa.fa-code
+        h3= strings.action.first_title
+        p!= strings.action.first_desc
+          
+      .col-sm-3.col-xs-12: .action
+        i.fa.fa-paint-brush
+        h3= strings.action.second_title
+        p= strings.action.second_desc
+          
+      .col-sm-3.col-xs-12: .action
+        i.fa.fa-globe
+        h3= strings.action.third_title
+        p= strings.action.third_desc
+          
+      .col-sm-3.col-xs-12: .action
+        i.fa.fa-smile-o
+        h3= strings.action.fourth_title
+        p= strings.action.fourth_desc
+  
+  .section-steps#section-theSteps: .container
+    h2.section-title= strings.steps.main_title
+    hr.section-separator
+      
+    p.section-comment= strings.steps.main_desc
+      
+    .div-steps
+      .row
+        .col-xs-12.col-sm-6: .step
+          h3!= strings.steps.step1_title
+          
+          != strings.steps.step1_p1
+          != strings.steps.step1_p2
+          != strings.steps.step1_p3
+          
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step1.png").img.img-responsive.img-center
+
+      .row
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step2.png").img.img-responsive.img-center
+        .col-xs-12.col-sm-6: .step
+          h3!= strings.steps.step2_title
+
+          != strings.steps.step2_p1
+          != strings.steps.step2_p2
+          != strings.steps.step2_p3
+
+      .row
+        .col-xs-12.col-sm-6: .step
+          h3!= strings.steps.step3_title
+
+          != strings.steps.step3_p1
+          != strings.steps.step3_p2
+          != strings.steps.step3_p3
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step3.png").img.img-responsive.img-center
+
+      .row
+        .col-sm-6.hidden-xs
+          img(src="/assets/img/step4.png").img.img-responsive.img-center
+        .col-xs-12.col-sm-6: .step
+          h3!= strings.steps.step4_title
+
+          != strings.steps.step4_p1
+          != strings.steps.step4_p2
+          != strings.steps.step4_p3
+          != strings.steps.step4_p4
+
+  .section-game#section-theGame: .container
+    h2.section-title!= strings.game.title
+    hr.section-separator
+      
+    p.section-comment!= strings.game.line_1
+    p.section-comment!= strings.game.line_2 
+      
+    .div-game
+      .row
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-terminal
+          .col-xs-10.feature-content
+            h3!= strings.game.col1_title
+            != strings.game.col1_desc
+              
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-street-view
+          .col-xs-10.feature-content
+            h3!= strings.game.col2_title
+            != strings.game.col2_desc
+              
+      .row
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-map-marker
+          .col-xs-10.feature-content
+            h3!= strings.game.col3_title
+            != strings.game.col3_desc
+              
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-briefcase
+          .col-xs-10.feature-content
+            h3!= strings.game.col4_title
+            != strings.game.col4_desc
+              
+      .row
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-group
+          .col-xs-10.feature-content
+            h3!= strings.game.col5_title
+            != strings.game.col5_desc
+              
+        .col-xs-12.col-sm-6: .feature: .row
+          .col-xs-2.feature-icon: i.fa.fa-graduation-cap
+          .col-xs-10.feature-content
+            h3!= strings.game.col6_title
+            != strings.game.col6_desc
+              
+    .cta
+      button.btn.btn-future= strings.game.btn
+
+  .section-schedule#section-theSchedule: .container
+    h2.section-title!= strings.schedule.title
+    hr.section-separator
+      
+    p.section-comment!= strings.schedule.line_1
+    p.section-comment!= strings.schedule.line_2
+      
+    //- TODO: Inline SVG to allow manipulation
+    .timeline-graph 
+      include includes/index/timeline.svg
+
+    p.section-comment!= strings.schedule.line_3
+
+  .section-help#section-theContribution: .container
+    h2.section-title!= strings.contribution.title
+    hr.section-separator
+    
+    p.section-comment!= strings.contribution.line_1
+
+    .row
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-code-fork
+        .labels
+          +label-dev
+            
+        h3!= strings.contribution.col1_title
+        != strings.contribution.col1_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-search
+        .labels
+          +label-dev
+          +label-student
+          
+        h3!= strings.contribution.col2_title
+        != strings.contribution.col2_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-bullseye
+        .labels
+          +label-dev
+          +label-student
+          
+        h3!= strings.contribution.col3_title
+        != strings.contribution.col3_desc
+            
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-book
+        .labels
+          +label-dev
+          +label-student
+          
+        h3!= strings.contribution.col4_title
+        != strings.contribution.col4_desc
+          
+    .row
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-object-group
+        .labels
+          +label-dev
+          +label-art
+          
+        h3!= strings.contribution.col5_title
+        != strings.contribution.col5_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-paint-brush
+        .labels
+          +label-art
+          
+        h3!= strings.contribution.col6_title
+        != strings.contribution.col6_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-lightbulb-o
+        .labels
+          +label-anyone
+          
+        h3!= strings.contribution.col7_title
+        != strings.contribution.col7_desc
+        
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-cogs
+        .labels
+          +label-student
+          
+        h3!= strings.contribution.col8_title
+        != strings.contribution.col8_desc
+            
+    .row
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-bullhorn
+        .labels
+          +label-anyone
+          
+        h3!= strings.contribution.col9_title
+        != strings.contribution.col9_desc
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-usd
+        .labels
+          +label-anyone
+          
+        h3!= strings.contribution.col10_title
+        != strings.contribution.col10_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-language
+        .labels
+          +label-anyone
+          
+        h3!= strings.contribution.col11_title
+        != strings.contribution.col11_desc
+          
+      .col-sm-3.col-xs-12: .help
+        i.fa.fa-group
+        .labels
+          +label-anyone
+          
+        h3!= strings.contribution.col12_title
+        != strings.contribution.col12_desc
+        
+    .cta: button.btn.btn-future!= strings.contribution.btn
+  
+  .section-team#section-theTeam: .container
+    h2.section-title= strings.team.title
+    hr.section-separator
+    p.section-comment!= strings.team.line_1
+
+    .row
+      .col-sm-6.col-md-3: .member
+        .member-photo: img(src="https://cdn.hackerexperience.com/team/renato.jpg" height="320" width="320")
+        .member-desc
+          h3 Renato Massaro
+          .member-role!=strings.team.renato_pos
+          !=strings.team.renato_bio
+      .col-sm-6.col-md-3: .member
+        .member-photo: img(src="https://cdn.hackerexperience.com/team/charlotte.jpg" height="320" width="320")
+        .member-desc
+          h3 
+            | Charlotte Oliveira
+          .member-role= strings.team.charlotte_pos
+          != strings.team.charlotte_bio
+      .col-sm-6.col-md-3: .member
+        .member-photo: img(src="https://cdn.hackerexperience.com/team/allan.jpg" height="320" width="320")
+        .member-desc
+          h3 Allan Jorge
+          .member-role= strings.team.allan_pos
+          != strings.team.allan_bio
+      .col-sm-6.col-md-3: .member
+        .member-photo: .circle: i.fa.fa-question
+        .member-desc
+          h3= strings.team.contrib_name
+          .member-role= strings.team.contrib_pos
+          != strings.team.contrib_bio
+          
+  .section-cta#section-letsBuildAGame: .container
+    h2.section-title= strings.lbag.title
+    hr.section-separator
+    .row
+      .col-xs-12.col-sm-6
+        p.section-comment!= strings.lbag.line_1
+
+        .div-cta
+          .cta-contrib: button.btn.btn-future= strings.lbag.btn_future
+          .cta-separator: span= strings.lbag.span_sep
+          .cta-subscribe
+            span!= strings.lbag.span_sub
+            input(type="text" placeholder= strings.lbag.input_sub)
+            button.btn.btn-future.subscribe-button= strings.lbag.btn_sub
+            span.frequency= strings.lbag.frequency
+      .col-xs-12.col-sm-6
+        img(src="/assets/img/teamwork.png").img.img-responsive.img-center
+
+mixin label-dev
+  span(title= strings.label.dev).label.label-dev: i.fa.fa-code
+
+mixin label-art
+  span(title= strings.label.art).label.label-art: i.fa.fa-paint-brush  
+
+mixin label-anyone
+  span(title= strings.label.anyone).label.label-anyone: i.fa.fa-check
+
+mixin label-student
+  span(title= strings.label.student).label.label-student: i.fa.fa-graduation-cap

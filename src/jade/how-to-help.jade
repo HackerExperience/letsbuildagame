@@ -1,0 +1,47 @@
+extends includes/layout
+
+block variables
+  - currentPage = "how-to-help";
+  - currentUrl = pages.howToHelp.baseUrl;
+
+block content
+  .container
+    .row
+      .col-xs-12
+        p.definition.
+          I'm a...
+        #hth-role
+          .row
+            .col-xs-3.role-nav-col
+              .role-nav
+                ul
+                  li: span Developer
+                  li.active: span Designer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+                  li: span Developer
+            .col-xs-9.role-desc-col
+              .role-desc
+                .role-desc-content
+                  .col-xs-8
+                    h1 Develop with us!
+                    p.
+                      Lalala
+                    ul
+                      li Fix bugs
+                      li Be awesome
+                  .col-xs-4
+                    p.
+                      tchau
+

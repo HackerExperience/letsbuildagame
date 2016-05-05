@@ -1,0 +1,179 @@
+// Extends bootstrap base stylesheet to provide vertical and horizontal
+// timeline components
+
+.timeline-vertical {
+  width: 100%;
+  position: relative;
+  padding: 0px;
+  list-style: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: $timeline-vertical-icon-size/2;
+    width: $timeline-vertical-line-width;
+    background-color: $timeline-vertical-line-color;
+    margin-left: -($timeline-vertical-line-width/2);
+    z-index: -1;
+  }
+
+  & > .timestamp {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+
+    .text {
+      display: inline-block;
+      color: #FFF;
+      font-size: 1.2em;
+      background-color: $color-contrast;
+      padding: 8px 16px;
+      @include text-shadow(#333 1px 1px 0);
+      @include border-radius(6px);
+      @include box-shadow(
+        0px 0px 0px 3px #FFF,
+        1px 1px 1px 3px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 2px 1px rgba(0, 0, 0, 0.15),
+        0px 0px 4px 2px rgba(0, 0, 0, 0.1));
+    }
+
+    @media (min-width: $screen-sm-min) {
+      border: 8px solid #FFF;
+      background-color: #FFF;
+    }
+  }
+
+  & > li.content {
+    position: relative;
+    margin: 20px 0px;
+
+    &::after, &::before {
+      display: table;
+      content: "";
+    }
+
+    &::after {
+      clear: both;
+    }
+
+    & > .icon {
+      position: absolute;
+      top: $timeline-vertical-icon-top;
+      font-size: 1.5em;
+      color: #FFF;
+      width: $timeline-vertical-icon-size;
+      height: $timeline-vertical-icon-size;
+      line-height: $timeline-vertical-icon-size;
+      text-align: center;
+      right: 0;
+      background-color: #999;
+      z-index: 100;
+      text-shadow: 1px 1px 1px #666;
+      @include border-radius(50%);
+      @include box-shadow(
+        0px 0px 0px 3px #FFF,
+        1px 1px 1px 3px rgba(0, 0, 0, 0.25),
+        inset 2px 2px 2px 1px rgba(0, 0, 0, 0.15),
+        0px 0px 4px 2px rgba(0, 0, 0, 0.1));
+
+      &.primary {
+        background-color: $brand-primary;
+      }
+
+      &.success {
+        background-color: $brand-success;
+      }
+
+      &.info {
+        background-color: $brand-info;
+      }
+
+      &.warning {
+        background-color: $brand-warning;
+      }
+
+      &.danger {
+        background-color: $brand-danger;
+      }
+    }
+
+    .content-panel {
+      float: left;
+      min-height:
+        ($timeline-vertical-icon-size/2 + $timeline-vertical-icon-top - $timeline-vertical-arrow-size + 1)
+        + (($timeline-vertical-arrow-size + 1) * 2);
+      width: 85%;
+      position: relative;
+      background-color: $timeline-vertical-panel-color;
+      border: 1px solid $timeline-vertical-panel-border-color;
+      padding: 15px;
+      @include border-radius(2px);
+      @include single-box-shadow(0px, 0px, 6px, 1px, $timeline-vertical-panel-shadow-color);
+
+      // Arrow
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+      }
+
+      &::before {
+        right: -($timeline-vertical-arrow-size + 1);
+        top: $timeline-vertical-icon-size/2 + $timeline-vertical-icon-top - $timeline-vertical-arrow-size;
+        border-top: $timeline-vertical-arrow-size + 1 solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: $timeline-vertical-arrow-size + 1 solid transparent;
+        border-left: $timeline-vertical-arrow-size + 1 solid $timeline-vertical-panel-border-color;
+      }
+
+      &::after {
+        top: $timeline-vertical-icon-size/2 + $timeline-vertical-icon-top - $timeline-vertical-arrow-size + 1;
+        right: -($timeline-vertical-arrow-size);
+        border-top: $timeline-vertical-arrow-size solid transparent;
+        border-right: 0px solid transparent;
+        border-bottom: $timeline-vertical-arrow-size solid transparent;
+        border-left: $timeline-vertical-arrow-size solid $timeline-vertical-panel-color;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    &::before {
+      left: 50%;
+      right: unset;
+    }
+
+    & > li.content {
+      & > .icon {
+        left: 50%;
+        right: unset;
+        margin-left: -($timeline-vertical-icon-size/2);
+      }
+
+      .content-panel {
+        margin-right: 0px;
+        width: 45%;
+      }
+
+      &:nth-of-type(even) .content-panel {
+        float: right;
+
+        &::before {
+          left: -($timeline-vertical-arrow-size + 1);
+          right: unset;
+          border-right: $timeline-vertical-arrow-size + 1 solid $timeline-vertical-panel-border-color;
+          border-left: 0px solid transparent;
+        }
+
+        &::after {
+          left: -($timeline-vertical-arrow-size);
+          right: unset;
+          border-right: $timeline-vertical-arrow-size solid $timeline-vertical-panel-color;
+          border-left: 0px solid transparent;
+        }
+      }
+    }
+  }
+}

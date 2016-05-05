@@ -1,0 +1,29 @@
+mixin meta-keywords(keywords)
+  if keywords
+    meta(name="keywords" content= keywords.join(","))
+
+mixin meta-description(description)
+  if description && description.length() > 0
+    meta(name="description" content= description)
+
+mixin meta-open_graph(title, description, url, image)
+  if title
+    meta(property="og:title" content= title)
+  meta(property="og:type" content="website")
+  if description
+    meta(property="og:description" content= description)
+  if url
+    meta(property="og:url" content= url)
+  if image
+    meta(property="og:image" content= image)
+  if block
+    block
+
+mixin stylesheet(href, media)
+  if media
+    link(rel="stylesheet" type="text/css" media= media href= href)&attributes(attributes)
+  else
+    link(rel="stylesheet" type="text/css" media="all" href= href)&attributes(attributes)
+
+mixin javascript(src)
+  script(type="text/javascript" src= src)&attributes(attributes)

@@ -1,0 +1,74 @@
+body {
+  background: $color-primary;
+}
+
+#hth-role {
+
+  margin-top: 20px;
+
+  .role-nav {
+    background: #FF0;
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+      border-top: 1px black solid;
+
+      .active {
+        border-right: 1px #FF0 solid !important;
+      }
+
+      li {
+        padding: 5px 0;
+        border-bottom: 1px black solid;
+        border-left: 1px black solid;
+        border-right: 1px black solid;
+        cursor: pointer;
+
+        &:hover {
+          background: #F00;
+        }
+
+        span {
+          margin-left: 20px;
+        }
+
+      }
+    }
+  }
+  .role-desc {
+    min-height: 600px;
+    background: #FF0;
+    border-top: 1px black solid;
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
+    //margin-left: -1px; //prevent double border
+
+    .role-desc-content {
+      margin: 15px 10px;
+      min-height: auto;
+
+      h1 {
+        margin: 0 0 10px 0;
+        font-size: 28px;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding: 0;
+      }
+    }
+  }
+
+  .role-desc-col, .role-nav-col {
+    padding: 0 !important;
+    margin: 0;
+  }
+}
+
+.definition {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 15px;
+}
