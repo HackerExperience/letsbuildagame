@@ -101,7 +101,7 @@ module.exports = (grunt) ->
           pretty: true
           data: (dest, src) ->
             (data = (env) ->
-              conf = grunt.file.readJSON "src/jade/variables.json"
+              conf = grunt.file.readJSON "src/jade/variables-" + (grunt.option("lang") || "en") + ".json"
               conf.env = env
               conf) "dev"
         files: x  = [
