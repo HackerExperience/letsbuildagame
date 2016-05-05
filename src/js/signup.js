@@ -450,5 +450,7 @@ $('#form-select-preferences').submit(function(event){
         },
         function(data){}
     );
+
+    animate_next($('#form-select-preferences'), $('#form-done'));
     
 });

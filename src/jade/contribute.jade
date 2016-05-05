@@ -375,6 +375,29 @@ block content
             input(type="submit" name="submit" value="Finish setup").next.action-button
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
+
+        form(style="display: none;")#form-done.subscribe-form
+
+          ul#progress-bar
+            li.active Account setup
+            li.active Verify email
+            li.active Select team
+            li.active Select tasks
+            li.active Preferences
+
+          fieldset
+            h2.fs-title Welcome aboard!
+            h3.fs-subtitle Thank you for your interest on being part of this journey!
+            h3.fs-subtitle.no-margin Soon we will contact you with a description of how to help on each of the actions you've selected.
+            h3.fs-subtitle.no-margin We will also send relevant discussions related to your tasks, according to your notification preferences.
+
+            a(href="https://dev.hackerexperience.com")
+              button.next.action-button.action-button-big Go to Development Center
+            a(href="https://hackerexperience.com")
+              button.next.action-button.action-button-big Go to Hacker Experience
+            a(href="https://letsbuildagame.org")
+              button.next.action-button Go back
+
 mixin tooltip-span(text)
   span(data-hint= text).hint--large.tooltip-span
     if block
