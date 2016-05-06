@@ -303,7 +303,7 @@
     },
     "schedule": {
       "title": "The schedule",
-      "line_1": "A tentative schedule (<a href='https://blog.renatomassaro.com/post/3/human_variables_in_software_development/'>estimating software is <em>hard</em></a>) with each step outlined below.",
+      "line_1": "A tentative schedule (<a href='https://blog.renatomassaro.com/human-variables'>estimating software is hard</a>) with each step outlined below.",
       "line_2": "Green dots tell us when the code repository will be made public<sup><a href='https://docs.hackerexperience.com/lbag/faq/#why-i-cant-find-any-source-of-the-game'>*</a></sup>. Red dots are problems we've faced.",
       "line_3": "You can find a detailed <a href='https://docs.hackerexperience.com/lbag/how_it_works/workflow/'>explanation of each phase</a> on the documentation."
     },
