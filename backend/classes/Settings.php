@@ -154,7 +154,6 @@ class Settings {
         try {
             $sql_reg->execute(array(':user_id' => $this->getUserId(), ':setting_value' => $setting_value));
         } catch (PDOException $e) {
-            var_dump($e);
             error_log($e);
             return FALSE;
         }
@@ -190,11 +189,7 @@ function upsert_setting($setting_name, $setting_value) {
         return Array(FALSE, 'SYSTEM_ERROR');
     }
     
-    if (!isset($setting_name) || !isset($setting_value)) {
-        return Array(FALSE, 'SYSTEM_ERROR');
-    }   
-    
-    $settings = new Settings();
+    $settings = new Settings($session->getUserId());
     return $settings->updateEntry($setting_name, $setting_value);
     
 }

@@ -349,7 +349,7 @@ block content
                 select(name="email-frequency" autocomplete="off").form-control.email-frequency
                   option(value="0")!= strings.contribute.notification.never
                   option(value="1x1")!= strings.contribute.notification.once_day
-                  option(value="2x7" selected="selected")=! strings.contribute.notification.twice_week
+                  option(value="2x7" selected="selected")!= strings.contribute.notification.twice_week
                   option(value="1x7")!= strings.contribute.notification.once_week
                   option(value="2x30")!= strings.contribute.notification.twice_month
                   option(value="1x30")!= strings.contribute.notification.once_month

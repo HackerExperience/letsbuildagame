@@ -1,7 +1,7 @@
 function ajax_call(input_data, callback){
     $.ajax({
         type: "POST",
-        url: "https://letsbuildagame.org/ajax",
+        url: "https://ajax.letsbuildagame.org",
         data: input_data,
         success: function(data){
             callback(data);
