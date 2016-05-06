@@ -1,5 +1,4 @@
 function ajax_call(input_data, callback){
-    console.log(input_data);
     $.ajax({
         type: "POST",
         url: "http://localhost/lbag/ajax.php",
