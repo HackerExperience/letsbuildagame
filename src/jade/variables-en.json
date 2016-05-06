@@ -499,6 +499,27 @@
         "step4_starts": "Tell me when Step 4 (Development) starts",
         "game_released": "Tell me when the game gets released"
       }
+    },
+    "header": {
+      "home": "Home",
+      "steps": "The steps",
+      "game": "The game",
+      "schedule": "The schedule",
+      "contribution": "The contribution",
+      "team": "The team",
+      "contribute": "Contribute"
+    },
+    "footer": {
+      "lbag": "LET'S BUILD A GAME",
+      "dev_center": "Development Center",
+      "rules": "Rules",
+      "resources": "Resources",
+      "faq": "FAQ",
+      "website": "Official website",
+      "specs": "Specifications",
+      "fund": "Fundraising",
+      "blog": "Blog",
+      "contact": "CONTACT US"
     }
   }
 }

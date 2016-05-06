@@ -8,11 +8,11 @@ header.site-header: nav.navbar.navbar-default.collapsed.navbar-fixed-top: .conta
       i.fa.fa-bars
   #headerNavbar.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-left
-      +nav-button("#section-home", "Home")
-      +nav-button("#section-theSteps", "The steps")
-      +nav-button("#section-theGame", "The game")
-      +nav-button("#section-theSchedule", "The schedule")
-      +nav-button("#section-theContribution", "The contribution")
-      +nav-button("#section-theTeam", "The team")
+      +nav-button("#section-home", strings.header.home)
+      +nav-button("#section-theSteps", strings.header.steps)
+      +nav-button("#section-theGame", strings.header.game)
+      +nav-button("#section-theSchedule", strings.header.schedule)
+      +nav-button("#section-theContribution", strings.header.contribution)
+      +nav-button("#section-theTeam", strings.header.team)
     ul.nav.navbar-nav.navbar-right
-      +nav-button(pages.contribute.baseUrl, "Contribute")
+      +nav-button(pages.contribute.baseUrl, strings.header.contribute)

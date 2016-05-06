@@ -316,7 +316,7 @@
       "col5_desc": "<p>Essa é uma etapa sem fim. Significando que nós estamos<em>sempre</em> desenvolvendo e dando manutenção para cada software, mesmo se o jogo já tenha sido lançado.</p>",
       "col6_title": "Aprenda enquanto joga",
       "col6_desc": "<p>Essa é uma etapa sem fim. Significando que nós estamos<em>sempre</em> desenvolvendo e dando manutenção para cada software, mesmo se o jogo já tenha sido lançado.</p>",
-      "btn": "Read more about Hacker Experience 2"
+      "btn": "Leia mais sobre Hacker Experience 2"
     },
     "schedule": {
       "title": "O cronograma",
@@ -499,6 +499,26 @@
         "updates": "Envie-me notícias <em>importantes</em> sobre o projeto",
         "step4_starts": "Avise-me quando a Etapa 4 (Desenvolvimento) começar",
         "game_released": "Avise-me quando o jogo for lançado"
+      },
+      "header": {
+        "home": "Início",
+        "steps": "Os passos",
+        "game": "O jogo",
+        "schedule": "O cronograma",
+        "contribution": "A contribuição",
+        "team": "O time",
+        "contribute": "Contribua"
+      },
+      "footer": {
+        "dev_center": "<a href=\"https://dev.hackerexperience.com\">Centro de Desenvolvimento</a>",
+        "rules": "<a href=\"https://docs.hackerexperience.com/lbag/\">Regras</a>",
+        "resources": "<a href=\"https://docs.hackerexperience.com/lbag/resources/\">Recursos</a>",
+        "faq": "<a href=\"https://docs.hackerexperience.com/lbag/faq/\">FAQ</a>",
+        "website": "<a href=\"https://hackerexperience.com\">Website Oficial</a>",
+        "specs": "<a href=\"https://docs.hackerexperience.com/specs\">Especificações</a>",
+        "fund": "<a href=\"https://igg.me/at/hacker-experience\">Financiamento</a>",
+        "blog": "<a href=\"https://leaks.hackerexperience.com\">Blog</a>",
+        "contact": "CONTATE-NOS"
       }
     }
   }
