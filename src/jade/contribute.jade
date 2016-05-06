@@ -8,6 +8,11 @@ append scripts
   include includes/meta-tags
   +javascript("https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
 
+block metatags
+  include includes/meta-tags
+  +meta-open_graph(pages.contribute.og.title, pages.contribute.og.description, baseUrl + pages.contribute.baseUrl, "/assets/img/game_dev.svg")
+
+
 block content
   .container.section-subscribe
     .row

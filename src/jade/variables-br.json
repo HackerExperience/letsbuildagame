@@ -1,20 +1,37 @@
 {
+  "baseUrl": "https://vamosfazerumjogo.com.br",
   "pages": {
     "index": {
       "title": "Let's Build A Game",
-      "baseUrl": "/"
+      "baseUrl": "/",
+      "og": {
+        "title": "",
+        "description": ""
+      }
     },
     "timeline": {
       "title": "Let's Build A Game",
-      "baseUrl": "/timeline.html"
+      "baseUrl": "/timeline.html",
+      "og": {
+        "title": "",
+        "description": ""
+      }
     },
     "howToHelp": {
       "title": "Let's Build A Game",
-      "baseUrl": "/how-to-help.html"
+      "baseUrl": "/how-to-help.html",
+      "og": {
+        "title": "",
+        "description": ""
+      }
     },
     "contribute": {
       "title": "Let's Build A Game",
-      "baseUrl": "/contribute.html"
+      "baseUrl": "/contribute.html",
+      "og": {
+        "title": "",
+        "description": ""
+      }
     }
   },
   "tooltips": {

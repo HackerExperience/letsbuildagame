@@ -4,6 +4,10 @@ block variables
   - currentPage = "how-to-help";
   - currentUrl = pages.howToHelp.baseUrl;
 
+block metatags
+  include includes/meta-tags
+  +meta-open_graph(pages.howToHelp.og.title, pages.howToHelp.og.description, baseUrl + pages.howToHelp.baseUrl, "/assets/img/game_dev.svg")
+
 block content
   .container
     .row
@@ -44,4 +48,3 @@ block content
                   .col-xs-4
                     p.
                       tchau
-

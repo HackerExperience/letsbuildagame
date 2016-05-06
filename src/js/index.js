@@ -4,7 +4,6 @@
   });
 
   var do_process_email = function(data, form) {
-      console.log(data)
       if (data.status === true) {
         var msg = document.createElement("span");
         msg.appendChild(

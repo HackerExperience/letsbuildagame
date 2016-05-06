@@ -1,20 +1,37 @@
 {
+  "baseUrl": "https://letsbuildagame.org",
   "pages": {
     "index": {
       "title": "Let's Build A Game",
-      "baseUrl": "/"
+      "baseUrl": "/",
+      "og": {
+        "title": "Let's Build A Game",
+        "description": ""
+      }
     },
     "timeline": {
       "title": "Let's Build A Game",
-      "baseUrl": "/timeline.html"
+      "baseUrl": "/timeline.html",
+      "og": {
+        "title": "",
+        "description": ""
+      }
     },
     "howToHelp": {
       "title": "Let's Build A Game",
-      "baseUrl": "/how-to-help.html"
+      "baseUrl": "/how-to-help.html",
+      "og": {
+        "title": "Help us build a game",
+        "description": ""
+      }
     },
     "contribute": {
       "title": "Let's Build A Game",
-      "baseUrl": "/contribute"
+      "baseUrl": "/contribute",
+      "og": {
+        "title": "Contribute to building a game",
+        "description": ""
+      }
     }
   },
   "tooltips": {
