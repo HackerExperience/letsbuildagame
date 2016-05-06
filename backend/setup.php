@@ -11,7 +11,8 @@ require_once 'classes/Project.php';
 $all_teams = all_teams();
 
 foreach ($all_teams as $name => $team) {
-    $team->getTeam()->add();
+    $teamobj = new Team($team);
+    $teamobj->getTeam()->add();
 }
 
 // -----------------------------------------------------------------------------
@@ -22,7 +23,8 @@ $all_tasks = all_tasks();
 
 foreach ($all_tasks as $name => $task_group) {
     foreach ($task_group as $task) {
-        $task->getTask()->add();
+        $taskobj = new Task($task);
+        $taskobj->getTask()->add();
     }
 }
 

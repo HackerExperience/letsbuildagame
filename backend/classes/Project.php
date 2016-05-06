@@ -30,7 +30,7 @@ class Project {
     }
 
     public function add() {
-        $sql_query = "INSERT INTO projects(name) VALUES (?, ?, ?) "
+        $sql_query = "INSERT INTO projects(name) VALUES (?) "
                 . "ON CONFLICT DO NOTHING";
         $sql_reg = $this->_dbo->prepare($sql_query);
         $sql_reg->execute(array($this->getName()));
