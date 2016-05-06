@@ -309,10 +309,11 @@ block content
             button.btn.btn-future= strings.lbag.btn_future
           .cta-separator: span= strings.lbag.span_sep
           .cta-subscribe
-            span!= strings.lbag.span_sub
-            input(type="text" placeholder= strings.lbag.input_sub)
-            button.btn.btn-future.subscribe-button= strings.lbag.btn_sub
-            span.frequency= strings.lbag.frequency
+            form(action="#" method="POST").form-waiting-list
+              span!= strings.lbag.span_sub
+              input(type="text" name="email" placeholder= strings.lbag.input_sub)
+              button.btn.btn-future.subscribe-button= strings.lbag.btn_sub
+              span.frequency= strings.lbag.frequency
       .col-xs-12.col-sm-6
         img(src="/assets/img/teamwork.png").img.img-responsive.img-center 
 

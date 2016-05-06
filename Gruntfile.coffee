@@ -100,10 +100,9 @@ module.exports = (grunt) ->
         options:
           pretty: true
           data: (dest, src) ->
-            (data = (env) ->
-              conf = grunt.file.readJSON "src/jade/variables-" + (grunt.option("lang") || "en") + ".json"
-              conf.env = env
-              conf) "dev"
+            conf = grunt.file.readJSON "src/jade/variables-" + (grunt.option("lang") || "en") + ".json"
+            conf.env = "dev"
+            conf
         files: x  = [
           expand: true
           cwd: "src/jade"
@@ -112,11 +111,12 @@ module.exports = (grunt) ->
           ext: ".html"]
       prod:
         options:
-          options:
-            pretty: false
-            compileDebug: false
-            data: (dest, src) ->
-              data "prod"
+          pretty: false
+          compileDebug: false
+          data: (dest, src) ->
+            conf = grunt.file.readJSON "src/jade/variables-" + (grunt.option("lang") || "en") + ".json"
+            conf.env = "prod"
+            conf
         files: x
     parallel:
       dev:
