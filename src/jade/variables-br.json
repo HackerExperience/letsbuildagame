@@ -2,7 +2,7 @@
   "baseUrl": "https://vamosfazerumjogo.com.br",
   "pages": {
     "index": {
-      "title": "Let's Build A Game",
+      "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/",
       "og": {
         "title": "",
@@ -10,7 +10,7 @@
       }
     },
     "timeline": {
-      "title": "Let's Build A Game",
+      "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/timeline.html",
       "og": {
         "title": "",
@@ -18,7 +18,7 @@
       }
     },
     "howToHelp": {
-      "title": "Let's Build A Game",
+      "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/how-to-help.html",
       "og": {
         "title": "",
@@ -26,7 +26,7 @@
       }
     },
     "contribute": {
-      "title": "Let's Build A Game",
+      "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/contribute.html",
       "og": {
         "title": "",
@@ -40,107 +40,107 @@
     },
 
     "teams": {
-      "dev": "Write patches, review code and write unit tests. Follow and discuss tasks tagged under any technology you love.",
+      "dev": "Escreva correções, revise código e escreva testes unitários. Siga e discuta tarefas classificadas sob qualquer tecnologia que você ame.",
 
-      "art": "Design game interfaces for desktop or mobile. Draw assets, enhance our icons and create the ultimate gaming experience.",
+      "art": "Projete as interfaces desktop e mobile do jogo. Desenhe assets, aprimore nossos ícones e crie a melhor experiência de jogo possível.",
 
-      "mgt": "Manage the community. Keep everything organized, tag tasks, guide new users and help us keep focused on what is important.",
+      "mgt": "Gerencie a comunidade. Mantenha tudo organizado, \"tagueie\" tarefas, guie novos usuários e ajude-nos a nos manter focado no que importa.",
 
-      "gd": "Design features, balance the game and develop the storyline. Don't be intimitated, amateur and wannabe game designers are more than welcome!",
+      "gd": "Projete funcionalidades, balanceie o jogo e desenvolva o enredo. Não se intimide, amadores e game designer wannabe são mais do que bem vindos!",
 
-      "translation": "Translate the game to your native language. Spotted any grammar error or typos? Fix them!",
+      "translation": "Traduza o jogo para a sua lingua nativa. Encontrou algum erro gramatical ou de pontuaçao? Corrija-os!",
 
-      "patron": "Share the project to your followers on social media. More contributors means faster development and a higher quality game.",
+      "patron": "Compartilhe o projeto com o seus seguidores nas redes sociais. Mais contribuidores significa um desenvolvimento mais rápido e um jogo de maior qualidade.",
 
-      "student": "Learn to code, or discover a new technology. Share and consolidate your knowledge.",
+      "student": "Aprenda a programar ou descubra uma nova tecnologia. Compartilhe e consolide seu conhecimento.",
 
-      "gamer": "Of course you want to play the game YOU are creating, right? Test brand new features, spot bugs or simply have fun!"
+      "gamer": "Claro que você quer jogar o jogo que VOCÊ está criando, certo? Teste novas funcionalidades, encontre erros ou simpesmente se divirta!"
     },
 
     "tasks": {
-      "submit-patches": "Grab open tasks or TODOs, write code and submit a patch for review. We will usually let people know what needs to be done, write a thorough requirements and triage the patch in easy / medium / hard to implement.",
+      "submit-patches": "Pegue tarefas em aberto or TODOs, escreva código e envie uma correção para análise, escreva requerimentos detalhados e classifique tarefas em fácil / médio / difícil de implementar. Nós iremos, eventualmente, avisar ao pessoal o que precisa ser feito.",
 
-      "review-code": "To ensure a high-quality game, all code written must go through a review process. Share your expertise and help us spot bugs by analyzing the review queue.",
+      "review-code": "Para garantir um jogo de alta qualidade, todo código escrito deve passar por um processo de review. Compartilhe sua experência e nos ajude a encontrar bugs, analizando a fila de revisão.",
 
-      "write-tests": "Tests are the best way to ensure we have a resilient and stable system. Select this task if you want to increase our test coverage by writing unit tests or integration tests for the game.",
+      "write-tests": "Testes são o melhor jeito de garantir que temos um sistema estável e confiável. Selecione essa tarefa caso queira aprimorar a nossa cobertura de testes escrevendo testes unitários ou testes de integração para o jogo.",
 
-      "write-docs": "A thorough documentation is fundamental to the success of the project. Help us keep our documents clean, readable and accurate.",
+      "write-docs": "Uma documentação bem detalhada é fundamental para o sucesso do projeto. Ajude-nos a manter nossos documentos íntegros, legíveis e concisos.",
 
-      "tag-todo": "Subscribe to the TODO tag. Not sure how to help? Grab an open task under the TODO list.",
+      "tag-todo": "Inscreva-se na tag TODO. Não sabe muito bem como ajudar? Pegue uma tarefa em aberto na TODO list.",
 
-      "tag-waitingreview": "Subscribe to the WaitingReview tag. Specially useful for spotting code that is waiting to be reviewed. You can also find specifications and drafts that are waiting review.",
+      "tag-waitingreview": "Inscreva-se na tag WaitingReview. Particularmente útil para achar código que esteja esperando para ser revisado. Você também pode encontrar especificações e rascunhos que estão esperando por revisão.",
 
-      "tag-bug": "Subscribe to the Bug tag. No one likes bugs. Tasks with the Bug tag are waiting for a fix.",
+      "tag-bug": "Inscreva-se na tag Bug. Ninguém gosta de bugs. Tarefas com a tag Bug estão a espera por uma correção.",
 
-      "tag-discussion": "Subscribe to the Discussions tag. Interesting technical discussions being held will be under this tag. It usually means that we are open to expert input/feedback on that specific subject.",
+      "tag-discussion": "Inscreva-se na tag Discussions. Discussões técnicas interessantes que estiverem ocorrendo estarão sob essa tag. Normalmente, isso significa que estamos abertos para um feedback mais preciso nesse assunto em específico.",
 
-      "tag-elixir": "Subscribe to the Elixir tag. Code, tasks, issues and anything related to Elixir. We use Elixir on our backend (server) software.",
+      "tag-elixir": "Inscreva-se na tag Elixir. Códigos, tarefas e tudo relacionado a Elixir. Nós usamos Elixir em nosso software de backend (servidor).",
 
-      "tag-python": "Subscribe to the Python tag. Code, tasks, issues and anything related to Python. We use Python on our backend (server) software.",
+      "tag-python": "Inscreva-se na tag Python. Códigos, tarefas e tudo relacionado a Python. Nós usamos Python em nosso software de backend (servidor).",
 
-      "tag-elm": "Subscribe to the Elm tag. Code, tasks, issues and anything related to Elm. We use Elm on our frontend software (client) for Web Bcolsers and Desktops.",
+      "tag-elm": "Inscreva-se na tag Elm. Códigos, tarefas e tudo relacionado a Elm. Nós usamos Elm em nosso software de frontend (cliente).",
 
-      "tag-fs": "Subscribe to the f# tag. Code, tasks, issues and anything related to F#. We use F# on our frontend software (client) for mobile interfaces.",
+      "tag-fs": "Inscreva-se na tag F#. Códigos, tarefas e tudo relacionado a F#. Nós usamos Elm em nosso software de frontend (cliente) para as interfaces mobile.",
 
-      "tag-javascript": "Subscribe to the Javascript tag. Code, tasks, issues and anything related to Javascript. We don't use Javascript directly, but supporting libraries and websites (like this one) do.",
+      "tag-javascript": "Inscreva-se na tag Javascript. Códigos, tarefas e tudo relacionado a Javascript. Nós não usamos Javascript diretamente, mas biblotecas de terceiros e websites (como esse, por exempl) o usam.",
 
-      "tag-php": "Subscribe to the PHP tag. Code, tasks, issues and anything related to PHP. We don't use PHP directly, but supporting libraries and websites (like this one) do. Specially, our Development Center (Phabricator) is built in PHP, and help is welcomed on building plugins to it.",
+      "tag-php": " Inscreva-se na tag PHP. Códigos, tarefas e tudo relacionado a PHP. We don't use PHP directly, but supporting libraries and websites (like this one) do. Specially, our Development Center (Phabricator) is built in PHP, and help is welcomed on building plugins to it.",
 
-      "tag-frontend": "Subscribe to the Frontend tag. Code, tasks, issues and anything related to Frontend.",
+      "tag-frontend": "Inscreva-se na tag Frontend. Códigos, tarefas e tudo relacionado a Frontend.",
 
-      "tag-backend": "Subscribe to the Backend tag. Code, tasks, issues and anything related to Backend.",
+      "tag-backend": "Inscreva-se na tag Backend. Códigos, tarefas e tudo relacionado a Backend.",
 
-      "tag-infrastructure": "Subscribe to the Infrastructure tag. Code, tasks, issues and anything related to Infrastructure.",
+      "tag-infrastructure": "Inscreva-se na tag Infrastructure. Códigos, tarefas e tudo relacionado a Infrastructure.",
 
-      "tag-security": "Subscribe to the Security tag. Code, tasks, issues and anything related to Security.",
+      "tag-security": "Inscreva-se na tag Security. Códigos, tarefas e tudo relacionado a Security.",
 
-      "tag-optimization": "Subscribe to the Optimization tag. Code, tasks, issues and anything related to Optimization.",
+      "tag-optimization": "Inscreva-se na tag Optimization. Códigos, tarefas e tudo relacionado a Optimization.",
 
-      "tag-ai": "Subscribe to the AI tag. Code, tasks, issues and anything related to AI.",
+      "tag-ai": "Inscreva-se na tag AI. Códigos, tarefas e tudo relacionado a AI.",
 
-      "tag-network": "Subscribe to the Network tag. Code, tasks, issues and anything related to Network.",
+      "tag-network": "Inscreva-se na tag Network. Códigos, tarefas e tudo relacionado a Network.",
 
-      "tag-databases": "Subscribe to the Databases tag. Code, tasks, issues and anything related to Databases.",
+      "tag-databases": "Inscreva-se na tag Databases. Códigos, tarefas e tudo relacionado a Databases.",
 
-      "tag-pm": "Subscribe to the Project Management tag. Code, tasks, issues and anything related to Project Management.",
+      "tag-pm": "Inscreva-se na tag Project Management. Códigos, tarefas e tudo relacionado a Project Management.",
 
-      "tag-linux": "Subscribe to the Linux tag. Code, tasks, issues and anything related to Linux.",
+      "tag-linux": "Inscreva-se na tag Linux. Códigos, tarefas e tudo relacionado a Linux.",
 
-      "tag-ios": "Subscribe to the iOS tag. Code, tasks, issues and anything related to iOS.",
+      "tag-ios": "Inscreva-se na tag iOS. Códigos, tarefas e tudo relacionado a iOS.",
 
-      "tag-android": "Subscribe to the Android tag. Code, tasks, issues and anything related to Android.",
+      "tag-android": "Inscreva-se na tag Android. Códigos, tarefas e tudo relacionado a Android.",
 
-      "tag-core": "Subscribe to the Core tag. Code, tasks, issues and anything related to Core. Core is the server software that powers the game. It is written mainly in Elixir and Python.",
+      "tag-core": "Inscreva-se na tag Core. Códigos, tarefas e tudo relacionado ao Core. Core is the server software that powers the game. It is written mainly in Elixir and Python.",
 
-      "tag-mobile": "Subscribe to the Mobile tag. Code, tasks, issues and anything related to Mobile. Mobile is the interface software for mobile phones (WP, iOS and Android) written in F#.",
+      "tag-mobile": "Inscreva-se na tag Mobile. Códigos, tarefas e tudo relacionado a Mobile. Mobile is the interface software for mobile phones (WP, iOS and Android) written in F#.",
 
-      "tag-web": "Subscribe to the Web tag. Code, tasks, issues and anything related to Web. Web is the interface software (client) for web bcolsers and desktop. It is written in Elm.",
+      "tag-web": "Inscreva-se na tag Web. Códigos, tarefas e tudo relacionado a Web. Web is the interface software (client) for web bcolsers and desktop. It is written in Elm.",
 
-      "tag-terminal": "Subscribe to the Terminal tag. Code, tasks, issues and anything related to Terminal. Terminal is the interface software (client) for *NIX Shell. It is written in Python.",
+      "tag-terminal": "Inscreva-se na tag Terminal. Códigos, tarefas e tudo relacionado a Terminal. Terminal is the interface software (client) for *NIX Shell. It is written in Python.",
 
-      "tag-aerospike": "Subscribe to the Aerospike tag. Code, tasks, issues and anything related to Aerospike. We use Aerospike for caching game data.",
+      "tag-aerospike": "Inscreva-se na tag Aerospike. Códigos, tarefas e tudo relacionado a Aerospike. We use Aerospike for caching game data.",
 
-      "tag-consul": "Subscribe to the Consul tag. Code, tasks, issues and anything related to Consul. We use Consul for service discovery and micro-services management.",
+      "tag-consul": "Inscreva-se na tag Consul. Códigos, tarefas e tudo relacionado a Consul. We use Consul for service discovery and micro-services management.",
 
-      "tag-elastic": "Subscribe to the Elastic tag. Code, tasks, issues and anything related to Elastic(search). We use Elasticsearch to storing map-related information, global coordinates and log data.",
+      "tag-elastic": "Inscreva-se na tag Elastic. Códigos, tarefas e tudo relacionado a Elastic(search). We use Elasticsearch to storing map-related information, global coordinates and log data.",
 
-      "tag-docker": "Subscribe to the Docker tag. Code, tasks, issues and anything related to Docker. We rely on Docker for containing each microservice of the game, as well as other stack tools like databases, proxies and message brokers.",
+      "tag-docker": "Inscreva-se na tag Docker. Códigos, tarefas e tudo relacionado a Docker. We rely on Docker for containing each microservice of the game, as well as other stack tools like databases, proxies and message brokers.",
 
-      "tag-kafka": "Subscribe to the Kafka tag. Code, tasks, issues and anything related to Kafka. We use Apache Kafka for internal services communication.",
+      "tag-kafka": "Inscreva-se na tag Kafka. Códigos, tarefas e tudo relacionado a Kafka. We use Apache Kafka for internal services communication.",
 
-      "tag-samza": "Subscribe to the Samza tag. Code, tasks, issues and anything related to Samza. We use Apache Samza for dynamically creating cached databased views.",
+      "tag-samza": "Inscreva-se na tag Samza. Códigos, tarefas e tudo relacionado a Samza. We use Apache Samza for dynamically creating cached databased views.",
 
-      "tag-nginx": "Subscribe to the nginx tag. Code, tasks, issues and anything related to nginx. We use nginx for routing, load balancing and rate-limiting requests, as well as managing Websocket connections.",
+      "tag-nginx": "Inscreva-se na tag nginx. Códigos, tarefas e tudo relacionado a nginx. We use nginx for routing, load balancing and rate-limiting requests, as well as managing Websocket connections.",
 
-      "tag-haproxy": "Subscribe to the HAProxy tag. Code, tasks, issues and anything related to HAProxy. We use HAProxy for routing and load balancing TCP requests.",
+      "tag-haproxy": "Inscreva-se na tag HAProxy. Códigos, tarefas e tudo relacionado a HAProxy. We use HAProxy for routing and load balancing TCP requests.",
 
-      "tag-mnesia": "Subscribe to the Mnesia tag. Code, tasks, issues and anything related to Mnesia. We use Mnesia to storing Elixir-specific data, usually required for internal communications.",
+      "tag-mnesia": "Inscreva-se na tag Mnesia. Códigos, tarefas e tudo relacionado a Mnesia. We use Mnesia to storing Elixir-specific data, usually required for internal communications.",
 
-      "tag-phabricator": "Subscribe to the Phabricator tag. Code, tasks, issues and anything related to Phabricator. We use Phabricator as our Development Center.",
+      "tag-phabricator": "Inscreva-se na tag Phabricator. Códigos, tarefas e tudo relacionado a Phabricator. We use Phabricator as our Development Center.",
 
-      "tag-postgresql": "Subscribe to the PostgreSQL tag. Code, tasks, issues and anything related to PostgreSQL. We use PostgreSQL to store most of the game data.",
+      "tag-postgresql": "Inscreva-se na tag PostgreSQL. Códigos, tarefas e tudo relacionado a PostgreSQL. We use PostgreSQL to store most of the game data.",
 
-      "tag-postgis": "Subscribe to the PostGIS tag. We make heavy use of the GIS extension for Postgres called PostGIS.",
+      "tag-postgis": "Inscreva-se na tag PostGIS. We make heavy use of the GIS extension for Postgres called PostGIS.",
 
       "discuss-ui": "Discuss the UI we use or plan to use. Share ideas and suggestions for a better user interface.",
 
@@ -150,21 +150,21 @@
 
       "review-ux": "Review the current UI for usability errors and bad user experience.",
 
-      "tag-design": "Subscribe to the Design tag. Generic tasks and discussions related to Design will have this tag.",
+      "tag-design": "Inscreva-se na tag Design. Generic tasks and discussions related to Design will have this tag.",
 
-      "tag-mobileui": "Subscribe to the InterfaceMobile tag. All design tasks related to the mobile interface will have this tag.",
+      "tag-mobileui": "Inscreva-se na tag InterfaceMobile. All design tasks related to the mobile interface will have this tag.",
 
-      "tag-webui": "Subscribe to the InterfaceWeb tag. All design tasks related to the Web interface will have this tag.",
+      "tag-webui": "Inscreva-se na tag InterfaceWeb. All design tasks related to the Web interface will have this tag.",
 
-      "tag-terminalui": "Subscribe to the InterfaceTerminal tag. All design tasks related to the terminal interface will have this tag.",
+      "tag-terminalui": "Inscreva-se na tag InterfaceTerminal. All design tasks related to the terminal interface will have this tag.",
 
-      "tag-designdiscussion": "Subscribe to the DesignDiscussion tag. Interesting tasks and issues being discussed will have this tag. Weigh in with your expertise and join the discussion.",
+      "tag-designdiscussion": "Inscreva-se na tag DesignDiscussion. Interesting tasks and issues being discussed will have this tag. Weigh in with your expertise and join the discussion.",
 
-      "tag-designsuggestion": "Subscribe to the DesignSuggestion tag. New suggestions related to design will have this tag. Review, comment and improve the suggestion.",
+      "tag-designsuggestion": "Inscreva-se na tag DesignSuggestion. New suggestions related to design will have this tag. Review, comment and improve the suggestion.",
 
-      "tag-designfeedback": "Subscribe to the DesignFeedback tag. Design contributions will have this tag so you can review, suggest and improve the final game interface.",
+      "tag-designfeedback": "Inscreva-se na tag DesignFeedback. Design contributions will have this tag so you can review, suggest and improve the final game interface.",
 
-      "tag-ux": "Subscribe to the UX tag. Interesting tasks, issues and questions about user experience will have this tag. Weigh in with your expertise and join the discussion.",
+      "tag-ux": "Inscreva-se na tag UX. Interesting tasks, issues and questions about user experience will have this tag. Weigh in with your expertise and join the discussion.",
 
       "discuss-features": "Discuss, review or suggest features and game mechanics. Do you think a feature might hurt the game design? Create a discussion and tell us why.",
 
@@ -174,16 +174,16 @@
 
       "design-story": "Write the game storyline. Design NPCs and tutorial levels. Craft missions and side quests.",
 
-      "tag-storyline": "Subscribe to the Storyline tag. Follow the progress of the game story. Review, suggest and improve it.",
+      "tag-storyline": "Inscreva-se na tag Storyline. Follow the progress of the game story. Review, suggest and improve it.",
 
-      "tag-gamemechanic": "Subscribe to the GameMechanic tag. It's the best way to find discussions and assets related to game mechanics.",
+      "tag-gamemechanic": "Inscreva-se na tag GameMechanic. It's the best way to find discussions and assets related to game mechanics.",
 
-      "tag-gamedesign": "Subscribe to the GameDesign tag. Follow discussions and tasks about Game Design.",
+      "tag-gamedesign": "Inscreva-se na tag GameDesign. Follow discussions and tasks about Game Design.",
 
-      "tag-heep-gd": "Subscribe to the HEEP-GD tag. HEEPs (Hacker Experience Enhancement Proposal) are the official way to add things to the game. Follow Game Design proposals that were approved or are being reviewed. Discuss, review and vote for or against the HEEP being accepted.",
-      "tag-feature": "Subscribe to the Feature tag. It's the best way to find discussions and assets related to specific features.",
+      "tag-heep-gd": "Inscreva-se na tag HEEP-GD. HEEPs (Hacker Experience Enhancement Proposal) are the official way to add things to the game. Follow Game Design proposals that were approved or are being reviewed. Discuss, review and vote for or against the HEEP being accepted.",
+      "tag-feature": "Inscreva-se na tag Feature. It's the best way to find discussions and assets related to specific features.",
 
-      "tag-featurerequest": "Subscribe to the FeatureRequest tag. This is the entrypoint for people to suggest new features to the game. Review, discuss and improve feature requests.",
+      "tag-featurerequest": "Inscreva-se na tag FeatureRequest. This is the entrypoint for people to suggest new features to the game. Review, discuss and improve feature requests.",
 
       "triage-tasks": "Keep our bug tracker organized. Triage tasks and issues regarding their priority and related projects.",
 
@@ -199,7 +199,7 @@
 
       "fix-typos": "Fix typos and grammar errors you find on the game clients, related documents or related websites (like this one).",
 
-      "tag-typos": "Subscribe to the Typos tag. Fix errors others have spotted, or let others know about typing mistaeks.",
+      "tag-typos": "Inscreva-se na tag Typos. Fix errors others have spotted, or let others know about typing mistaeks.",
 
       "spread": "Let your social followers know about Let's build a game. Invite your friends to the project. More contributors means faster development.",
 
@@ -221,19 +221,19 @@
 
       "answer-guide": "Be a mentor, guide students. Share resources, videos, books and advices. Answer questions they have. Help them get their first code approved.",
 
-      "tag-question": "Subscribe to the Question tag. Find the newest questions being asked on our Q&A application.",
+      "tag-question": "Inscreva-se na tag Question. Find the newest questions being asked on our Q&A application.",
 
-      "tag-advice": "Subscribe to the Advice tag. Share an advice to everyone.",
+      "tag-advice": "Inscreva-se na tag Advice. Share an advice to everyone.",
 
-      "tag-resource": "Subscribe to the Resources tag. Share cool online resources that people can use to learn and improve their knowledge.",
+      "tag-resource": "Inscreva-se na tag Resources. Share cool online resources that people can use to learn and improve their knowledge.",
 
-      "tag-tutorial": "Subscribe to the Tutorial tag. Create, share and read tutorial about anything related to the game development.",
+      "tag-tutorial": "Inscreva-se na tag Tutorial. Create, share and read tutorial about anything related to the game development.",
 
-      "tag-studygroup": "Subscribe to the StudyGroup tag. Create or join a study group about any subject related to the game development. Learn with others.",
+      "tag-studygroup": "Inscreva-se na tag StudyGroup. Create or join a study group about any subject related to the game development. Learn with others.",
 
-      "tag-seekingmentor": "Subscribe to the SeekingMentor tag. Use this to find mentors who can guide your learning path.",
+      "tag-seekingmentor": "Inscreva-se na tag SeekingMentor. Use this to find mentors who can guide your learning path.",
 
-      "tag-seekingstudent": "Subscribe to the SeekingStudent tag. Use this to find students to mentor.",
+      "tag-seekingstudent": "Inscreva-se na tag SeekingStudent. Use this to find students to mentor.",
 
       "play": "Of course you want to play the game YOU are creating, right? You are invited to play Hacker Experience 2 whenever it gets released.",
 
@@ -247,15 +247,15 @@
 
       "offer-service": "Got a service that might be interesting for the project? Let us know about it.",
 
-      "tag-marketing": "Subscribe to the Marketing tag.",
+      "tag-marketing": "Inscreva-se na tag Marketing tag.",
 
-      "tag-legal": "Subscribe to the Legal tag. Discussions and documents related to Legal subjects can be find here. Read and review our legal documents.",
+      "tag-legal": "Inscreva-se na tag Legal. Discussions and documents related to Legal subjects can be find here. Read and review our legal documents.",
 
-      "tag-social-media": "Subscribe to the Social Media tag.",
+      "tag-social-media": "Inscreva-se na tag Social Media tag.",
 
-      "tag-crm": "Subscribe to the CRM tag.",
+      "tag-crm": "Inscreva-se na tag CRM tag.",
 
-      "tag-soundtrack": "Subscribe to the Soundtrack tag. Listen to the current set of sounds and give feedback."
+      "tag-soundtrack": "Inscreva-se na tag Soundtrack. Listen to the current set of sounds and give feedback."
 
     }
   },
