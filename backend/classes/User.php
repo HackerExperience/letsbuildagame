@@ -213,13 +213,20 @@ class User {
         if(!$validate_success){
             return Array(FALSE, $validate_msg);
         }
+
+        if (strpos($_SERVER['HTTP_REFERER'], 'letsbuildagame')) {
+            $origin = 'lbag';
+        } else {
+            $origin = 'vfuj';
+        }
         
-        $sql_query = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+        $sql_query = "INSERT INTO users(username, email, password, origin) VALUES (?, ?, ?, ?)";
         $sql_reg = $this->_dbo->prepare($sql_query);
         
         try {
             $sql_reg->execute(array($this->getUsername(), $this->getEmail(), 
-                                    User::hashPassword($this->getPassword())));
+                                    User::hashPassword($this->getPassword(),
+                                    $origin)));
             $userID = $this->_dbo->lastInsertId('users_user_id_seq');
         } catch (PDOException $e) {
             error_log($e);

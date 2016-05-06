@@ -5,9 +5,11 @@ CREATE TABLE users (
   username        VARCHAR NOT NULL UNIQUE,
   email           VARCHAR NOT NULL UNIQUE,
   password        VARCHAR,
-  date_registered TIMESTAMP NOT NULL default now()
+  date_registered TIMESTAMP NOT NULL default now(),
+  origin          VARCHAR NOT NULL
 );
 
+CREATE INDEX "users_origin" ON "users" ("origin");
 
 CREATE TABLE projects (
   project_id  SERIAL PRIMARY KEY,
@@ -20,7 +22,6 @@ CREATE TABLE user_projects (
   is_subscribed BOOLEAN NOT NULL,
   PRIMARY KEY (project_id, user_id)
 );
-
 
 CREATE TABLE notifications (
   notification_id     SERIAL PRIMARY KEY,
