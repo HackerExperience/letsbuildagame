@@ -43,15 +43,15 @@ class Settings {
             return FALSE;
         }
         
-        $query = $this->_read($this->getUserId());       
-        
-        if (!$query) {
-            return FALSE;
-        }
-
-        if (!property_exists($query, $setting_name)) {
-            return FALSE;
-        }
+//        $query = $this->_read($this->getUserId());       
+//        
+//        if (!$query) {
+//            return FALSE;
+//        }
+//
+//        if (!property_exists($query, $setting_name)) {
+//            return FALSE;
+//        }
         
         $this->setSettings((array)$query);
         
