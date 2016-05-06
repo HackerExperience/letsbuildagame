@@ -507,7 +507,7 @@
       "game": "Jogo",
       "schedule": "Cronograma",
       "contribution": "Contribuição",
-      "team": "Time",
+      "team": "Equipe",
       "contribute": "Contribua"
     },
     "footer": {
@@ -522,6 +522,7 @@
       "blog": "Blog",
       "contact": "CONTATE-NOS"
     },
-    "finish": "Concluir Configuração"
+    "finish": "Concluir Configuração",
+    "title": "Vamos fazer um jogo"
   }
 }
