@@ -1,29 +1,23 @@
 (function() {
-  $("#timeline-button-1").popover({
-    container: ".timeline-graph",
-    content: "Lorem ipsum",
-    title: "foobar",
-    trigger: "click hover"
-  });
+  var popover_layout = function(title, content) {
+    return {
+      title: title,
+      content: content,
+      container: ".timeline-graph",
+      trigger: "click hover"}}
 
-  $("#timeline-button-2").popover({
-    container: ".timeline-graph",
-    content: "Lorem ipsum",
-    title: "bar",
-    trigger: "click hover"
-  })
+  $("#timeline-iv").popover(
+    popover_layout("", ""));
 
-  $("#timeline-button-3").popover({
-    container: ".timeline-graph",
-    content: "Lorem ipsum",
-    title: "baz",
-    trigger: "click hover"
-  })
+  $("#timeline-cor-vi").popover(
+    popover_layout("", ""));
 
-  $("#timeline-button-4").popover({
-    container: ".timeline-graph",
-    content: "Lorem ipsum",
-    title: "Ja acabou ?",
-    trigger: "click hover"
-  })
+  $("#timeline-web-vi-a").popover(
+    popover_layout("", ""));
+
+  $("#timeline-web-vi-b").popover(
+    popover_layout("", ""));
+
+  $("#timeline-mob-vi").popover(
+    popover_layout("", ""));
 })();
