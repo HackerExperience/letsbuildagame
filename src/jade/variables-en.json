@@ -14,7 +14,7 @@
     },
     "contribute": {
       "title": "Let's Build A Game",
-      "baseUrl": "/contribute.html"
+      "baseUrl": "/contribute"
     }
   },
   "tooltips": {
