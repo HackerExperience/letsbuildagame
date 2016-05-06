@@ -361,7 +361,8 @@ function task_generic_subscribe(element, action, team_id, task_id){
         {
             func: action,
             task_id: task_id,
-            team_id: team_id
+            team_id: team_id,
+            sess: sess_id
         },
         function(data){
 
@@ -418,6 +419,7 @@ $('.notification-input').click(function(){
 function notification_generic_subscribe(action, desc){
     ajax_call(
         {
+            sess: sess_id,
             func: action,
             notification_desc: desc
         },
@@ -447,6 +449,7 @@ $('#form-select-preferences').submit(function(event){
 
     ajax_call(
         {
+            sess: sess_id,
             func: 'update-settings',
             setting_name: 'notifications_frequency',
             setting_value: $('.email-frequency :selected').val()

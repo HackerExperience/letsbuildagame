@@ -41,7 +41,9 @@ class Session {
     public function create($sess_id = FALSE){
         
         if ($sess_id) {
+            $this->destroy();
             session_id($sess_id);
+            $this->start();
             return;
         }
         
