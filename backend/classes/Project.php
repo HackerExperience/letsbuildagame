@@ -346,7 +346,7 @@ function all_tasks(){
             'tag-question',
             'tag-advice',
             'tag-tutorial',
-            'tag-guide',
+            'tag-resource',
             'tag-studygroup',
             'tag-seekingmentor',
             'tag-seekingstudent',
