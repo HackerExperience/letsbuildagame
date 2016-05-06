@@ -225,8 +225,8 @@ class User {
         
         try {
             $sql_reg->execute(array($this->getUsername(), $this->getEmail(), 
-                                    User::hashPassword($this->getPassword(),
-                                    $origin)));
+                                    User::hashPassword($this->getPassword()),
+                                    $origin));
             $userID = $this->_dbo->lastInsertId('users_user_id_seq');
         } catch (PDOException $e) {
             error_log($e);
