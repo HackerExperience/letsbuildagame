@@ -288,6 +288,14 @@ class User {
         ];
         return password_hash($password, PASSWORD_BCRYPT, $options);
     }
+
+    public function send_code($to, $code) {
+		$tpl = new EmailTemplate('contact@hackerexperience.com', $to);
+		$tpl->subscribe($code);
+
+		$email = new Email();
+		return $email->send($tpl);
+	}
 }
 
 function validate_user($username) {
