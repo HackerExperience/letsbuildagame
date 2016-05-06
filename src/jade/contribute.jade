@@ -16,111 +16,111 @@ block content
         form#form-setup-acc.subscribe-form
 
           ul#progress-bar
-            li.active Account setup
-            li Verify email
-            li Select team
-            li Select tasks
-            li Preferences
+            li.active!= strings.contribute.progress_bar.step_1
+            li!= strings.contribute.progress_bar.step_2
+            li!= strings.contribute.progress_bar.step_3
+            li!= strings.contribute.progress_bar.step_4
+            li!= strings.contribute.progress_bar.step_5
 
           fieldset
-            h2.fs-title Create your account
-            h3.fs-subtitle Next you'll verify your email address
+            h2.fs-title!= strings.contribute.account_setup.title
+            h3.fs-subtitle!= strings.contribute.account_setup.subtitle
             h3.fs-error
 
             .form-group
-              input(type="text" name="username" placeholder="Username").input-username
+              input(type="text" name="username" placeholder= strings.contribute.account_setup.username).input-username
               span.helper.input-username-help
             .form-group
-              input(type="text" name="email" placeholder="Email").input-email
+              input(type="text" name="email" placeholder= strings.contribute.account_setup.email).input-email
               span.helper.input-email-help
             .form-group
-              input(type="password" name="password" placeholder="Password").input-password
+              input(type="password" name="password" placeholder= strings.contribute.account_setup.password).input-password
               span.helper.input-password-help
 
-            input(type="submit" name="submit" value="Create").next.action-button
+            input(type="submit" name="submit" value= strings.contribute.account_setup.create).next.action-button
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
         form(style="display:none;")#form-verify-email.subscribe-form
 
           ul#progress-bar
-            li.active Account setup
-            li.active Verify email
-            li Select team
-            li Select tasks
-            li Preferences
+            li.active!= strings.contribute.progress_bar.step_1
+            li.active!= strings.contribute.progress_bar.step_2
+            li!= strings.contribute.progress_bar.step_3
+            li!= strings.contribute.progress_bar.step_4
+            li!= strings.contribute.progress_bar.step_5
 
           fieldset
-            h2.fs-title Verify your email address
-            h3.fs-subtitle Please copy the verification code we sent to you.
+            h2.fs-title!= strings.contribute.verify_email.title
+            h3.fs-subtitle!= strings.contribute.verify_email.subtitle
             h3.fs-error
 
             .form-group
-              input(type="text" name="email-code" placeholder="Email verification code").input-email-code
+              input(type="text" name="email-code" placeholder= strings.contribute.verify_email.email_code).input-email-code
               span.helper.input-email-code
 
-            input(type="submit" name="submit" value="Activate").next.action-button
+            input(type="submit" name="submit" value= strings.contribute.verify_email.activate).next.action-button
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
 
         form(style="display: none;")#form-select-contrib.subscribe-form
 
           ul#progress-bar
-            li.active Account setup
-            li.active Verify email
-            li.active Select Team
-            li Select Tasks
-            li Preferences
+            li.active!= strings.contribute.progress_bar.step_1
+            li.active!= strings.contribute.progress_bar.step_2
+            li.active!= strings.contribute.progress_bar.step_3
+            li!= strings.contribute.progress_bar.step_4
+            li!= strings.contribute.progress_bar.step_5
 
           fieldset
-            h2.fs-title Contribution Team
-            h3.fs-subtitle Join teams you like so we can narrow down your contribution options. 
-            h3.fs-subtitle.no-margin Select as many as you want. You can change these settings later.
+            h2.fs-title!= strings.contribute.select_team.title
+            h3.fs-subtitle!= strings.contribute.select_team.subtitle
+            h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtle_margin
             h3.fs-error
 
             .team-selector
               .row
-                +team('dev', 'Development', 'code')
-                +team('art', 'Design & Art', 'paint-brush')
-                +team('mgt', 'Management', 'tags')
-                +team('gd', 'Game Design', 'lightbulb-o')
+                +team('dev', strings.contribute.select_team.dev, 'code')
+                +team('art', strings.contribute.select_team.art, 'paint-brush')
+                +team('mgt', strings.contribute.select_team.mgt, 'tags')
+                +team('gd', strings.contribute.select_team.gd, 'lightbulb-o')
               .row
-                +team('translation', 'Translation', 'language')
-                +team('patron', 'Patron', 'tag')
-                +team('student', 'Student / Mentor', 'mortar-board')
-                +team('gamer', 'Gamer', 'gamepad')
+                +team('translation', strings.contribute.select_team.translation, 'language')
+                +team('patron', strings.contribute.select_team.patron, 'tag')
+                +team('student', strings.contribute.select_team.student, 'mortar-board')
+                +team('gamer', strings.contribute.select_team.gamer, 'gamepad')
 
-            input(type="submit" name="submit" value="I'm ready").next.action-button.disabled
+            input(type="submit" name="submit" value= strings.contribute.select_team.ready).next.action-button.disabled
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
 
         form(style="display: none;")#form-select-tasks.subscribe-form
 
           ul#progress-bar
-            li.active Account setup
-            li.active Verify email
-            li.active Select Team
-            li.active Select Tasks
-            li Preferences
+            li.active!= strings.contribute.progress_bar.step_1
+            li.active!= strings.contribute.progress_bar.step_2
+            li.active!= strings.contribute.progress_bar.step_3
+            li.active!= strings.contribute.progress_bar.step_4
+            li!= strings.contribute.progress_bar.step_5
 
           fieldset
-            h2.fs-title Contribution Tasks
-            h3.fs-subtitle Select the <strong>actions</strong> that you feel like doing. We'll describe how to perform each one later.
-            h3.fs-subtitle.no-margin Subscribe to <strong>tags</strong> to receive notifications whenever we need your help on the subject.
-            h3.fs-subtitle.no-margin You can (un)subscribe later. You'll set notification preferences next.
+            h2.fs-title!= strings.contribute.contribution_tasks.title
+            h3.fs-subtitle!= strings.contribute.contribution_tasks.subtitle
+            h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin
+            h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin2
             h3.fs-error
 
             .task-selector
               #dev
                 a#cat-dev(href="#").category
-                  p Development team (42)
+                  p!= strings.contribute.contribution_tasks.dev_team
                     i.fa.fa-chevron-down.category-icon
                 #tasks-dev
-                  h1 Actions
+                  h1!= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('submit-patches', 'Submit patches', 'code-fork')
-                    +task('review-code', 'Review code', 'search')
-                    +task('write-tests', 'Write tests', 'bullseye')
-                    +task('write-docs', 'Write docs', 'book')
+                    +task('submit-patches', strings.contribute.contribution_tasks.patches, 'code-fork')
+                    +task('review-code', strings.contribute.contribution_tasks.code, 'search')
+                    +task('write-tests', strings.contribute.contribution_tasks.tests, 'bullseye')
+                    +task('write-docs', strings.contribute.contribution_tasks.docs, 'book')
                   h1 Tags
                   h2 Workflow
                   .row
@@ -129,7 +129,7 @@ block content
                     +task('tag-bug', 'Bug', 'tag')
                     +task('tag-discussion', 'Discussion', 'tag')
 
-                  h2 Programming languages
+                  h2!= strings.contribute.contribution_tasks.langs
                   .row
                     +task('tag-elixir', 'Elixir', 'tag')
                     +task('tag-python', 'Python', 'tag')
@@ -139,31 +139,31 @@ block content
                     +task('tag-javascript', 'Javascript', 'tag')
                     +task('tag-php', 'PHP', 'tag')
 
-                  h2 Areas of interest
+                  h2= strings.contribute.contribution_tasks.areas
                   .row
                     +task('tag-frontend', 'Frontend', 'tag')
                     +task('tag-backend', 'Backend', 'tag')
-                    +task('tag-infrastructure', 'Infrastructure', 'tag')
-                    +task('tag-security', 'Security', 'tag')
+                    +task('tag-infrastructure', strings.contribute.contribution_tasks.infra, 'tag')
+                    +task('tag-security', strings.contribute.contribution_tasks.sec, 'tag')
                   .row
-                    +task('tag-optimization', 'Optimization', 'tag')
-                    +task('tag-ai', 'AI', 'tag')
-                    +task('tag-network', 'Network', 'tag')
-                    +task('tag-databases', 'Databases', 'tag')
+                    +task('tag-optimization', strings.contribute.contribution_tasks.opt, 'tag')
+                    +task('tag-ai', strings.contribute.contribution_tasks.ai, 'tag')
+                    +task('tag-network', strings.contribute.contribution_tasks.net, 'tag')
+                    +task('tag-databases', strings.contribute.contribution_tasks.dbs, 'tag')
                   .row
-                    +task('tag-pm', 'Project Mgt.', 'tag')
+                    +task('tag-pm', strings.contribute.contribution_tasks.project, 'tag')
                     +task('tag-linux', 'Linux', 'tag')
                     +task('tag-ios', 'iOS', 'tag')
                     +task('tag-android', 'Android', 'tag')
 
-                  h2 Game software (server & interfaces)
+                  h2= strings.contribute.contribution_tasks.game_software
                   .row
                     +task('tag-core', 'Core', 'tag')
                     +task('tag-mobile', 'Mobile', 'tag')
                     +task('tag-web', 'Web', 'tag')
                     +task('tag-terminal', 'Terminal', 'tag')
 
-                  h2 Stack Tools
+                  h2= strings.contribute.contribution_tasks.stack
                   .row
                     +task('tag-aerospike', 'Aerospike', 'tag')
                     +task('tag-consul', 'Consul', 'tag')
@@ -181,15 +181,15 @@ block content
                     +task('tag-postgis', 'PostGIS', 'tag')
               #art
                 a#cat-art(href="#").category
-                  p Design & art team (12)
+                  pstrings.contribute.contribution_tasks.design_art
                     i.fa.fa-chevron-down.category-icon
                 #tasks-art
-                  h1 Actions
+                  h1!= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('discuss-ui', 'Discuss UI', 'comments')
-                    +task('design-ui', 'Design UI', 'paint-brush')
-                    +task('create-assets', 'Create assets', 'image')
-                    +task('review-ux', 'Review UX', 'dashboard')
+                    +task('discuss-ui', strings.contribute.contribution_tasks.discuss_ui, 'comments')
+                    +task('design-ui', strings.contribute.contribution_tasks.design_ui, 'paint-brush')
+                    +task('create-assets', strings.contribute.contribution_tasks.assets, 'image')
+                    +task('review-ux', strings.contribute.contribution_tasks.rev_ux, 'dashboard')
                   h1 Tags
                   .row
                     +task('tag-design', 'Design', 'tag')
@@ -203,15 +203,15 @@ block content
                     +task('tag-ux', 'UX', 'tag')
               #gd
                 a#cat-gd(href="#").category
-                  p Game design team (10)
+                  p= strings.contribute.contribution_tasks.gd_team
                     i.fa.fa-chevron-down.category-icon
                 #tasks-gd
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('discuss-features', 'Discuss features', 'comments')
-                    +task('study-game', 'Study the game', 'map')
-                    +task('balance', 'Balance skills', 'balance-scale')
-                    +task('design-story', 'Design the story', 'pencil')
+                    +task('discuss-features', strings.contribute.contribution_tasks.features, 'comments')
+                    +task('study-game', strings.contribute.contribution_tasks.study_game, 'map')
+                    +task('balance', strings.contribute.contribution_tasks.balance, 'balance-scale')
+                    +task('design-story', strings.contribute.contribution_tasks.story, 'pencil')
                   h1 Tags
                   .row
                     +task('tag-storyline', 'Storyline', 'tag')
@@ -223,15 +223,15 @@ block content
                     +task('tag-featurerequest', 'FeatureRequest', 'tag')
               #mgt
                 a#cat-mgt(href="#").category
-                  p Community Management team (7)
+                  p= strings.contribute.contribution_tasks.community
                     i.fa.fa-chevron-down.category-icon
                 #tasks-mgt
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('triage-tasks', 'Triage tasks', 'folder-open')
-                    +task('guide-users', 'Guide users', 'map-signs')
-                    +task('curate-content', 'Curate content', 'file-text')
-                    +task('report', 'Flag & report', 'legal')
+                    +task('triage-tasks', strings.contribute.contribution_tasks.tasks, 'folder-open')
+                    +task('guide-users', strings.contribute.contribution_tasks.guide, 'map-signs')
+                    +task('curate-content', strings.contribute.contribution_tasks.content, 'file-text')
+                    +task('report', strings.contribute.contribution_tasks.report, 'legal')
                   h1 Tags
                   .row
                     +task('tag-report', 'Report', 'tag')
@@ -239,14 +239,14 @@ block content
                     +task('tag-community', 'Community', 'tag')
               #translation
                 a#cat-translation(href="#").category
-                  p Translation team (5)
+                  p= strings.contribute.contribution_tasks.translation
                     i.fa.fa-chevron-down.category-icon
                 #tasks-translation
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('translate-text', 'Translate text', 'language')
-                    +task('improve-text', 'Improve text', 'paragraph')
-                    +task('fix-typos', 'Fix typos', 'strikethrough')
+                    +task('translate-text', strings.contribute.contribution_tasks.translate, 'language')
+                    +task('improve-text', strings.contribute.contribution_tasks.improve, 'paragraph')
+                    +task('fix-typos', strings.contribute.contribution_tasks.typos, 'strikethrough')
                   h1 Tags
                   .row
                     +task('tag-typos', 'Typos', 'tag')
@@ -254,30 +254,30 @@ block content
 
               #patron
                 a#cat-patron(href="#").category
-                  p Patron team (4)
+                  p= strings.contribute.contribution_tasks.patron
                     i.fa.fa-chevron-down.category-icon
                 #tasks-patron
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('spread', 'Spread the word', 'bullhorn')
-                    +task('preorder', 'Preorder', 'gift')
-                    +task('rate-review', 'Rate & review', 'thumbs-up')
-                    +task('invest', 'Be an investor', 'rocket')
+                    +task('spread', strings.contribute.contribution_tasks.spread, 'bullhorn')
+                    +task('preorder', strings.contribute.contribution_tasks.preorder, 'gift')
+                    +task('rate-review', strings.contribute.contribution_tasks.rate, 'thumbs-up')
+                    +task('invest', strings.contribute.contribution_tasks.invest, 'rocket')
 
               #student
                 a#cat-student(href="#").category
-                  p Student & Mentorship team (13)
+                  p= strings.contribute.contribution_tasks.mentor
                     i.fa.fa-chevron-down.category-icon
                 #tasks-student
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('follow-topics', 'Follow topics', 'rss')
-                    +task('learn-code', 'Learn to code', 'road')
-                    +task('study-group', 'Join study group', 'group')
-                    +task('share-knowledge', 'Share knowlege', 'exchange')
+                    +task('follow-topics', strings.contribute.contribution_tasks.topics, 'rss')
+                    +task('learn-code', strings.contribute.contribution_tasks.learn, 'road')
+                    +task('study-group', strings.contribute.contribution_tasks.study, 'group')
+                    +task('share-knowledge', strings.contribute.contribution_tasks.share, 'exchange')
                   .row
-                    +task('adopt-student', 'Adopt a student', 'heart')
-                    +task('answer-guide', 'Answer & guide', 'support')
+                    +task('adopt-student', strings.contribute.contribution_tasks.adopt, 'heart')
+                    +task('answer-guide', strings.contribute.contribution_tasks.answer, 'support')
                   h1 Tags
                   .row
                     +task('tag-question', 'Question', 'tag')
@@ -291,25 +291,25 @@ block content
 
               #gamer
                 a#cat-gamer(href="#").category
-                  p Gamer team (4)
+                  p= strings.contribute.contribution_tasks.gamer_team
                     i.fa.fa-chevron-down.category-icon
                 #tasks-gamer
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('play', 'Play the game', 'gamepad')
-                    +task('become-tester', 'Become a tester', 'flask')
-                    +task('submit-ideas', 'Submit ideas ', 'lightbulb-o')
-                    +task('report-bugs', 'Report bugs', 'bug')
+                    +task('play', strings.contribute.contribution_tasks.plat, 'gamepad')
+                    +task('become-tester', strings.contribute.contribution_tasks.tester, 'flask')
+                    +task('submit-ideas', strings.contribute.contribution_tasks.ideas, 'lightbulb-o')
+                    +task('report-bugs', strings.contribute.contribution_tasks.bugs, 'bug')
 
               #other
                 a#cat-other(href="#").category
-                  p Miscellaneous (7)
+                  p= strings.contribute.contribution_tasks.misc
                     i.fa.fa-chevron-down.category-icon
                 #tasks-other
-                  h1 Actions
+                  h1= strings.contribute.contribution_tasks.actions
                   .row
-                    +task('music', 'Compose music', 'music')
-                    +task('offer-service', 'Offer a service', 'suitcase')
+                    +task('music', strings.contribute.contribution_tasks.music, 'music')
+                    +task('offer-service', strings.contribute.contribution_tasks.offer, 'suitcase')
                   h1 Tags
                   .row
                     +task('tag-marketing', 'Marketing', 'tag')
@@ -318,59 +318,59 @@ block content
                     +task('tag-crm', 'CRM', 'tag')
                   .row
                     +task('tag-soundtrack', 'Soundtrack', 'tag')
-                  h2 Suggest other ways you can contribute to the game
+                  h2= strings.contribute.contribution_tasks.suggest
                   .row
                     .col-xs-12
                       input#custom-actions(type="text" name="custom-actions")
 
-            input(type="submit" name="submit" value="Let's go").next.action-button
+            input(type="submit" name="submit" value= strings.contribute.contribution_tasks.lets).next.action-button
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
         form(style="display: none;")#form-select-preferences.subscribe-form
 
           ul#progress-bar
-            li.active Account setup
-            li.active Verify email
-            li.active Select team
-            li.active Select tasks
-            li.active Preferences
+            li.active!= strings.contribute.progress_bar.step_1
+            li.active!= strings.contribute.progress_bar.step_2
+            li.active!= strings.contribute.progress_bar.step_3
+            li.active!= strings.contribute.progress_bar.step_4
+            li.active!= strings.contribute.progress_bar.step_5
 
           fieldset
-            h2.fs-title Notification preferences
-            h3.fs-subtitle We will compile into <em>one</em> email all tasks and tags you are interested in.
-            h3.fs-subtitle.no-margin Important discussions will be highlighted, and you can always view more tasks.
-            h3.fs-subtitle.no-margin You can unsubscribe or change preferences at any time.
+            h2.fs-title!= strings.contribute.notification.title
+            h3.fs-subtitle!= strings.contribute.notification.subtitle
+            h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin
+            h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin2
             h3.fs-error
 
             .form-group
-              label(for="email-frequency").col-sm-2.control-label Frequency
+              label(for="email-frequency").col-sm-2.control-label= strings.contribute.notification.frequency
 
               .col-sm-10
                 select(name="email-frequency" autocomplete="off").form-control.email-frequency
-                  option(value="0") Never
-                  option(value="1x1") One email per day
-                  option(value="2x7" selected="selected") Two emails per week
-                  option(value="1x7") One email per week
-                  option(value="2x30") Two emails per month
-                  option(value="1x30") One email per month
+                  option(value="0")!= strings.contribute.notification.never
+                  option(value="1x1")!= strings.contribute.notification.once_day
+                  option(value="2x7" selected="selected")=! strings.contribute.notification.twice_week
+                  option(value="1x7")!= strings.contribute.notification.once_week
+                  option(value="2x30")!= strings.contribute.notification.twice_month
+                  option(value="1x30")!= strings.contribute.notification.once_month
                 span.helper.input-email-code
 
-              span.help-block Select how often we can send an email with interesting discussions related to your tasks.
+              span.help-block!= strings.contribute.notification.help
 
             .form-group
 
-              label(for="email-frequency").col-sm-2.control-label Notifications
+              label(for="email-frequency").col-sm-2.control-label!= strings.contribute.notification.notifications
 
               .col-sm-10
                 label.checkbox-group
                   input(type="checkbox" value="important_updates").notification-input 
-                  span Send me <em>important</em> news about the project
+                  span!= strings.contribute.notification.updates
                 label.checkbox-group
                   input(type="checkbox" value="step4_starts").notification-input
-                  span Tell me when Step 4 (Development) starts
+                  span!= strings.contribute.notification.step4_starts
                 label.checkbox-group
                   input(type="checkbox" value="game_released" checked="checked" autocomplete="off").notification-input
-                  span Tell me when the game gets released
+                  span= strings.contribute.notification.game_released
 
             input(type="submit" name="submit" value="Finish setup").next.action-button
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
