@@ -231,9 +231,9 @@ class User {
         $email_verification = new EmailVerification('', $this);
         $verification_code = $email_verification->generateCode();
         
-        //send email
+        $this->send_code($this->getEmail(), $verification_code);
         
-        return Array(TRUE, $verification_code);
+        return Array(TRUE, '');
     }
 
     private function read($search_value, $search_method='id', $limit = 1) {
@@ -290,11 +290,11 @@ class User {
     }
 
     public function send_code($to, $code) {
-		$tpl = new EmailTemplate('contact@hackerexperience.com', $to);
-		$tpl->subscribe($code);
+            $tpl = new EmailTemplate('contact@hackerexperience.com', $to);
+            $tpl->confirm_email($code);
 
-		$email = new Email();
-		return $email->send($tpl);
+            $email = new Email();
+            return $email->send($tpl);
 	}
 }
 

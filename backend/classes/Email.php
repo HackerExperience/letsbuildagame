@@ -22,7 +22,7 @@ class Email {
     }
     
     public function getConfiguration() {
-        $config_file = __DIR__ . '/sendgrid.local.php';
+        $config_file = __DIR__ . '/../sendgrid.local.php';
         if (!is_file($config_file)) {
             throw new Exception('Create the configuration file database. (sendgrid.local.php)');
         }
@@ -70,12 +70,12 @@ class EmailTemplate {
         
 	$subject = "Confirm your account on Let's Build a Game";
         
-        $link = 'https://subscribe.hackerexperience.com/?code='.$code;
+        //$link = 'https://subscribe.hackerexperience.com/?code='.$code;
         
-        $msgHtml = 'Thank you for registering.'
-                . 'Please, verify your email by clicking on the link below.<br/><br/>'
-                . '<a href="'.$link.'">'.$link.'</a><br/><br/>'
-                . 'Thanks.';
+        $msgHtml = 'Thank you for creating an account on Let\'s Build a Game.<br/><br/>'
+                . 'Your verification code is <strong>'.$code.'</strong>.<br/><br/>'
+                . 'Please copy it and paste on the registration form.<br/><br/>'
+                . 'Sincerely,<br/>the Let\'s Build a Game team.';
         $msgText = strip_tags($msgHtml);
         
         $this->subject = $subject;

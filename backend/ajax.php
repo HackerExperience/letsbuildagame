@@ -6,6 +6,7 @@ require_once 'classes/EmailVerification.php';
 require_once 'classes/Project.php';
 require_once 'classes/Notification.php';
 require_once 'classes/Settings.php';
+require_once 'classes/Email.php';
 
 $result = Array(
     'status' => FALSE,
