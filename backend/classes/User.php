@@ -334,9 +334,10 @@ function register_user($username, $password, $email) {
 
     if ($registration_success) {
         $user->login();
+        $registration_msg = session_id();
     }
-
-    return Array($registration_success, $registration_msg); 
+    
+    return Array($registration_success, $registration_msg);
     
 }
 

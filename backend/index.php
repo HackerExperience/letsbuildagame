@@ -20,6 +20,11 @@ function update_result($status_array) {
 
 function function_dispatcher($function) {
     
+    if (isset($_POST['sess'])) {
+        $session = new Session();
+        $session->create($_POST['sess']);
+    }
+    
     switch ($function) {
         
         case 'validate-user':

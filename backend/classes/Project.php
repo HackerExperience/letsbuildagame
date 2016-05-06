@@ -377,8 +377,8 @@ function all_tasks(){
 }
 
 function register_teams($data) {
-    
     $session = new Session();
+    
     if (!$session->exists()) {
         return Array(FALSE, 'SYSTEM_ERROR');
     }
@@ -409,7 +409,6 @@ function register_teams($data) {
         }
 
         $team_obj = new Team($team_id);
-
         $team_obj->join($session->getUserId());
     }
     

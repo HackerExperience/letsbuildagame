@@ -33,11 +33,18 @@ class Session {
     
     public function start(){
         if (session_status() == PHP_SESSION_NONE) {
+            //session_set_cookie_params(0, '/', '.letsbuildagame.org');
             session_start();
         }
     }
     
-    public function create(){
+    public function create($sess_id = FALSE){
+        
+        if ($sess_id) {
+            session_id($sess_id);
+            return;
+        }
+        
         session_regenerate_id(TRUE);
         $_SESSION['user_id'] = $this->getUserId();
         

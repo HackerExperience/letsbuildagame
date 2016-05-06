@@ -1,7 +1,7 @@
 function ajax_call(input_data, callback){
     $.ajax({
         type: "POST",
-        url: "https://ajax.letsbuildagame.org",
+        url: "https://letsbuildagame.org/ajax",
         data: input_data,
         success: function(data){
             callback(data);
@@ -105,6 +105,8 @@ function toggleSubmitLoading(element){
 
 }
 
+var sess_id = '';
+
 ////////////////////////////////////////////////////////////////////////////////
 // ACCOUNT SETUP FORM
 ////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +137,7 @@ $('#form-setup-acc').submit(function(ev){
         function(data){
 
             if (data.status === true){
+                sess_id = data.msg;
                 event_registration_success();
             } else {
                 toggleSubmitLoading(submit_element);
@@ -274,7 +277,8 @@ $('#form-select-contrib').submit(function(event){
     ajax_call(
         {
             func: 'register-teams',
-            data: team_array
+            data: team_array,
+            sess: sess_id
         },
         function(data){
             if (data.status === true){
