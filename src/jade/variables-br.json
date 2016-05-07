@@ -5,16 +5,16 @@
       "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/",
       "og": {
-        "title": "",
-        "description": ""
+        "title": "Vamos fazer um jogo",
+        "description": "Junte-se a outros contribuidores e ajude a criar o próximo jogo colaborativo. Juntos. Agora. Não importa quem você seja."
       }
     },
     "timeline": {
       "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/timeline.html",
       "og": {
-        "title": "",
-        "description": ""
+        "title": "Vamos fazer um jogo",
+        "description": "Junte-se a outros contribuidores e ajude a criar o próximo jogo colaborativo. Juntos. Agora. Não importa quem você seja."
       }
     },
     "howToHelp": {
@@ -29,8 +29,8 @@
       "title": "Vamos Fazer Um Jogo",
       "baseUrl": "/contribute.html",
       "og": {
-        "title": "",
-        "description": ""
+        "title": "Vamos fazer um jogo",
+        "description": "Junte-se a outros contribuidores e ajude a criar o próximo jogo colaborativo. Juntos. Agora. Não importa quem você seja."
       }
     }
   },

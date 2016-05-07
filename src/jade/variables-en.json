@@ -6,15 +6,15 @@
       "baseUrl": "/",
       "og": {
         "title": "Let's Build A Game",
-        "description": ""
+        "description": "Join other contributors and help create the next collaborative game. Together. Now. No matter who you are."
       }
     },
     "timeline": {
       "title": "Let's Build A Game",
       "baseUrl": "/timeline.html",
       "og": {
-        "title": "",
-        "description": ""
+        "title": "Let's Build A Game",
+        "description": "Join other contributors and help create the next collaborative game. Together. Now. No matter who you are."
       }
     },
     "howToHelp": {
@@ -29,8 +29,8 @@
       "title": "Let's Build A Game",
       "baseUrl": "/contribute",
       "og": {
-        "title": "Contribute to building a game",
-        "description": ""
+        "title": "Let's Build A Game",
+        "description": "Join other contributors and help create the next collaborative game. Together. Now. No matter who you are."
       }
     }
   },
