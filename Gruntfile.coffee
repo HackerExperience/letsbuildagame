@@ -157,8 +157,11 @@ module.exports = (grunt) ->
           beautify: true
           sourceMap: true
           sourceMapIncludeSources: true
-        files: x = {
-          "dist/assets/js/custom.js": ["src/js/**/*.js"]}
+        files: x = [
+          expand: true
+          cwd: "src/js"
+          src: ["**/*.js"]
+          dest: "dist/assets/js"]
       prod:
         options:
           preserveComments: "some"

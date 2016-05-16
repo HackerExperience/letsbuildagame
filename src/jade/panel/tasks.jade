@@ -1,0 +1,252 @@
+extends ../includes/layout
+include ../includes/meta-tags
+
+block title
+  title Let's build a game - User Panel
+  
+append styles
+  +stylesheet("/assets/css/panel.css")
+
+append scripts
+  +javascript("/assets/js/contrib-tasks.js")
+
+block header
+  include ../includes/panel/header
+  
+block content
+  mixin task(task_id, name, icon)
+    - var div_id = 
+
+    .col-xs-3
+      span(data-hint= (tooltips.tasks[task_id] || "")).hint--large.tooltip-span
+        div(id="task-" + task_id).task
+          .col-xs-2
+            i(class="fa fa-" + icon)
+          .col-xs-9
+            span.task-name= name
+        span.error-helper 
+        
+  .container: .user-panel
+    h1 Tasks
+    form#form-select-tasks.subscribe-form: fieldset
+      h3.fs-subtitle!= strings.contribute.contribution_tasks.subtitle
+      h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin
+      h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin2
+      h3.fs-error
+
+      .task-selector
+        #dev
+          a#cat-dev(href="#").category
+            p!= strings.contribute.contribution_tasks.dev_team
+              i.fa.fa-chevron-down.category-icon
+          #tasks-dev
+            h1!= strings.contribute.contribution_tasks.actions
+            .row
+              +task('submit-patches', strings.contribute.contribution_tasks.patches, 'code-fork')
+              +task('review-code', strings.contribute.contribution_tasks.code, 'search')
+              +task('write-tests', strings.contribute.contribution_tasks.tests, 'bullseye')
+              +task('write-docs', strings.contribute.contribution_tasks.docs, 'book')
+            h1 Tags
+            h2 Workflow
+            .row
+              +task('tag-todo', 'TODO', 'tag')
+              +task('tag-waitingreview', 'WaitingReview', 'tag')
+              +task('tag-bug', 'Bug', 'tag')
+              +task('tag-discussion', 'Discussion', 'tag')
+
+            h2!= strings.contribute.contribution_tasks.langs
+            .row
+              +task('tag-elixir', 'Elixir', 'tag')
+              +task('tag-python', 'Python', 'tag')
+              +task('tag-elm', 'Elm', 'tag')
+              +task('tag-fs', 'F#', 'tag')
+            .row
+              +task('tag-javascript', 'Javascript', 'tag')
+              +task('tag-php', 'PHP', 'tag')
+
+            h2= strings.contribute.contribution_tasks.areas
+            .row
+              +task('tag-frontend', 'Frontend', 'tag')
+              +task('tag-backend', 'Backend', 'tag')
+              +task('tag-infrastructure', strings.contribute.contribution_tasks.infra, 'tag')
+              +task('tag-security', strings.contribute.contribution_tasks.sec, 'tag')
+            .row
+              +task('tag-optimization', strings.contribute.contribution_tasks.opt, 'tag')
+              +task('tag-ai', strings.contribute.contribution_tasks.ai, 'tag')
+              +task('tag-network', strings.contribute.contribution_tasks.net, 'tag')
+              +task('tag-databases', strings.contribute.contribution_tasks.dbs, 'tag')
+            .row
+              +task('tag-pm', strings.contribute.contribution_tasks.project, 'tag')
+              +task('tag-linux', 'Linux', 'tag')
+              +task('tag-ios', 'iOS', 'tag')
+              +task('tag-android', 'Android', 'tag')
+
+            h2= strings.contribute.contribution_tasks.game_software
+            .row
+              +task('tag-core', 'Core', 'tag')
+              +task('tag-mobile', 'Mobile', 'tag')
+              +task('tag-web', 'Web', 'tag')
+              +task('tag-terminal', 'Terminal', 'tag')
+
+            h2= strings.contribute.contribution_tasks.stack
+            .row
+              +task('tag-aerospike', 'Aerospike', 'tag')
+              +task('tag-consul', 'Consul', 'tag')
+              +task('tag-elastic', 'Elastic', 'tag')
+              +task('tag-docker', 'Docker', 'tag')
+            .row
+              +task('tag-kafka', 'Apache Kafka', 'tag')
+              +task('tag-samza', 'Apache Samza', 'tag')
+              +task('tag-nginx', 'nginx', 'tag')
+              +task('tag-haproxy', 'HAproxy', 'tag')
+            .row
+              +task('tag-mnesia', 'Mnesia', 'tag')
+              +task('tag-phabricator', 'Phabricator', 'tag')
+              +task('tag-postgresql', 'PostgreSQL', 'tag')
+              +task('tag-postgis', 'PostGIS', 'tag')
+        #art
+          a#cat-art(href="#").category
+            p= strings.contribute.contribution_tasks.design_art
+              i.fa.fa-chevron-down.category-icon
+          #tasks-art
+            h1!= strings.contribute.contribution_tasks.actions
+            .row
+              +task('discuss-ui', strings.contribute.contribution_tasks.discuss_ui, 'comments')
+              +task('design-ui', strings.contribute.contribution_tasks.design_ui, 'paint-brush')
+              +task('create-assets', strings.contribute.contribution_tasks.assets, 'image')
+              +task('review-ux', strings.contribute.contribution_tasks.rev_ux, 'dashboard')
+            h1 Tags
+            .row
+              +task('tag-design', 'Design', 'tag')
+              +task('tag-mobileui', 'InterfaceMobile', 'tag')
+              +task('tag-webui', 'InterfaceWeb', 'tag')
+              +task('tag-terminalui', 'InterfaceTerminal', 'tag')
+            .row
+              +task('tag-designdiscussion', 'DesignDiscussion', 'tag')
+              +task('tag-designsuggestion', 'DesignSuggestion', 'tag')
+              +task('tag-designfeedback', 'DesignFeedback', 'tag')
+              +task('tag-ux', 'UX', 'tag')
+        #gd
+          a#cat-gd(href="#").category
+            p= strings.contribute.contribution_tasks.gd_team
+              i.fa.fa-chevron-down.category-icon
+          #tasks-gd
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('discuss-features', strings.contribute.contribution_tasks.features, 'comments')
+              +task('study-game', strings.contribute.contribution_tasks.study_game, 'map')
+              +task('balance', strings.contribute.contribution_tasks.balance, 'balance-scale')
+              +task('design-story', strings.contribute.contribution_tasks.story, 'pencil')
+            h1 Tags
+            .row
+              +task('tag-storyline', 'Storyline', 'tag')
+              +task('tag-gamemechanic', 'GameMechanic', 'tag')
+              +task('tag-gamedesign', 'GameDesign', 'tag')
+              +task('tag-heep-gd', 'HEEP-GD', 'tag')
+            .row
+              +task('tag-feature', 'Feature', 'tag')
+              +task('tag-featurerequest', 'FeatureRequest', 'tag')
+        #mgt
+          a#cat-mgt(href="#").category
+            p= strings.contribute.contribution_tasks.community
+              i.fa.fa-chevron-down.category-icon
+          #tasks-mgt
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('triage-tasks', strings.contribute.contribution_tasks.tasks, 'folder-open')
+              +task('guide-users', strings.contribute.contribution_tasks.guide, 'map-signs')
+              +task('curate-content', strings.contribute.contribution_tasks.content, 'file-text')
+              +task('report', strings.contribute.contribution_tasks.report, 'legal')
+            h1 Tags
+            .row
+              +task('tag-report', 'Report', 'tag')
+              +task('tag-meta', 'Meta', 'tag')
+              +task('tag-community', 'Community', 'tag')
+        #translation
+          a#cat-translation(href="#").category
+            p= strings.contribute.contribution_tasks.translation
+              i.fa.fa-chevron-down.category-icon
+          #tasks-translation
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('translate-text', strings.contribute.contribution_tasks.translate, 'language')
+              +task('improve-text', strings.contribute.contribution_tasks.improve, 'paragraph')
+              +task('fix-typos', strings.contribute.contribution_tasks.typos, 'strikethrough')
+            h1 Tags
+            .row
+              +task('tag-typos', 'Typos', 'tag')
+              +task('tag-translationrequest', 'TranslationRequest', 'tag')
+
+        #patron
+          a#cat-patron(href="#").category
+            p= strings.contribute.contribution_tasks.patron
+              i.fa.fa-chevron-down.category-icon
+          #tasks-patron
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('spread', strings.contribute.contribution_tasks.spread, 'bullhorn')
+              +task('preorder', strings.contribute.contribution_tasks.preorder, 'gift')
+              +task('rate-review', strings.contribute.contribution_tasks.rate, 'thumbs-up')
+              +task('invest', strings.contribute.contribution_tasks.invest, 'rocket')
+
+        #student
+          a#cat-student(href="#").category
+            p= strings.contribute.contribution_tasks.mentor
+              i.fa.fa-chevron-down.category-icon
+          #tasks-student
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('follow-topics', strings.contribute.contribution_tasks.topics, 'rss')
+              +task('learn-code', strings.contribute.contribution_tasks.learn, 'road')
+              +task('study-group', strings.contribute.contribution_tasks.study, 'group')
+              +task('share-knowledge', strings.contribute.contribution_tasks.share, 'exchange')
+            .row
+              +task('adopt-student', strings.contribute.contribution_tasks.adopt, 'heart')
+              +task('answer-guide', strings.contribute.contribution_tasks.answer, 'support')
+            h1 Tags
+            .row
+              +task('tag-question', 'Question', 'tag')
+              +task('tag-resource', 'Resource', 'tag')
+              +task('tag-tutorial', 'Tutorial', 'tag')
+              +task('tag-advice', 'Advice', 'tag')
+            .row
+              +task('tag-studygroup', 'StudyGroup', 'tag')
+              +task('tag-seekingmentor', 'SeekingMentor', 'tag')
+              +task('tag-seekingstudent', 'SeekingStudent', 'tag')
+
+        #gamer
+          a#cat-gamer(href="#").category
+            p= strings.contribute.contribution_tasks.gamer_team
+              i.fa.fa-chevron-down.category-icon
+          #tasks-gamer
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('play', strings.contribute.contribution_tasks.play, 'gamepad')
+              +task('become-tester', strings.contribute.contribution_tasks.tester, 'flask')
+              +task('submit-ideas', strings.contribute.contribution_tasks.ideas, 'lightbulb-o')
+              +task('report-bugs', strings.contribute.contribution_tasks.bugs, 'bug')
+
+        #other
+          a#cat-other(href="#").category
+            p= strings.contribute.contribution_tasks.misc
+              i.fa.fa-chevron-down.category-icon
+          #tasks-other
+            h1= strings.contribute.contribution_tasks.actions
+            .row
+              +task('music', strings.contribute.contribution_tasks.music, 'music')
+              +task('offer-service', strings.contribute.contribution_tasks.offer, 'suitcase')
+            h1 Tags
+            .row
+              +task('tag-marketing', 'Marketing', 'tag')
+              +task('tag-legal', 'Legal', 'tag')
+              +task('tag-social-media', 'Social Media', 'tag')
+              +task('tag-crm', 'CRM', 'tag')
+            .row
+              +task('tag-soundtrack', 'Soundtrack', 'tag')
+            h2= strings.contribute.contribution_tasks.suggest
+            .row
+              .col-xs-12
+                input#custom-actions(type="text" name="custom-actions")
+
+      input(type="submit" name="submit" value= strings.contribute.contribution_tasks.lets).next.action-button
+      i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

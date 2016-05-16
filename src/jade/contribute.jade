@@ -12,6 +12,8 @@ block metatags
   include includes/meta-tags
   +meta-open_graph(pages.contribute.og.title, pages.contribute.og.description, baseUrl + pages.contribute.baseUrl, baseUrl + "/assets/img/game_dev.svg")
 
+append scripts
+  +javascript("/assets/js/signup.js")
 
 block content
   .container.section-subscribe
@@ -79,7 +81,7 @@ block content
           fieldset
             h2.fs-title!= strings.contribute.select_team.title
             h3.fs-subtitle!= strings.contribute.select_team.subtitle
-            h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtle_margin
+            h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtitle_margin
             h3.fs-error
 
             .team-selector

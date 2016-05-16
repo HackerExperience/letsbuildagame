@@ -11,6 +11,10 @@ block metatags
   include includes/meta-tags
   +meta-open_graph(pages.index.og.title, pages.index.og.description, baseUrl + pages.index.baseUrl, "https://cdn.hackerexperience.com/og/lbag.png")
 
+  append scripts
+    +javascript("/assets/js/index.js")
+    +javascript("/assets/js/timeline_popover.js")
+
 block content
   .main: .container
     .row

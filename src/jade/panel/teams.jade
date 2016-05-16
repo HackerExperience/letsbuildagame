@@ -1,0 +1,47 @@
+extends ../includes/layout
+include ../includes/meta-tags
+
+block title
+  title Let's build a game - User Panel
+  
+append styles
+  +stylesheet("/assets/css/panel.css")
+
+append scripts
+  +javascript("/assets/js/contrib-teams.js")
+
+block header
+  include ../includes/panel/header
+  
+block content
+  mixin team(team_id, name, icon)
+    .col-xs-3
+      span(data-hint= tooltips.teams[team_id]).hint--large.tooltip-span
+        div(id="team-" + team_id).team        
+          i(class="fa fa-" + icon)
+          .team-name= name
+
+  .container: .user-panel
+    h1 Teams
+
+    form#form-select-contrib.subscribe-form
+      fieldset
+        h2.fs-title!= strings.contribute.select_team.title
+        h3.fs-subtitle!= strings.contribute.select_team.subtitle
+        h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtitle_margin
+        h3.fs-error
+
+        .team-selector
+          .row
+            +team('dev', strings.contribute.select_team.dev, 'code')
+            +team('art', strings.contribute.select_team.art, 'paint-brush')
+            +team('mgt', strings.contribute.select_team.mgt, 'tags')
+            +team('gd', strings.contribute.select_team.gd, 'lightbulb-o')
+          .row
+            +team('translation', strings.contribute.select_team.translation, 'language')
+            +team('patron', strings.contribute.select_team.patron, 'tag')
+            +team('student', strings.contribute.select_team.student, 'mortar-board')
+            +team('gamer', strings.contribute.select_team.gamer, 'gamepad')
+
+        input(type="submit" name="submit" value= strings.contribute.select_team.ready).next.action-button
+        i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

@@ -1,0 +1,52 @@
+extends ../includes/layout
+include ../includes/meta-tags
+
+block title
+  title Let's build a game - User Panel
+  
+append styles
+  +stylesheet("/assets/css/panel.css")
+
+append scripts
+  +javascript("/assets/js/contrib-teams.js")
+
+block header
+  include ../includes/panel/header
+  
+block content
+  .container: .user-panel
+    h1 Preferences
+    form#form-select-preferences.subscribe-form: fieldset
+      h3.fs-subtitle!= strings.contribute.notification.subtitle
+      h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin
+      h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin2
+      h3.fs-error
+
+      .form-group
+        label(for="email-frequency").col-sm-2.control-label= strings.contribute.notification.frequency
+        .col-sm-10
+          select(name="email-frequency" autocomplete="off").form-control.email-frequency
+            option(value="0")!= strings.contribute.notification.never
+            option(value="1x1")!= strings.contribute.notification.once_day
+            option(value="2x7" selected="selected")!= strings.contribute.notification.twice_week
+            option(value="1x7")!= strings.contribute.notification.once_week
+            option(value="2x30")!= strings.contribute.notification.twice_month
+            option(value="1x30")!= strings.contribute.notification.once_month
+          span.helper.input-email-code
+        span.help-block!= strings.contribute.notification.help
+
+      .form-group
+        label(for="email-frequency").col-sm-2.control-label!= strings.contribute.notification.notifications
+        .col-sm-10
+          label.checkbox-group
+            input(type="checkbox" value="important_updates").notification-input 
+            span!= strings.contribute.notification.updates
+          label.checkbox-group
+            input(type="checkbox" value="step4_starts").notification-input
+            span!= strings.contribute.notification.step4_starts
+          label.checkbox-group
+            input(type="checkbox" value="game_released" checked="checked" autocomplete="off").notification-input
+            span= strings.contribute.notification.game_released
+
+      input(type="submit" name="submit" value= strings.finish).next.action-button
+      i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

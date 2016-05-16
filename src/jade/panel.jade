@@ -1,0 +1,23 @@
+extends includes/layout
+
+block title
+  title Let's build a game - User Panel
+  
+append styles
+  include includes/meta-tags
+  +stylesheet("/assets/css/panel.css")
+
+block header
+  include includes/panel/header
+  
+block content
+  .container: .user-panel
+    h1 Contribution Panel
+    p.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+      placerat euismod ante eget aliquet. Proin maximus nisl a porttitor
+      porta. Aenean accumsan eleifend turpis a ultricies. Duis vel augue vitae
+      sem pharetra gravida. Maecenas consectetur ante id velit condimentum, ut
+      tempor tellus luctus. Aliquam aliquet, orci id feugiat tincidunt, est
+      metus feugiat est, sed mollis velit lacus a justo. Mauris vitae molestie
+      augue. Morbi. 

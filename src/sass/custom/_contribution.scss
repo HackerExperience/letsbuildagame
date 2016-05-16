@@ -1,0 +1,397 @@
+$step-amount: 5;
+$contrast-color: #2C3E50;
+
+.step-form {
+  margin: 64px 0;
+  position: relative;
+
+  .fs-title,
+  .fs-subtitle {
+    text-align: center;
+  }
+
+  .fs-title {
+    color: $color-contrast;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .fs-subtitle {
+    color: #666;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+
+  fieldset {
+    @include single-text-shadow(0, 0, 15px, 1px, rgba(#000, 0.4));
+    background: #FFF;
+    border: 0 none;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    width: 80%;
+
+    // Hide all except first fieldset
+    &:not(:first-of-type) {
+      display: none;
+    }
+  }
+
+  label {
+    color: $contrast-color;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+}
+
+.progress-bar {
+  // CSS counters to number the steps
+  counter-reset: step;
+  margin-bottom: 32px;
+  overflow: hidden;
+  text-align: center;
+
+  li {
+    color: #FFF;
+    float: left;
+    font-size: 9px;
+    list-style-type: none;
+    position: relative;
+    text-transform: uppercase;
+    width: 96% / $step-amount;
+
+    &:before {
+      background: #FFF;
+      border-radius: 3px;
+      color: #333;
+      content: counter(step);
+      counter-increment: step;
+      display: block;
+      font-size: 10px;
+      line-height: 20px;
+      margin: 0 auto 5px;
+      width: 20px;
+    }
+
+    &:after {
+      background: #FFF;
+      content: "";
+      height: 2px;
+      left: -50%;
+      position: absolute;
+      top: 9px;
+      width: 100%;
+      z-index: -1; // put it behind the numbers
+    }
+
+    &:first-child:after {
+      // Connector not needed before the first step
+      content: none;
+    }
+
+    // Marking active/completed steps green
+    // The number of the step and the connector before it = green
+    &.active:before,
+    &.active:after {
+      background: #27AE60;
+      color: #FFF;
+    }
+  }
+}
+
+.subscribe-form {
+  // margin: 50px auto;
+  // position: relative;
+  // text-align: center;
+  // width: 1000px;
+
+  // fieldset {
+  //   @include single-text-shadow(0, 0, 15px, 1px, rgba(#000, 0.4));
+  //   background: #FFF;
+  //   border: 0 none;
+  //   border-radius: 3px;
+  //   box-sizing: border-box;
+  //   margin: 0 10%;
+  //   padding: 20px 30px;
+  //   width: 80%;
+  //
+  //   // Hide all except first fieldset
+  //   &:not(:first-of-type) {
+  //     display: none;
+  //   }
+  // }
+
+  label {
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 13px;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  select {
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: 3px;
+    color: #2C3E50;
+    font-size: 13px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
+  .checkbox-group {
+    color: #2C3E50;
+    display: block;
+    font-size: 13px;
+    text-align: left;
+
+    span {
+      font-weight: normal;
+    }
+
+    input {
+      color: #2C3E50;
+      display: block;
+      float: left;
+      font-size: 13px;
+      outline: 0;
+      width: 10%;
+    }
+  }
+
+  .action-button-big {
+    width: 200px;
+  }
+
+  .action-button {
+    background: #27AE60;
+    border: 0 none;
+    border-radius: 1px;
+    color: #FFF;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 5px;
+    padding: 10px 5px;
+    width: 100px;
+
+    &:hover,
+    &:focus {
+      @include box-shadow(
+        0 0 0 2px #FFF,
+        0 0 0 3px #27AE60);
+    }
+  }
+
+  .has-error {
+    border-color: #F00;
+  }
+
+  .has-success {
+    border-color: $color-primary;
+  }
+
+  .helper,
+  .fs-error {
+    color: #F00;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .input-loading {
+    color: #2C3E50;
+    font-size: 30px;
+    margin: 7px 5px;
+    padding: 7px 5px;
+  }
+}
+
+.no-margin {
+  margin-top: -10px;
+}
+
+.team-selector {
+  .row:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  .tooltip-span {
+    width: 100%;
+  }
+
+  .team {
+    background: $color-tertiary;
+    border: 1px #000 solid;
+    min-width: 163px;
+    padding: 0 0 5px;
+    text-align: center;
+    width: 100%;
+
+    i {
+      color: #FFF;
+      font-size: 40px;
+      margin-top: 15px;
+    }
+
+    h1,
+    .team-name {
+      color: #FFF;
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 20px 10px;
+    }
+
+    &:hover {
+      background: lighten($color-secondary, 15%);
+      cursor: pointer;
+    }
+  }
+
+  .team-selected {
+    background: $color-secondary;
+
+    &:hover {
+      background: darken($color-secondary, 5%);
+      cursor: pointer;
+    }
+  }
+}
+
+#form-select-contrib,
+#form-select-tasks {
+  .next {
+    margin-top: 30px;
+  }
+
+  .disabled {
+    background-color: #CCC;
+    border: 0;
+    box-shadow: none;
+    cursor: default;
+    text-shadow: none;
+  }
+}
+
+.task-selector {
+  text-align: center;
+
+  h1 {
+    background-color: #DDD;
+    color: #2C3E50;
+    font-size: 15px;
+    padding: 5px 0;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    background-color: #F4F4F4;
+    color: #2C3E50;
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    padding: 3px 0;
+  }
+
+  .row:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  .tooltip-span {
+    width: 100%;
+  }
+
+  .task {
+    background: lighten($color-tertiary, 10%);
+    border: 1px #000 solid;
+    min-height: 30px;
+    // min-width: 163px;
+    padding: 3px 0 5px;
+    width: 100%;
+
+    i {
+      color: #FFF;
+      font-size: 16px;
+      margin-left: 5px;
+      margin-top: 3px;
+    }
+
+    .task-name {
+      color: #FFF;
+      float: left;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    &:hover {
+      background: lighten($color-primary, 15%);
+      cursor: pointer;
+    }
+  }
+
+  .task-selected {
+    background: $color-primary;
+
+    &:hover {
+      background: darken($color-primary, 5%);
+      cursor: pointer;
+    }
+  }
+
+  .category {
+    color: #FFF;
+    cursor: pointer;
+    font-size: 15px;
+    outline: 0;
+    padding: 5px 0;
+    position: relative;
+    text-transform: uppercase;
+
+    p {
+      background-color: $color-secondary;
+      border: 1px $color-primary solid;
+      margin-top: 20px;
+      padding: 3px 0;
+      position: relative;
+    }
+
+    .category-icon {
+      color: #FFF;
+      margin-top: 3px;
+      position: absolute;
+      right: 40px;
+    }
+  }
+
+  .error-helper {
+    color: #F00;
+    font-size: 10px;
+  }
+
+  #tasks-other {
+    input {
+      padding: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-left: 5px;
+      margin-top: 4px;
+    }
+  }
+}

@@ -1,6 +1,17 @@
 body {
   background: $color-primary;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   position: relative;
+}
+
+main {
+  flex: 1;
+}
+
+.site-footer {
+  flex: 0;
 }
 
 .btn.btn-future {
