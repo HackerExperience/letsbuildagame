@@ -1,4 +1,7 @@
 {
+  "config": {
+    "list_id": 6
+  },
   "baseUrl": "https://vamosfazerumjogo.com.br",
   "pages": {
     "index": {
@@ -320,9 +323,9 @@
     },
     "schedule": {
       "title": "O cronograma",
-      "line_1": "Uma tentativa de cronograma (<a>estimar software é<em> dificil</em></a>) com cada passo descrito abaixo.",
-      "line_2": "Os pontos verdes nos dizem quando o repositório se tornará publico. <sup><a>* </a></sup>Os pontos vermelhos são problemas com os quais nos deparamos.",
-      "line_3": "Você pode encontrar uma <a>explicação detalhada de cada fase</a> na documentação."
+      "line_1": "Uma tentativa de cronograma (<a href=\"https://blog.renatomassaro.com/human-variables\">estimar software é<em> dificil</em></a>) com cada passo descrito abaixo.",
+      "line_2": "Os pontos verdes nos dizem quando o repositório se tornará publico. <sup><a href=\"https://docs.hackerexperience.com/lbag/faq/#why-i-cant-find-any-source-of-the-game\">* </a></sup>Os pontos vermelhos são problemas com os quais nos deparamos.",
+      "line_3": "Você pode encontrar uma <a href=\"https://docs.hackerexperience.com/lbag/how_it_works/workflow/\">explicação detalhada de cada fase</a> na documentação."
     },
     "contribution": {
       "title": "Contribuição",

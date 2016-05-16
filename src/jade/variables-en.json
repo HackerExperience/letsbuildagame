@@ -1,4 +1,7 @@
 {
+  "config": {
+    "list_id": 1
+  },
   "baseUrl": "https://letsbuildagame.org",
   "pages": {
     "index": {

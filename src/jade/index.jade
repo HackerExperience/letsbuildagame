@@ -16,6 +16,8 @@ block metatags
     +javascript("/assets/js/timeline_popover.js")
 
 block content
+  script.
+    list_id=#{config.list_id}
   .main: .container
     .row
       .col-xs-12.col-md-7.col-lg-8: .intro#section-home

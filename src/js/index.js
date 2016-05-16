@@ -7,7 +7,7 @@
       if (data.status === true) {
         var msg = document.createElement("span");
         msg.appendChild(
-          document.createTextNode("E-mail successfully entered the waiting list"))
+          document.createTextNode("Thank you! Please verify your email inbox."))
         $(form).parent().append(msg);
         $(form).remove();
       } else {
@@ -29,7 +29,7 @@
         data: {
           func: "subscribe",
           email: $(this).find("input").val(),
-          list_id: 2},
+          list_id: list_id},
         success: process_email(this)});
     });
 })();
