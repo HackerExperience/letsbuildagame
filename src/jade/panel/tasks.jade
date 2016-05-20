@@ -28,11 +28,12 @@ block content
         
   .container: .user-panel
     h1 Tasks
+    p.panel-desc!= strings.contribute.contribution_tasks.subtitle
+    p.panel-desc!= strings.contribute.contribution_tasks.subtitle_margin
+    p.panel-desc!= strings.contribute.contribution_tasks.subtitle_margin2
+    
     form#form-select-tasks.subscribe-form: fieldset
-      h3.fs-subtitle!= strings.contribute.contribution_tasks.subtitle
-      h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin
-      h3.fs-subtitle.no-margin!= strings.contribute.contribution_tasks.subtitle_margin2
-      h3.fs-error
+      .fs-error
 
       .task-selector
         #dev

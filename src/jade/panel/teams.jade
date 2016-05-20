@@ -23,13 +23,12 @@ block content
 
   .container: .user-panel
     h1 Teams
+    p.panel-desc!= strings.contribute.select_team.subtitle
+    p.panel-desc!= strings.contribute.select_team.subtitle_margin
 
     form#form-select-contrib.subscribe-form
       fieldset
-        h2.fs-title!= strings.contribute.select_team.title
-        h3.fs-subtitle!= strings.contribute.select_team.subtitle
-        h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtitle_margin
-        h3.fs-error
+        .fs-error
 
         .team-selector
           .row
@@ -43,5 +42,5 @@ block content
             +team('student', strings.contribute.select_team.student, 'mortar-board')
             +team('gamer', strings.contribute.select_team.gamer, 'gamepad')
 
-        input(type="submit" name="submit" value= strings.contribute.select_team.ready).next.action-button
+        input(type="submit" name="submit" value= strings.contribute.select_team.ready).next.action-button.disabled
         i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

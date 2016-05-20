@@ -16,11 +16,12 @@ block header
 block content
   .container: .user-panel
     h1 Preferences
+    p.panel-desc!= strings.contribute.notification.subtitle
+    p.panel-desc!= strings.contribute.notification.subtitle_margin
+    p.panel-desc!= strings.contribute.notification.subtitle_margin2
+    
     form#form-select-preferences.subscribe-form: fieldset
-      h3.fs-subtitle!= strings.contribute.notification.subtitle
-      h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin
-      h3.fs-subtitle.no-margin!= strings.contribute.notification.subtitle_margin2
-      h3.fs-error
+      .fs-error
 
       .form-group
         label(for="email-frequency").col-sm-2.control-label= strings.contribute.notification.frequency
