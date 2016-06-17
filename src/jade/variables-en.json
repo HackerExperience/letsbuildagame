@@ -537,6 +537,7 @@
     "title": "Let's build a game",
     "panel": {
       "dashboard": {
+        "intro": "Welcome. Update your tasks, teams and settings using the menu above. Don't forget to also create an account at the <a href=\"https://dev.hackerexperience.com\">Development Center</a>.",
         "actions": {
           "submit-patches": {
             "desc": "This step hasn't started yet. We'll let you know when it does.",
