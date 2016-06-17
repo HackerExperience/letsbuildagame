@@ -1,0 +1,107 @@
+.subscribe-form {
+    width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+.subscribe-form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    
+    /*stacking fieldsets above each other*/
+    position: absolute;
+}
+
+.subscribe-form label {
+  padding: 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/*Hide all except first fieldset*/
+.subscribe-form fieldset:not(:first-of-type) {
+    display: none;
+}
+/*inputs*/
+.subscribe-form input, .subscribe-form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.subscribe-form select {
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: montserrat;
+  color: #2C3E50;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.subscribe-form {
+
+  .checkbox-group {
+
+    span {
+      font-weight: normal;
+    }
+
+    input {
+      outline: 0;
+      display: block;
+      width: 10%;
+      font-size: 13px;
+      font-family: montserrat;
+      color: #2C3E50;
+      float: left;
+    }
+
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-family: montserrat;
+    color: #2C3E50;
+
+  }
+
+}
+
+/*buttons*/
+.subscribe-form .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+.subscribe-form .action-button-big {
+  width: 200px;
+}
+
+.subscribe-form .action-button:hover, .subscribe-form .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}

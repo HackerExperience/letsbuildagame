@@ -6,6 +6,8 @@
       container: ".timeline-graph",
       trigger: "click hover"}}
 
+  setTimeout(function(){
+
   $("#timeline-iv").popover(
     popover_layout("", ""));
 
@@ -20,4 +22,7 @@
 
   $("#timeline-mob-vi").popover(
     popover_layout("", ""));
+
+  }, 1000);
+  
 })();

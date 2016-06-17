@@ -23,5 +23,9 @@
         text-shadow: $navbar-default-link-active-shadow;
       }
     }
+    .nav-user {
+      display: none;
+    }
   }
 }
+

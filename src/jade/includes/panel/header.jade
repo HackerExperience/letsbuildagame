@@ -1,5 +1,5 @@
-mixin nav-button(url, title)
-  li(class={active: currentUrl == url})
+mixin nav-button(url, title, nav_class)
+  li(class={active: currentUrl == url} class= nav_class)&attributes(attributes)
     a(href= url)= title
 
 header.site-header: nav.navbar.navbar-default.collapsed: .container
@@ -8,9 +8,10 @@ header.site-header: nav.navbar.navbar-default.collapsed: .container
       i.fa.fa-bars
   #headerNavbar.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-left
-      +nav-button(pages.index.baseUrl, strings.header.home)
+      +nav-button("/panel.html", "My panel")
       +nav-button("/panel/teams.html", "Teams")
       +nav-button("/panel/tasks.html", "Tasks")
       +nav-button("/panel/preferences.html", "Preferences")
     ul.nav.navbar-nav.navbar-right
-      +nav-button("/panel.html", "Logged as \#{user}")
+      +nav-button("/panel", "Welcome", "nav-welcome")
+      +nav-button("/panel/logout", "Logout", "nav-logout")

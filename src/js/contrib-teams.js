@@ -6,7 +6,8 @@
   var ajax_call = function(input_data, callback) {
     $.ajax({
       type: "POST",
-      url: "https://ajax.letsbuildagame.org",
+      //url: "https://ajax.letsbuildagame.org",
+      url: "localhost/lback/index.php",
       data: input_data,
       success: callback
     });

@@ -54,7 +54,7 @@ doctype html
       if env === prod
         +stylesheet("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Raleway:400,700")
 
-  body
+  body(page= currentPage)
     block header
       include header
 
@@ -67,4 +67,7 @@ doctype html
     block scripts
       +javascript("/assets/js/vendor/jquery.min.js")
       +javascript("/assets/js/vendor/bootstrap.min.js")
-      +javascript("/assets/js/custom.js")
+      +javascript("/assets/js/index.js")
+
+      if currentPage.indexOf('panel') != -1
+        +javascript("/assets/js/panel.js")

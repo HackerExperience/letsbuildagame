@@ -3,12 +3,12 @@ include ../includes/meta-tags
 
 block title
   title Let's build a game - User Panel
-  
+
+block variables
+  - currentPage = "panel_teams";
+
 append styles
   +stylesheet("/assets/css/panel.css")
-
-append scripts
-  +javascript("/assets/js/contrib-teams.js")
 
 block header
   include ../includes/panel/header
@@ -21,14 +21,15 @@ block content
           i(class="fa fa-" + icon)
           .team-name= name
 
-  .container: .user-panel
+  .container: .user-panel(style="text-align: center;")
     h1 Teams
-    p.panel-desc!= strings.contribute.select_team.subtitle
-    p.panel-desc!= strings.contribute.select_team.subtitle_margin
 
     form#form-select-contrib.subscribe-form
       fieldset
-        .fs-error
+        h2.fs-title!= strings.contribute.select_team.title
+        h3.fs-subtitle!= strings.contribute.select_team.subtitle
+        h3.fs-subtitle.no-margin!= strings.contribute.select_team.subtitle_margin
+        h3.fs-error
 
         .team-selector
           .row
@@ -42,5 +43,5 @@ block content
             +team('student', strings.contribute.select_team.student, 'mortar-board')
             +team('gamer', strings.contribute.select_team.gamer, 'gamepad')
 
-        input(type="submit" name="submit" value= strings.contribute.select_team.ready).next.action-button.disabled
+        input(type="submit" name="submit" value="Update teams").next.action-button
         i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

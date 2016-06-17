@@ -29,6 +29,10 @@ html {
     @import "custom/pages/timeline";
   }
 
+  &#page-login {
+    @import "custom/pages/login";
+  }
+
   &#page-contribute {
     @import "custom/pages/contribute";
   }

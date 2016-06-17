@@ -3,29 +3,38 @@ include ../includes/meta-tags
 
 block title
   title Let's build a game - User Panel
-  
+
+block variables
+  - currentPage = "panel_tasks";
+
 append styles
   +stylesheet("/assets/css/panel.css")
 
-append scripts
-  +javascript("/assets/js/contrib-tasks.js")
+//- append scripts
+//-   +javascript("/assets/js/contrib-tasks.js")
 
 block header
   include ../includes/panel/header
   
 block content
+  
+  mixin tooltip-span(text)
+    span(data-hint= text).hint--large.tooltip-span
+      if block
+        block
+
   mixin task(task_id, name, icon)
-    - var div_id = 
+    - var div_id = 'task-' + task_id
 
     .col-xs-3
-      span(data-hint= (tooltips.tasks[task_id] || "")).hint--large.tooltip-span
-        div(id="task-" + task_id).task
+      +tooltip-span(tooltips.tasks[task_id])
+        div(id="#{div_id}").task
           .col-xs-2
             i(class="fa fa-" + icon)
           .col-xs-9
             span.task-name= name
         span.error-helper 
-        
+
   .container: .user-panel
     h1 Tasks
     p.panel-desc!= strings.contribute.contribution_tasks.subtitle

@@ -30,7 +30,15 @@
     },
     "contribute": {
       "title": "Vamos Fazer Um Jogo",
-      "baseUrl": "/contribute.html",
+      "baseUrl": "/contribute",
+      "og": {
+        "title": "Vamos fazer um jogo",
+        "description": "Junte-se a outros contribuidores e ajude a criar o próximo jogo colaborativo. Juntos. Agora. Não importa quem você seja."
+      }
+    },
+    "login": {
+      "title": "Vamos Fazer Um Jogo",
+      "baseUrl": "/login.html",
       "og": {
         "title": "Vamos fazer um jogo",
         "description": "Junte-se a outros contribuidores e ajude a criar o próximo jogo colaborativo. Juntos. Agora. Não importa quem você seja."
@@ -511,7 +519,8 @@
       "schedule": "Cronograma",
       "contribution": "Contribuição",
       "team": "Equipe",
-      "contribute": "Contribua"
+      "contribute": "Contribua",
+      "login": "Entrar"
     },
     "footer": {
       "lbag": "VAMOS FAZER UM JOGO",
@@ -526,6 +535,152 @@
       "contact": "CONTATE-NOS"
     },
     "finish": "Concluir Configuração",
-    "title": "Vamos fazer um jogo"
+    "title": "Vamos fazer um jogo",
+    "panel": {
+      "dashboard": {
+        "actions": {
+          "submit-patches": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Submit Patches"
+          },
+          "review-code": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Review code"
+          },
+          "write-tests": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Write tests"
+          },
+          "write-docs": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Write Documentation"
+          },
+          "discuss-ui": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Discuss UI"
+          },
+          "design-ui": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Design UI"
+          },
+          "create-assets": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Create Assets"
+          },
+          "review-ux": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Review UX"
+          },
+          "discuss-features": {
+            "desc": "Head to the <a href='https://dev.hackerexperience.com'>Development Center</a> and follow the FeatureRequest tag.",
+            "name": "Discuss Features"
+          },
+          "study-game": {
+            "desc": "",
+            "name": "Study the Game"
+          },
+          "balance": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Balance the Game"
+          },
+          "design-story": {
+            "desc": "----",
+            "name": "Design the Storyline"
+          },
+          "triage-tasks": {
+            "desc": "----",
+            "name": "Triage Tasks"
+          },
+          "guide-users": {
+            "desc": "----",
+            "name": "Guide Users"
+          },
+          "curate-content": {
+            "desc": "----",
+            "name": "Curate Content"
+          },
+          "report": {
+            "desc": "Monitor discussions and threads at the <a href='https://dev.hackerexperience.com'>Development Center</a> and report anyone misbehaving.",
+            "name": "Report bad behaviour"
+          },
+          "translate-text": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Translate Text"
+          },
+          "improve-text": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Improve Text"
+          },
+          "fix-typos": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Fix Typos"
+          },
+          "spread": {
+            "desc": "Invite your friends. Share the project to your followers. The more contributors we have, the best the game we can build.",
+            "name": "Spread the Word"
+          },
+          "preorder": {
+            "desc": "We need your donation to keep working on the game. You can preorder it at <a href='https://www.indiegogo.com/projects/hacker-experience-2-open-source-hacking-game--2/'>Indiegogo</a>.",
+            "name": "Preorder the game"
+          },
+          "rate-review": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Rate & Review"
+          },
+          "invest": {
+            "desc": "Are you an angel or VC? <a href='mailto:contact@hackerexperience.com'>Contact us</a> for more information. Ask for our business plan.",
+            "name": "Invest in the Game"
+          },
+          "follow-topics": {
+            "desc": "----",
+            "name": "Follow Topics"
+          },
+          "learn-code": {
+            "desc": "----",
+            "name": "Learn to Code"
+          },
+          "study-group": {
+            "desc": "----",
+            "name": "Join/create a Study Group"
+          },
+          "share-knowledge": {
+            "desc": "-----",
+            "name": "Share your knowledge"
+          },
+          "adopt-student": {
+            "desc": "----",
+            "name": "Adopt a Student"
+          },
+          "answer-guide": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Answer Guide"
+          },
+          "play": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Play the game"
+          },
+          "become-tester": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Become a tester"
+          },
+          "submit-ideas": {
+            "desc": "Create an account at the <a href='https://dev.hackerexperience.com'>Development Center</a> and share your idea with us.",
+            "name": "Submit Ideas"
+          },
+          "report-bugs": {
+            "desc": "This step hasn't started yet. We'll let you know when it does.",
+            "name": "Report Bugs"
+          },
+          "music": {
+            "desc": "-----",
+            "name": "Compose Music"
+          },
+          "offer-service": {
+            "desc": "Do you have a service that could be useful to the game? Are you a SaaS company? <a href='mailto:contact@hackerexperience.com'>Talk to us</a>.",
+            "name": "Offer a Service"
+          }
+        }
+      }
+    }
   }
 }

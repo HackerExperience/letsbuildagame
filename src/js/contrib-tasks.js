@@ -1,14 +1,10 @@
 (function() {
-  var sess_id = "";
+
   var active_tasks = [];
 
-  var ajax_call = function(input_data, callback) {
-    $.ajax({
-      type: "POST",
-      url: "https://ajax.letsbuildagame.org",
-      data: input_data,
-      success: callback
-    });
+  array_length = lbag_data['tasks'].length;
+  for (var i = 0; i < array_length; i++) {
+    active_tasks.push(lbag_data['tasks'][i]);
   }
 
   var toggleSubmitLoading = function(elem) {
@@ -32,7 +28,7 @@
         sess: sess_id
       },
       function(data) {
-        if (!data.status && data.msg) {
+        if (!data.status) {
           var helper = element.parent().find('.error-helper')
 
           if (!helper.length) {
@@ -47,14 +43,17 @@
         }
       }
     );
+    refresh_data();
   }
 
   var task_subscribe = function(element, team_id, task_id) {
     task_generic_subscribe(element, 'subscribe-task', team_id, task_id);
+    active_tasks.push(task_id);
   }
 
   var task_unsubscribe = function(element, team_id, task_id) {
     task_generic_subscribe(element, 'unsubscribe-task', team_id, task_id);
+    active_tasks.splice(active_tasks.indexOf(task_id), 1);
   }
 
   // Toggles all active tasks

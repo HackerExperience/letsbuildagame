@@ -1,6 +1,7 @@
 bower_filter = (type, component, relative_dir_path) ->
   switch component
     when "jquery" then ""
+    when "jquery.easing" then ""
     when "bootstrap-sass"
       switch type
         when "sass"

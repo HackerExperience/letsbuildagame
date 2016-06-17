@@ -1,0 +1,38 @@
+extends includes/layout
+
+block variables
+  - currentPage = "login";
+  - currentUrl = pages.login.baseUrl;
+
+append scripts
+  include includes/meta-tags
+  +javascript("https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+
+block metatags
+  include includes/meta-tags
+  +meta-open_graph(pages.login.og.title, pages.login.og.description, baseUrl + pages.login.baseUrl, baseUrl + "/assets/img/game_dev.svg")
+
+append scripts
+  +javascript("/assets/js/login.js")
+
+block content
+  .container.section-subscribe
+    .row
+      .col-xs-12
+
+        form(action="#" method="POST")#form-login.subscribe-form
+
+          fieldset
+            h2.fs-title Contributor Login
+            h3.fs-subtitle Welcome back!
+            h3.fs-error
+
+            .form-group
+              input(type="text" name="username" placeholder="Username").input-username
+              span.helper.input-username-help
+            .form-group
+              input(type="password" name="password" placeholder="Password").input-password
+              span.helper.input-password-help
+
+            input(type="submit" name="submit" value="Login now").next.action-button
+            i(style="display: none;").fa.fa-spinner.fa-spin.input-loading

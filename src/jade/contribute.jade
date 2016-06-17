@@ -6,7 +6,8 @@ block variables
 
 append scripts
   include includes/meta-tags
-  +javascript("https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+  //- +javascript("https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+  +javascript("/assets/js/vendor/jquery_easing.js")
 
 block metatags
   include includes/meta-tags
@@ -100,7 +101,7 @@ block content
             i(style="display: none;").fa.fa-spinner.fa-spin.input-loading
 
 
-        form(style="display: none;")#form-select-tasks.subscribe-form
+        form(style="display:none;")#form-select-tasks.subscribe-form
 
           ul#progress-bar
             li.active!= strings.contribute.progress_bar.step_1

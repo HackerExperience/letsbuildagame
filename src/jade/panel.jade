@@ -3,13 +3,16 @@ extends includes/layout
 block title
   title Let's build a game - User Panel
   
+block variables
+  - currentPage = "panel";
+
 append styles
   include includes/meta-tags
   +stylesheet("/assets/css/panel.css")
 
 block header
   include includes/panel/header
-  
+
 block content
   .container: .user-panel
     h1 Contribution Panel
@@ -21,3 +24,9 @@ block content
       tempor tellus luctus. Aliquam aliquet, orci id feugiat tincidunt, est
       metus feugiat est, sed mollis velit lacus a justo. Mauris vitae molestie
       augue. Morbi. 
+
+    #actions
+      p
+
+
+  script var panel_actions = !{JSON.stringify(strings.panel.dashboard.actions)}
